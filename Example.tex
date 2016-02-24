@@ -1,0 +1,1489 @@
+\documentclass[12pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage{calc}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{multirow}
+
+\usepackage{harvard}
+\usepackage{aer}
+\usepackage{aertt}
+\usepackage{verbatim}
+\usepackage{fancyheadings}
+
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+\usepackage{blindtext}
+\usepackage{tabularx}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{rotating}
+\usepackage{amsmath}
+%\usepackage[retainorgcmds]{IEEEeqnarray}
+
+\usepackage{endnotes}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+
+\setlength{\voffset}{0in} \setlength{\topmargin}{0pt}
+\setlength{\hoffset}{0pt} \setlength{\oddsidemargin}{0pt}
+\setlength{\headheight}{0pt} \setlength{\headsep}{.1in}
+\setlength{\marginparsep}{0pt} \setlength{\marginparwidth}{0pt}
+\setlength{\marginparpush}{0pt} \setlength{\footskip}{.4in}
+\setlength{\textwidth}{6.5in} \setlength{\textheight}{9in}
+\setlength{\parskip}{0pc}
+
+\renewcommand{\baselinestretch}{2}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+\newcommand{\citee}[1]{\citename{#1} \citeyear{#1}}
+
+\begin{comment}
+\pagestyle{fancyplan}
+\lhead{}
+\chead{Self-Esteem, Education, and Wages}
+\rhead{\thepage}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\end{comment}
+
+\newcommand{\appsection}[1]
+{
+\let\oldthesection\thesection
+\renewcommand{\thesection}{Appendix \oldthesection}
+\section{#1}\let\thesection\oldthesection
+\renewcommand{\theequation}{\thesection\arabic{equation}}
+\setcounter{equation}{0}
+}
+\begin{comment}
+\titleformat{\chapter}
+  {\normalfont\normalsize\mdseries\centering\uppercase}{\thechapter}{1em}{}
+ \end{comment}
+
+\titleformat{\chapter}[display]
+  {\normalfont\normalsize\selectfont\mdseries\centering}
+  {\MakeUppercase{\chaptertitlename}\ \thechapter}{20pt}{\MakeUppercase}
+
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries\centering}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\mdseries\centering}{\thesubsection}{1em}{}
+
+\renewcommand\contentsname{\normalsize\mdseries\begin{center}{TABLE OF CONTENTS}\end{center}}
+\renewcommand\listtablename{\normalsize\mdseries\begin{center}{LIST OF TABLES}\end{center}}
+
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+
+\renewcommand{\cftchapfont}{\scshape}
+\renewcommand{\cftchappagefont}{\mdseries}
+\renewcommand{\cfttabfont}{Table }
+
+
+\pagestyle{myheadings}
+
+\begin{document}
+
+
+
+\begin{comment}
+\begin{minipage}[h]{\textwidth}
+
+\begin{titlepage}
+
+\title{Self-Esteem, Education, and Wages Revisited}
+\author{
+Stephen Lagos}
+\and
+Pedro de Araujo\footnote{E-mail: Pedro.deAraujo@coloradocollege.edu}\\
+Colorado College}
+\date{Fall 2011\\[0.5cm]
+Economics}
+
+\maketitle
+\begin{center}PRELIMINARY AND INCOMPLETE (please do not cite)\end{center}
+\abstract{Personality undoubtedly plays a role in determining educational attainment and labor market outcomes. We investigate the role of self-esteem in determining wages directly and indirectly via education. We use data from the 1979 wave of the National Longitudinal Study of Youth (NLSY79) to estimate a three equation simultaneous equation model that treats self-esteem, educational attainment, and real wages as endogenous. We find that self-esteem has a significant positive impact on real wages, sometimes directly but always indirectly via education. The magnitude of the indirect effect of self-esteem on wages via education, on average, comprises approximately 78 percent of the full effect of self-esteem on wages. We also discuss differences between males and females in terms of the relationships between self-esteem, education, and wages.}
+
+
+\begin{singlespace}
+\noindent \underline{KEY WORDS}: (Self-esteem, Determinants of wages, Simultaneous equation model, Gender inequality)\\ \end{comment}
+\begin{comment}\noindent \textit{JEL Classification}: J24, J71\\
+\end{singlespace}
+
+\thispagestyle{empty}
+
+\end{titlepage}
+
+\end{minipage}
+\end{comment}
+\newpage
+\vspace*{1cm}
+\begin{center}
+SELF-ESTEEM, EDUCATION, AND WAGES REVISITED\\
+\vspace{0.5cm}
+Stephen Lagos\\
+\vspace{0.5cm}
+Fall 2011\\
+\vspace{0.5cm}
+Economics\\
+\vspace{0.5cm}
+\prbf{Abstract}
+\end{center}
+\vspace{0.55cm}
+Personality undoubtedly plays a role in determining educational attainment and labor market outcomes. We investigate the role of self-esteem in determining wages directly and indirectly via education. We use data from the 1979 wave of the National Longitudinal Study of Youth (NLSY79) to estimate a three equation simultaneous equation model that treats self-esteem, educational attainment, and real wages as endogenous. We find that self-esteem has a significant positive impact on real wages, sometimes directly but always indirectly via education. The magnitude of the indirect effect of self-esteem on wages via education, on average, comprises approximately 78 percent of the full effect of self-esteem on wages. We also discuss differences between males and females in terms of the relationships between self-esteem, education, and wages.
+\vspace{0.2cm}
+\begin{singlespace}
+\noindent \underline{KEY WORDS}: (Self-esteem, Determinants of wages, Simultaneous equation model, Gender inequality)\\
+\end{singlespace}
+\thispagestyle{empty}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\renewcommand\thepage{}
+\tableofcontents
+
+
+
+
+\newpage
+
+\listoftables
+\thispagestyle{empty}
+\renewcommand\thepage{\arabic{page}}
+
+\newpage
+
+\begin{center}ACKNOWLEDGEMENTS\end{center}
+\thispagestyle{empty}
+
+I'd like to thank my thesis advisor, Pedro de Araujo, for all of the help, knowledge, and advice he provided me with throughout the thesis process. I'd also like to thank Esther Redmount for her helpful comments.
+
+\newpage
+\setcounter{page}{1}
+
+\chapter{Introduction}
+
+\begin{comment} This section will contain the motivation and goal of the paper, a brief summary of the structure of the paper, and a brief summary of findings \end{comment}
+
+
+Inequality among individuals has long been a topic of interest in economics. Economic theory suggests that wages are linked to productivity. More productive workers are more valuable to an employer and are compensated accordingly, while less productive employees earn less. Human capital variables such as education, experience, and tenure are well-established determinants of productivity and wages. However, a large portion of the variance in wages across individuals is left unexplained by these traditional human capital variables. As \citee{BGO2001} write, "apparently similar individuals receive quite different earnings: a person's age, years of schooling, years of labor market experience, parents' level of schooling, occupation, and income tell us surprisingly little about the individuals' earnings. In standard earnings equations for individuals of the same race and sex in the United States, between two-thirds and four-fifths of the variance of the natural logarithm of hourly wages or of annual earnings is unexplained" (p. 1137). It is clear that factors other than traditional human capital variables play a role in determining wages.
+
+Self-esteem has garnered attention as one variable that may help explain inequality across individuals. \citee{R1995} consider self-esteem to be a general attitude towards oneself, and \citee{R1965} characterizes individuals with high self-esteem as individuals that respect themselves, acknowledge their own limitations, and expect improvement and growth.
+The purpose of this paper is to combine the literature that examines the relationship between self-esteem and educational attainment with the literature that examines the relationship between self-esteem and wages. We accomplish this by investigating the role of self-esteem in determining wages, both directly and indirectly via education. Additionally, we allow wages, educational attainment, and self-esteem to simultaneously determine one another, which addresses the problem of simultaneity bias.
+
+Using data from the 1979 wave of the National Longitudinal Survey of Youth (NLSY79), we find that self-esteem has a positive and significant effect on wages. Interestingly, we find that the indirect effect of self-esteem on wages, on average, is larger than the direct effect. This suggests that previous studies that have examined the relationship between self-esteem and wages have understated the full effect of self-esteem on wages by ignoring this substantial indirect effect. This may hold true for other studies that have investigated the returns to personality. Additionally, we analyze gender differences in the relationships between self-esteem, education, and wages. We find that self-esteem is a better direct predictor of real wages for females than for males, while the indirect effect of self-esteem for males and females is similar in magnitude. We also find that, despite the fact that females obtain more education than males and receive a higher rate of return on education than males, labor market discrimination against females cannot be ruled out.
+
+The structure of the paper is as follows: First, we discuss related literature. Second, we introduce our empirical model. Third, we discuss the data. Fourth, we describe our empirical methodology. Fifth, we present our results. Last, we conclude and introduce ideas for further study.
+
+\chapter{Related Literature}
+
+\section*{The Relationships Between Wages, Education, and Self-esteem}
+\addcontentsline{toc}{section}{The Relationship Between Wages, Education, and Self-esteem}
+
+Various studies have found or noted positive relationships between self-esteem and variables that may be related to productivity. \citee{SB2002} found that individuals with high self-esteem generally persist more on difficult tasks than individuals with low self-esteem, while individuals with low self-esteem possess fewer resources for dealing with rejection. \citee{SBG1988} found that individuals with high self-esteem adjusted their level of persistence more than individuals with low self-esteem when they learned that persistence wasn't an optimal strategy.  \citee{B1977} found that individuals with high self-esteem aspire to more prestigious careers than individuals with low self-esteem,  and \citee{ET1983} found that individuals with high self-esteem received better interview evaluations and utilized more efficient job search methods than individuals with low self-esteem. \citee{JEB1998} and \citee{JB2001} both found a positive relationship between self-esteem and job performance, while \citee{F2005} found that self-esteem is positively associated with independence and achievement-oriented traits. In a literature review, \citee{B2003} noted that self-esteem is positively related to taking initiative and happiness. Additionally, from a theoretical perspective, \citee{TS2001} hypothesize that self-confidence is one of the two major components of self-esteem, and \citee{RSS1989} suggest that individuals with low self-esteem may be limited by their low self-opinions (self-consistency theory).
+
+All of the above findings suggest that self-esteem may determine important economic outcomes by enhancing productivity, and there is a body of empirical literature that supports this idea. \citee{W1999}, \citee{F2000}, \citee{M2001}, and \citee{W2006} all concluded that self-esteem is a significant predictor of later wages, and  \citee{W1999} and \citee{W2006} found that self-esteem is a significant predictor of educational attainment. However, self-esteem may also be partially determined by the outcomes that some claim it predicts. \citee{RSS1989} provide theoretical justification for this idea by explaining that self-esteem is a product of reflected appraisals (an individual's perception of what others think of that individual), social comparison (an individual's perception of how "good" that individual is in comparison to others), and self-attribution (an individual's perception of how successful their effort was and why). More concretely, \citee{BO1977} noted that educational and occupational outcomes "represent important sources of direct feedback about the self, particularly for adolescents and young adults" (p. 366). Empirically, \citee{BO1977} and \citee{GVD1996} found that occupational attainment impacts self-esteem, \citee{GVD1997} found that wages and self-esteem are jointly determined, and \citee{RSS1989}, \citee{F1998}, and \citee{RB2000} all concluded that academic variables impact self-esteem.
+
+\section*{Subjective Response Data and the Measurement of Self-esteem and Locus of Control}
+\addcontentsline{toc}{section}{Subjective Response Data and the Measurement of Self-esteem and Locus of Control}
+
+This study relies upon subjective response data for measures of self-esteem and locus of control, a concept that will soon be introduced. Self-esteem is measured by the Rosenberg Self-esteem Scale, while locus of control is measured by the Rotter scale. Below, we outline some issues that may be associated with the use of subjective response data in economics, and we discuss the validity of the measures of self-esteem and locus of control that we use in our regression models.
+
+\subsection*{Subjective response data in economics}
+\addcontentsline{toc}{subsection}{Subjective response data in economics}
+
+
+\begin{comment}This section will contain a discussion on the validity of using subjective response data as a dependent or independent variable. A good example of this is in Waddell (2006), p. 75.\end{comment}
+
+\citee{F1978} examined the validity of using job satisfaction as an independent and dependent variable in economics. By doing so, he addressed the issue of using subjective response data in regression analysis. He concludes that, "subjective variables like job satisfaction contain useful information for predicting and understanding behavior, but that they also lead to complexities due to their dependence on psychological states" (p. 140). In a more recent study, \citee{BM2001} address the issue more generally. They determined that using subjective data as a dependent variable may be problematic because the measurement error of the subjective variable may correlate with other variables. However, they also conclude that using subjective data as an explanatory variable can be useful if the results are interpreted carefully.
+
+\subsection*{The Rosenberg Self-esteem Scale}
+\addcontentsline{toc}{subsection}{The Rosenberg Self-esteem Scale}
+
+
+The Rosenberg Self-esteem scale is a ten item Likert-style scale that provides information about an individual's level of self-acceptance and self-respect, where high scores represent a generally positive self-concept (\citee{RSS1989}). While \citee{B2003} note that high self-esteem may be associated with narcissistic behavior, Rosenberg asserts that high scores on his scale do not "imply feelings of superiority or perfection (\citee{RSS1989}, p. 1008). According to \citee{W2006}, the validity of a psychological test is a function of three variables: convergent validity, reliability, and stability. Convergent validity deals with how well scores on one test correlate with scores on another test that supposedly measures the same variable. \citee{D1985} provided evidence of convergent validity when he found that Rosenberg Self-esteem Scale scores are highly correlated with Coopersmith Self-esteem Inventory scores.  Additionally, \citee{FC1984} determined that the Rosenberg scale is both reliable and stable. This means that the questions aim to measure the same component of personality (reliability), and test-retest correlations are generally high over a short period of time for an individual (stability). Each respondent in the NLSY took the Rosenberg scale in 1980, 1987, and 2006. The scores on the scale are positively correlated over time, but are certainly not perfectly correlated (r=0.46 between 1980 and 1987 scores, r=0.42 between 1987 and 2006 scores, and r=0.31 between 1980 and 2006 scores). In our regression models we use two measures of self-esteem. First, we use raw Rosenberg Self-esteem Scale scores. Second, we follow \citee{M2001} in using only the first seven items from the scale. Further explanation of this can be found in Section 5.
+
+\subsection*{The Rotter Locus of Control Scale}
+\addcontentsline{toc}{subsection}{The Rotter Locus of Control Scale}
+
+
+\citee{O2005} characterizes the Rotter locus of control as "perhaps the most widely used personality variable in sociological and economic research" (p. 829). The scale measures "the causal relationship between one's own behavior and its consequences" (\citee{PP2010}, p. 5), where an individual with an internal locus of control believes that he or she has control of various outcomes, while an individual with an external locus of control believes that other factors, such as fate or luck, determine various outcomes. Low scores are associated with an internal locus of control, while high scores are associated with an external locus of control. \citee{GVD1997} assert that "construct validity and stability evaluations suggest the I-E (Rotter) Scale is an effective way to account for a person's locus of control" (p. 819), but warn that the scale may not be completely reliable because a factor other than personal control accounts for some of the variation in scale scores. Each respondent in the NLSY took a four item version of the Rotter test in 1979. We use this score as the basis of our measure of locus of control, which is explained in greater detail in Section 5.
+
+\begin{comment}Data on personality provides a promising avenue to reduce the size of this residual. Undoubtedly traits such as persistence, perseverance, and motivation play a role in determining the productivity of an individual. In fact, according to a 1998 US Census Bureau survey, employers rank the "attitude" of an applicant above work experience and educational attainment as the most important determinant of whether that applicant will be hired. (Bureau of the Census - see \citee{BGO2001} for citation). However, despite its importance to employers, \citee{GVD1997} state that most economists overlook personality as a determinant of wages because they view it as "unobservable or unmeasurable" (p. 815). Data from the National Longitudinal Study of Youth's 1979 wave, though, provides information on at least one of these potentially valuable traits: self-esteem.
+
+This paper investigates the role of self-esteem in determining wages, both directly and indirectly via education. It differs from the literature on self-esteem and wages in that it accounts for simultaneity bias, treats education as endogenous, corrects for the effect of schooling on test scores that measure ability, and sheds light on the magnitude of the indirect effect of self-esteem relative to the direct effect of self-esteem. We provide a link between literature that examines the relationship between self-esteem and education and literature that examines the relationship between self-esteem and wages. We find that self-esteem exerts a positive and significant direct and indirect effect on wages and that the indirect effect of self-esteem comprises the majority of the full effect of self-esteem for individuals in their mid to late career once we control for endogenous education. The structure of this paper is as follows. First, we outline related literature. Second, we discuss our dataset, the National Longitudinal Survey of Youth, and describe the variables used in our models. Third, we introduce our empirical model and describe how it will be estimated. Lastly, we discuss our results and their implications.
+
+\section{Related Literature}
+
+\subsection{Why might self-esteem matter}
+
+This section will contain a review of the literature, both theoretical and empirical, that links self-esteem to a variety of traits and behaviors
+
+
+\citee{R1995} consider self-esteem to be a general attitude towards oneself. \citee{R1965} provide a more detailed description. The author describes an individual with high self-esteem as follows: "the individual respects himself, considers himself worthy, he does not necessarily consider himself better than others, but he definitely does not consider himself worse; he does not feel that he is the ultimate perfection but, on the contrary, recognizes his limitations and expects to grow and improve" (p. 31). Conversely, individuals with low self-esteem are described as lacking respect for themselves \cite{R1965}. A multitude of studies have shown, or at least hypothesized, that self-esteem may be linked to a variety of potentially valuable or productive personality traits and behaviors. \citee{SS1977}, \citee{SBG1988}, and \citee{SB2002} all found a positive connection between self-esteem and persistence. In a literature review, \citee{B2003} noted that there appears to be a positive relationship between self-esteem and happiness and self-esteem and taking greater initiative. \citee{TS2001} hypothesize that self-confidence is one of the two major components that comprise self-esteem. They, along with \citee{LLK2004} emphasize the close relationship between self-efficacy and self-esteem. \citee{R1995} shed some light on the relationship between self-esteem and academic self-concept by postulating that the degree to which academic self-concept impacts self-esteem is dependent on how important academic achievement is to that individual. \citee{DC2002} concluded that individuals with high self-esteem are more in touch with their progress in accomplishing a goal than individuals with low self-esteem. \citee{B1977} concluded that there is a positive relationship between self-esteem and aspiring to more prestigious occupations, and \citee{B1985} found that individuals with higher self-esteem responded to a raise by being more productive, while individuals with lower self-esteem responded by being less productive. Similarly, \citee{JEB1998} and \citee{JB2001} reported a positive relationship between self-esteem and job performance. \citee{ET1983} concluded that individuals with high self-esteem received better job interview evaluations and utilized more effective job search methods than individuals with low self-esteem, while \citee{F2005} found that there is a positive association between self-esteem and independence and achievement-oriented traits. \citee{RSS1989} emphasize the relationship between low self-esteem and depression and delinquency. The authors also discuss self-consistency theory, which suggests that an individual will only perform as well as their perception of their own ability dictates. Individuals with lower self-esteem will only be able to perform as well as they believe they can, which may limit their productivity. \citee{LKR1992} postulate that self-esteem effects academic achievement, in part, by effecting one's motivation to succeed in school. \citee{BO1977} hypothesize that individuals with high self-esteem will be more ambitious and will be better equipped to overcome setbacks in achieving a goal (but find no evidence in the data to support this theory). These results and theories suggest that having high self-esteem may enhance productivity, therefore positively influencing educational and labor market outcomes.
+
+However, while self-esteem may be a determinant of various outcomes, it may also be a product of these outcomes that some claim it predicts. \citee{RSS1989} explain that self-esteem is a product of reflected appraisals (an individual's perception of what others think of that individual), social comparison (an individual's perception of how "good" that individual is in comparison to others), and self-attribution (an individual's perception of how successful their effort was and why). \citee{BO1977} noted that educational and occupational outcomes "represent important sources of direct feedback about the self, particularly for adolescents and young adults" (p. 366). Under this logic, it makes intuitive sense that educational and labor market outcomes could play a role in determining self-esteem.
+
+\subsection{Self-esteem and education}
+
+This section will contain a review of the literature that examines the relationship between self-esteem and education
+
+Several studies have found a positive correlation between self-esteem and various education variables (\citee{BO1977}, \citee{MRK1981}, \citee{RSS1989}, \citee{RTP1990}, \citee{LKR1992}; etc.). However, the direction, and even existence, of causality is debated. \citee{W1999} and \citee{W2006} found that self-esteem predicted educational attainment, while \citee{HSU2006} found that an index of noncognitive skills, based on self-esteem and locus of control, predicted educational outcomes. \citee{GCM2001} concluded that self-efficacy is a significant predictor of educational attainment, and \citee{P1996} found in his literature review that self-efficacy is generally a significant predictor of academic performance. \citee{A2007} and \citee{GLB2004} found that academic self-concept is a valid predictor of academic performance.
+
+On the other hand, \citee{RSS1989}, \citee{F1998}, and \citee{RB2000} all concluded that academic variables impact self-esteem. Alternatively, \citee{F1989} suggested that a reciprocal relationship between self-esteem and academic achievement is a key factor in the process of dropping out of school ("self-esteem frustration model"), and \citee{LKR1992} found that self-esteem impacted academic performance, which impacted self-esteem. \citee{MO2008} found a reciprocal relationship between academic self-concept and academic variables, while \citee{LLK2004} concluded that self-efficacy, which is partially determined by academic achievement, is a significant predictor of educational attainment. Reaching a different conclusion, \citee{BO1977} and \citee{MRK1981} both determined that the relationship between self-esteem and academic variables is mostly due to confounding variables, while \citee{CP2003} found that, once endogeneity is controlled for, decomposed self-esteem (into self-efficacy and self-liking) has no impact on academic performance.
+
+\subsection{Self-esteem and wages}
+
+This section will contain a review of the literature that examines the relationship between self-esteem and wages
+
+Like in the case of self-esteem and educational outcomes, the positive correlation between self-esteem and wages seems clear. While the direction of causality in the wage case is debated, the existence of causality appears to be more established. \citee{W1999}, \citee{F2000}, \citee{M2001}, and \citee{W2006} all concluded that self-esteem is a significant predictor of later wages. Similarly, \citee{HSU2006}, \citee{JH2007}, and \citee{FPW2007} developed different indices that relied at least partially on self-esteem and found that their indices are significant determinants of various labor market outcomes. Conversely, \citee{BO1977} determined that the relationship between self-esteem and occupational attainment is mostly due to the effect occupational attainment has on self-esteem. \citee{GVD1996} reported a similar finding when they concluded that unemployment has a significant, negative impact on self-esteem. Finally, \citee{GVD1997} concluded that self-esteem and wages jointly determine one another.
+
+\end{comment}
+
+\chapter{Empirical Model}
+
+
+\begin{comment} This section will discuss what we changed about the GVD model and provide justification for these changes. It will also contain a presentation of the empirical model.
+\end{comment}
+
+From the literature, it seems plausible that there is a reciprocal relationship between both self-esteem and education and self-esteem and wages (\citee{RSS1989}, \citee{W1999}, \citee{BO1977}). Therefore, we want to capture this possibility in our model. Our empirical model is based on the model developed by \citee{GVD1997}. This model is especially applicable to our study because it allows self-esteem and wages to effect each other. This is done by using a two equation simultaneous equations model with real wage as the dependent variable in one equation and self-esteem as the dependent variable in the other equation. However, while their model treats education as an exogenous explanatory variable, we treat it as endogenous and allow it to be determined, in part, by self-esteem
+
+We endogenize education by adding a third equation to the original simultaneous equations model proposed by \citee{GVD1997}. In this third equation, the dependent variable is educational attainment, and self-esteem is included as an endogenous explanatory variable. This differs from their original model because it allows self-esteem, along with other variables, to determine educational attainment and indirectly affect real wage. Our basic empirical model is defined as follows:
+\begin{eqnarray}
+wg_i & = & \alpha_0 + \alpha_1 ed_i + \alpha_2 se_i + \alpha_3 int + \Omega_1' L2_i + \Omega_2' D_i + \Omega_3' B1_i + \alpha_4 sel_i^w + \epsilon_i \\
+ed_i & = & \beta_0 + \beta_1 se_i + \beta_2 int_i + \Lambda_1' D_i + \Lambda_2' B3_i + \beta_3 sel_i^e + \nu_i \\
+se_i & = & \delta_0 + \delta_1 wg_i + \delta_2 ed_i + \delta_3 rwg_i  + \Psi_1' AB_i + \Psi_2' L1_i + \Psi_3' D_i + \Psi_4' B2_i + \eta_i
+\end{eqnarray}
+In the above equations, "wg" represents real log wage, "ed" represents educational attainment, "se" represents self-esteem, "int" represents intelligence, and "sel" represents a self-selection variable. The vector "L1" contains experience and tenure; the vector "L2" contains "L1" and dummy variables that give information on the individual's industry of occupation, region of residence, and type of residence (urban or rural); the vector "D" contains information on the individual's age, gender, race, marital status, and number of dependent children; the vector "B1" contains information on who the individual lived with at age 14 (both parents or other), what the individual's parents did for work when the individual was 14 (professional or manager or otherwise), and how many siblings the individual had by the time he or she turned 14; the vector "B2" contains "B1" and information about where the child lived at age 14 (urban or rural, and foreign country or United States); the vector "B3" contains "B2" and information on the individual's parents' education; the vector "rwg" contains information on where the individual lays in the wage distribution (high or low), and the vector "AB" contains information on the individual's cognitive (intelligence) and non-cognitive (locus of control) skills.
+
+Justification for the model specifications is mostly established in the literature. Human capital variables such as education, experience, and tenure are well-accepted determinants of wages, and \citee{HM1994} demonstrated the importance of intelligence in determining wages. Additionally, demographic and background variables may influence preferences and attitudes (\citee{GVD1997}).
+
+Cognitive ability undoubtedly has some impact on educational attainment, and we follow \citee{HSU2006} in including demographic and background factors as determinants of educational attainment. As discussed above, self-esteem theory suggests that various variables that provide individuals with feedback about their relative success may impact self-esteem. We consider a wide range of variables as factors that may fit this criteria, including wages, human capital, ability, and background and demographic characteristics. We follow \citee{GVD1997} in including locus of control as a determinant of self-esteem. However, we treat locus of control more similarly to \citee{PP2010} and \citee{HSU2006} in that we treat it as a latent noncognitive ability not a completely time invariant trait immune to life experiences. According to \citee{FPW2007}, an individual with an external locus of control believes that he or she does not control his or her life, which leads to a more pessimistic outlook. Therefore, these individuals are expected to have lower self-esteem.
+
+We follow \citee{H1979} in including a self-selection correction variable in the wage equation to account for labor market participation. Additionally, we include a selection variable in the educational attainment equation to account for unobserved differences (like taste, preferences, financial constraints) in individuals that may impact the decision to invest in education. These selection variables are constructed using Heckman's two step procedure. We allow self-esteem, along with other controls, to effect both the probability of being employed and the probability of graduating from high school. Further explanation of the selection variables can be found in Section 5.
+
+As in \citee{GVD1997}, locus of control and relative wage are included only in the self-esteem equation. We include data on industry of occupation and location (region, urban or rural) only in the wage equation, and parents' education is included only in the education equation. The exclusion of parents' education from the wage equation is based on the results from \citee{W1999}, who found parents' education to be a highly significant predictor of educational attainment but an insignificant predictor of occupational attainment, and the exclusion of parents' education from the self-esteem equation is based on the results from \citee{GVD1997}, who found that parents' education did not predict self-esteem in either 1980 or in 1987. We believe that these empirical findings justify our exclusion restriction. Additionally, information on where the individual grew up (urban, rural, foreign, domestic at age 14) is excluded from only the wage equation. We believe that current location, not past location will directly impact wages, while past location may indirectly influence wages via educational attainment and self-esteem. This is consistent with the exclusion restriction outlined in \citee{HSU2006}. Lastly, experience and tenure are excluded only from the education equation, as it would make little sense to say that these variables impact education. Combined, all of these exclusion restrictions leave us with three unique equations that are each identified. Further discussion of identification can be found in Section 5.
+
+In our first model, we follow the logic of \citee{GVD1997} in excluding locus of control as an explanatory variable for wages  and educational attainment, but including it as an explanatory variable for self-esteem. However, recent evidence in the literature suggests that locus of control may be an important predictor of both educational outcomes (\citee{W1999}, \citee{RB2000}, \citee{CD2003}, \citee{PP2010}) and labor market outcomes (\citee{O2005}, \citee{JH2007}, \citee{FPW2007}). This evidence has persuaded us to test an alternative model that includes locus of control as a determinant of wages and education, since excluding it could result in omitted variable bias. This revised model differs from the basic model only by including locus of control as a determinant of wages and educational attainment. In other words, in the revised model, locus of control appears in all three equations instead of just one. Relative wage still only appears in the self-esteem equation, industry of occupation and region of residence still only appear in the wage equation, and parent's education still only appears in the education equation. Once again, the three equations are unique and identified.
+\begin{comment}
+However, before estimating the models, steps still must be taken in order to account for the potential endogneity of variables that measure ability derived from test scores. We rely on AFQT scores as the basis of our measure of intelligence and Rotter scale scores as the basis of our measure of locus of control. At the date of each of these tests, respondents in the data differed substantially in their age and educational attainment. Additionally, they came from a wide variety of backgrounds and represented different demographic groups. These factors, in addition to the latent factors that the tests are trying to measure, may influence test scores. For example, it makes intuitive sense that successfully completing a year of education could improve one's aptitude test scores and make one feel in more control of one's own destiny (more internal locus of control). In fact, \citee{HHM2003} concluded that completing an additional year of school boosts AFQT scores by an average of 2 to 4 percentage points for an individual, and \citee{RB2000} found that academic achievement impacts locus of control test scores. Additionally, age, demographic factors, and background factors may play a role in determining test scores (\citee{HHM2003}). Therefore, we must net out the effects that schooling and other factors may have on test scores in order to get a measure of true intelligence and locus of control. Since education impacts test scores, failing to correct for reverse causality between schooling and scores will result in understating the importance of educational attainment in determining wages. This, of course, will result in an understatement of the indirect effect of self-esteem via education. To correct for measurement error, we follow a  two step procedure, which is outlined below.
+
+The first step involves using two stage least squares to regress the test score on education, age, and background variables. For both tests, education is treated as endogenous and is instrumented by quarter of birth. The model used for AFQT scores is identical to the model used by \citee{HHM2003} to generate a residualized AFQT score variable, and the model used for Rotter scores differs only in its exclusion of parents' education as an explanatory variable. Results from this analysis, which can be found in Table \ref{tab:test}, confirm that education plays a role in determining test scores. The residualized test score represents a rough estimate of the ability that the test intends to measure. In other words, residualized AFQT scores represent a rough estimate of intelligence, and residualized Rotter scores represent a rough estimate of locus of control. However, since the residual may contain more than just intelligence or locus of control, we must take another step in an attempt to isolate intelligence and locus of control from the residuals.
+
+The second step involves factor analysis. We analyze the factors that explain the variation in residualized test score, raw test score, and education. We believe that latent ability will be a factor that explains most of the variation in residualized test score, less of the variation in raw test score, and even less of the variation in educational attainment. The factor that meets this criteria for AFQT scores is declared intelligence and the factor that meets this criteria for Rotter scores is declared locus of control.
+
+Compared to the raw test scores, the magnitude of the correlation between these new variables and educational attainment is smaller, but the direction of the relationship between the factors and educational attainment is the same. Additionally, as expected, the correlation between the factor intelligence and the factor locus of control is smaller in magnitude than the correlation between AFQT test scores and Rotter scale scores. While these variables are not the focus of our analysis, using accurate measures of intelligence and locus of control is an important part of getting a clear picture of the relationship between educational attainment and wages, which is central to our analysis.
+\end{comment}
+
+\chapter{Data and Descriptive Statistics}
+
+\begin{comment}
+Note- this section does not contain a description of the variables in GVD1997, but I think it makes more sense to include it here than in the model section (which is what they do).
+\end{comment}
+
+\section*{The National Longitudinal Study of Youth}
+\addcontentsline{toc}{section}{The National Longitudinal Study of Youth}
+
+
+Data comes from the 1979 wave of the National Longitudinal Study of Youth (NLSY79). According to the Bureau of Labor Statistics, "the NLSY79 is a nationally representative sample of 12,686 young men and women who were 14-22 years old when they were first interviewed in 1979" (http://www.bls.gov/nls/nlsy79.htm). The same individuals were interviewed every year between 1979 and 1994. After 1994, the interviews took place every other year (1996, 1998, 2000; etc.). The most recent year for which data is available is 2008. The NLSY79 is a rich data set that provides information on many facets of each respondent's life. Information on the variables used for this study is included below. Descriptive statistics for most variables used in our analysis can be found in Table \ref{tab:stat}.
+
+\begin{table}
+\caption{\mdseries{Descriptive Statistics}
+\label{tab:stat}}
+\vspace{2pt}
+\centering\begin{tabular}{l|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{2}{|c|}{1980 Data} & \multicolumn{2}{|c|}{1987 Data} & \multicolumn{2}{|c|}{2006 Data}\\
+\hline
+& \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.}\\
+\hline
+log Wage & 2.064 & 0.7167 & 2.476 & 0.7306 & 2.913 & 0.8064\\
+10-item Rosenberg & 23.13 & 4.009 & 23.97 & 4.012 & 24.06 & 4.165\\
+7-item Rosenberg & 24.18 & 2.721 & 24.45 & 2.780 & 24.27 & 2.899\\
+Education & 12.03 & 1.629 & 13.14 & 2.210 & 13.78 & 2.411\\
+Experience & 69.62 & 29.49 & 300.1 & 112.6 & 837.54 & 226.01\\
+Tenure & 47.93 & 41.96 & 130.0 & 129.0 & 431.2 & 389.4\\
+Intelligence & 0.1604 & 0.8904 & 0.0422 & 0.8704 & 0.0164 & 0.8726\\
+Age & 19.72 & 1.800 & 25.82 & 2.261 & 44.66 & 2.232\\
+Male & 0.4987 & 0.5001 & 0.5038 & 0.5000 & 0.4992 & 0.5001\\
+Black & 0.1734 & 0.3786 & 0.2230 & 0.4163 & 0.2545 & 0.4356\\
+Married & 0.1555 & 0.3624 & 0.4478 & 0.4973 & 0.6282 & 0.4834\\
+Children & 0.1508 & 0.4545 & 0.6230 & 0.9449 & 1.226 & 1.194\\
+Locus & -0.0762 & 0.9837 & -0.0386 & 0.9787 & -0.0060 & 0.9834\\
+Both parents & 0.7844 & 0.4113 & 0.7622 & 0.4258 & 0.7692 & 0.4214\\
+Professional parent & 0.7526 & 0.4316 & 0.7474 & 0.4345 & 0.7460 & 0.4353\\
+Parents' education & 11.39 & 2.850 & 11.38 & 2.920 & 11.30 & 2.963\\
+Urban childhood & 0.7752 & 0.4175 & 0.7765 & 0.4166 & 0.7790 & 0.4150\\
+Siblings & 3.501 & 2.314 & 3.532 & 2.428 & 3.560 & 2.482\\
+Foreign childhood & 0.0033 & 0.0571 & 0.0032 & 0.0562 & 0.0013 & 0.0359\\
+\hline
+N & 3363 & & 5677 & & 3886 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry data is omitted from table; 10-item scale scores calculated by NLSY fall between 0 and 30, while 7-item scale scores calculated by the authors fall between 7 and 28}\\
+\end{tabular}
+\end{table}
+
+
+\begin{comment} This section will provide a basic overview of the NLSY79 \end{comment}
+
+\section*{Description of variables used}
+\addcontentsline{toc}{section}{Description of variables used}
+
+
+\begin{comment} This section will discuss which variables from the NLSY will be used and provide a description of them \end{comment}
+
+The key variables for this study are wage, education, and self-esteem. Wage is measured in March 2008 dollars as earnings from working in a year divided by number of hours worked in that year. The natural logarithm of this value is used in our analysis. It should be noted that this value may be downward biased as suggested by \citee{B1980}. While the NLSY does provide an hourly rate of pay variable, the responses appear to be suspect. The mean real hourly wage from this data was 1043.85 in 1980, 2903.95 in 1987, and 2169.39 in 2006. Our constructed variable provides more reasonable estimates, with the mean real hourly wage starting at 9.82 in 1980 when the respondents are young and rising to 23.65 in 2006 when the respondents are older. Not surprisingly, as the respondents get older, the standard deviation of real wages also increases. This data can be found in Table \ref{tab:stat}. Individuals are determined to have a high wage if their wage is greater than one standard deviation above the mean for that year, and individuals are determined to have a low wage if their wage is more than one standard deviation below the mean.
+
+Self-esteem is measured by score on the Rosenberg self-esteem scale (coded as Self-esteem).  NLSY respondents took the Rosenberg test in 1980, 1987, and 2006. In addition to using the full 10-item scale to measure self-esteem, we also follow \citee{M2001} in using a 7-item version of the scale as a robustness check. 10-item Rosenberg Self-esteem scores appear to increase over time, while there is no clear trend in 7-item Rosenberg scores.
+
+Education is measured as the highest grade an individual has completed by a given year. Experience is measured as total number of weeks worked since 1978, and tenure is measured as weeks worked for current employer. All of these measures are identical to those used by \citee{GVD1997}, and they all increase over time. Our intelligence variable is derived from Armed Forces Qualifications Test (AFQT) score percentile. The AFQT is frequently used in the literature to measure cognitive ability (\citee{HSU2006}). It is used by the US military to determine service eligibility by measuring the trainability of a candidate. Each respondent took the AFQT in 1980. Intelligence scores decrease for the sample over time. It is important to keep in mind that the individuals sampled in 1980, 1987, and 2006 are not the same due to prevalent nonresponse. It appears that data becomes increasingly available on individuals with lower cognitive abilities over time. Information on individual's industry of occupation is used to create dummy variables for various industries.
+
+Demographic variables used include age, gender (=1 if male), race (=1 if black, =0 otherwise), number of children in household, and marital status (=1 if married, =0 otherwise). The proportion of males in the sample over time appears to remain relatively constant, while the proportion of blacks increases steadily from 17.34 percent in 1980 up to 25.45 percent in 2006. Background variables used include family structure at age 14 (coded as Both parents, =1 if lived with both parents at age 14), parents' occupation (=1 if at least one parent was a professional or manager), average number of years of education for the individual's parents, type of residence at age 14 (coded as urban childhood, =1 if child lived in urban environment at age 14, =0 otherwise),  and nation of residence at age 14 (=1 if individual lived out of the United States at age 14, =0 otherwise). The proportion of individuals that come from what we expect to be advantageous backgrounds (both parents present, at least one parent worked as a professional or manager, fewer siblings, more educated parents) is highest in 1980.
+
+The score on four questions from the Rotter scale is used to derive our measure of locus of control.  Lower scores on the scale represent an internal locus of control, while higher scores represent an external locus of control. NLSY respondents took the four question Rotter test in 1979. Like intelligence, locus of control for the sample becomes less favorable as time increases (values increase, which represents a more external locus of control). This isn't surprising, as locus of control and intelligence are correlated.
+
+
+\chapter{Empirical Methodology}
+
+We focus on data from 1980, 1987, and 2006, which are the three years that respondents in the NLSY79 took the Rosenberg Self-esteem Scale. Using data from these years, we estimate our original and revised three equation models with OLS, 2SLS, 3SLS, and 3SLS GMM. Additionally, we estimate both models with two different measures of self-esteem (10-item scale score and 7-item scale score). Results from Hausman tests give preference to the 2SLS method, but we report all results as robustness checks. The results across estimation technique are typically very similar. We estimate each model for males and females together and separately to test for gender-specific effects. As another robustness check, we control for past labor market participation, but we find that this makes no significant difference. Robust standard errors are calculated for each model.
+In this section, we describe the various empirical methods that we employ in the context of our paper. The first section consists of a discussion on simultaneous equation models, and the second section includes information on the estimation techniques that we utilize and describes their differences. In the third section, we discuss self-selection, while the fourth section describes how and why we create latent ability variables for intelligence and locus of control. Lastly, we discuss how and why we constructed an alternative measure of self-esteem (7-item instead of 10-item).
+
+\section*{Simultaneous Equation Models}
+\addcontentsline{toc}{section}{Simultaneous Equation Models}
+
+Simultaneous equation models are used when two or more of the variables in a model are jointly determined. Based on what we have found in the literature (\citee{GVD1997}, \citee{RSS1989}, \citee{W1999}), we believe that wages, education, and self-esteem determine each other. This means that each variable must be a dependent variable in one equation, which leaves us with three equations. When variables are jointly determined, using a simultaneous equation model is often necessary to avoid simultaneity bias. This occurs because endogenous explanatory variables are typically correlated with error terms (\citee{W2009}).
+
+Simultaneous equation models require identification. Essentially, this means that there must be some differences between the wage, education, and self-esteem equations. Each equation must meet two conditions: the order condition and the rank condition. The order condition states that there must be at least as many excluded exogenous explanatory variables as included endogenous explanatory variables in an equation, and the rank condition is more complicated and one can generally assume that the model is identified if the order condition is met (\citee{W2009}). In order to meet the order condition, exclusion restrictions must be made. An exclusion restriction is made when a variable appears in one equation, but not in another. Since we have three equations in our model, we must make several exclusion restrictions. In the wage equation, at least five variables are always excluded (urban childhood, foreign childhood, parents' education, education self-selection, and relative wage). In the education equation, at least six variables are always excluded (work experience, tenure, regional controls, industry of occupation controls, labor self-selection, and relative wage). In the self-esteem equation, five variables are always excluded (regional controls, industry of occupation controls, labor self-selection, parents' education, and education self-selection). Additionally, locus of control is excluded from both the wage and education equations in the basic model. The above exclusion restrictions allow our model to meet the order condition, and therefore, be identified. In fact, since it appears that we have made more exclusion restrictions than necessary for identification, our model is actually overidentified.
+
+\section*{Estimation Techniques}
+\addcontentsline{toc}{section}{Estimation Techniques}
+
+Our model is estimated by Ordinary Least Squares (OLS), Two-Stage Least Squares (2SLS), Three-Stage Least Squares (3SLS), and 3SLS General Method of Moments (3SLS-GMM). It should be noted that, unlike the other techniques, OLS fails to account for simultaneity, which, as discussed above, generally results in simultaneity bias.
+
+In Tables \ref{tab:wage80} through \ref{tab:wage06d}, Ordinary Least Squares results are presented in column 1 for the wage equation and column 5 for the education equation. OLS estimates are derived from the minimization of the sum of squared vertical distances between observed data points and data points predicted by the model. Mathematically, the basic model is estimated by minimizing the three following equations:
+
+\begin{eqnarray}
+\sum_{i=1}^n\ (wg_i - \hat{\alpha_0} - \hat{\alpha_1} ed_i - \hat{\alpha_2} se_i - \hat{\alpha_3} int - \hat{\Omega_1'} L2_i - \hat{\Omega_2'} D_i - \hat{\Omega_3'} B1_i - \hat{\alpha_4} sel_i^w)^2 \\
+\sum_{i=1}^n\ (ed_i - \hat{\beta_0} - \hat{\beta_1} se_i - \hat{\beta_2} int_i - \hat{\Lambda_1'} D_i - \hat{\Lambda_2'} B3_i - \hat{\beta_3} sel_i^e)^2\\
+\sum_{i=1}^n\ (se_i - \hat{\delta_0} - \hat{\delta_1} wg_i - \hat{\delta_2} ed_i - \hat{\delta_3} rwg_i  - \hat{\Psi_1'} AB_i - \hat{\Psi_2'} L1_i - \hat{\Psi_3'} D_i - \hat{\Psi_4'} B2_i)^2
+\end{eqnarray}
+where each coefficient is determined by:
+\beq \hat{\beta_{ols}} = (X' X)^{-1} X' Y\eeq
+OLS is the best linear unbiased estimator if five conditions are met: the relationship is linear, sampling is random, there isn't perfect collinearity among explanatory variables, the expected value of the error term is 0, and the error term has constant variance. For the sake of inference, it is assumed that the error terms are normally distributed. The wage, education, and self-esteem equations are estimated completely independently of each other, which means that the results will ignore the reciprocal relationship between wages, education, and self-esteem. Since we are not controlling for the effect of wages on self-esteem in the wage equation or the effect of education on self-esteem in the education equation, it is difficult to determine the direction of causality. Is the self-esteem coefficient positive and significant in the wage equation because self-esteem effects wages, wages effect self-esteem, or both? The same question can be asked about results from the education and self-esteem equations. Despite this shortcoming, estimating the model by OLS is useful because it serves as an additional robustness test.
+
+Two Stage Least Squares (2SLS) results are presented in column 2 for the wage equation and column 6 for the education equation in Tables \ref{tab:wage80} through \ref{tab:wage06d}. Unlike OLS, 2SLS can be used to properly estimate a simultaneous equation model. 2SLS estimates are derived, as the name suggests, in two stages. First, each endogenous variable (wage, education, self-esteem) is regressed on every exogenous explanatory variable in the entire model. Second, the predicted values from these regressions ($\hat{wg}$, $\hat{ed}$, $\hat{se}$) replace the endogenous explanatory variables in the original equations. Finally, each equation is estimated via OLS using the predicted values as explanatory variables instead of the observed values. So, the three equations in the basic model are actually estimated as:
+\begin{eqnarray}
+wg_i & = & \alpha_0 + \alpha_1 \hat{ed_i} + \alpha_2 \hat{se_i} + \alpha_3 int + \Omega_1' L2_i + \Omega_2' D_i + \Omega_3' B1_i + \alpha_4 sel_i^w + \epsilon_i \\
+ed_i & = & \beta_0 + \beta_1 \hat{se_i} + \beta_2 int_i + \Lambda_1' D_i + \Lambda_2' B3_i + \beta_3 sel_i^e + \nu_i \\
+se_i & = & \delta_0 + \delta_1 \hat{wg_i} + \delta_2 \hat{ed_i} + \delta_3 rwg_i  + \Psi_1' AB_i + \Psi_2' L1_i + \Psi_3' D_i + \Psi_4' B2_i + \eta_i
+\end{eqnarray}
+where $\hat{ed_i}$ represents predicted education, $\hat{se_i}$ represents predicted self-esteem, and $\hat{wg_i}$ represents predicted wage. Again, predicted variables are derived from regressing the endogenous explanatory variable (education, self-esteem, wages) on every exogenous explanatory variable in the system of equations.
+
+Each coefficient in 2SLS is determined by:
+\beq \hat{\beta_{2sls}} = [X' Z (Z' Z)^{-1} Z' X]^{-1} X' Z (Z' Z)^{-1}Z' Y\eeq
+where X is a matrix of explanatory variables, Z is a matrix of exogenous explanatory variables, and Y is a vector of the dependent variable (\citee{W2002}).
+
+This process allows us to better interpret the coefficients. For example, in the wage equation, the self-esteem coefficient can be interpreted as the effect of self-esteem on wages holding both the effect of self-esteem on education and the effect of wages on self-esteem constant. This allows us to determine the direction and magnitude of causation.
+
+Three Stage Least Squares (3SLS) is similar to 2SLS, but it assumes that the error terms between each of the three equations are correlated. Under 3SLS, unobserved factors that effect wages, education, and self-esteem are all correlated. 3SLS and 2SLS can be identical, but are not in the case of our model, which is overidentified. 3SLS and 3SLS-GMM differ in the weighting matrix that they use. Traditional 3SLS estimates are weighted as follows:
+
+\beq \hat{\beta_{3sls}} = [\hat{X}' (I_N \otimes \hat{\Omega}^{-1}) \hat{X}]^{-1} \hat{X}' (I_N \otimes \hat{\Omega}^{-1}) Y\eeq
+and 3SLS-GMM estimates are weighted as follows:
+
+\beq \hat{\beta_{3sls-GMM}} = [X' Z (Z' (I_N \otimes \hat{\Omega}) Z)^{-1} Z' X]^{-1} X' Z (Z' (I_N \otimes \hat{\Omega}) Z)^{-1} Z' Y\eeq
+where
+\beq \hat{\Omega} = N^{-1} \sum_{i=1}^N\ \hat{u_i} \hat{u_i}' ,\eeq
+\beq \hat{X} = Z_i (Z' Z)^{-1} Z' X ,\eeq
+$\hat{u_i}$ is the residual from a 2SLS regression, I is the identity matrix, Z is a matrix of exogenous explanatory variables, X is a matrix of explanatory variables, and Y is a vector of the dependent variable.
+
+Three assumptions are necessary for identification. First, exogenous explanatory variables are assumed to be uncorrelated with the error term. Second, the system is assumed to meet the rank condition, and third, the weighting matrix is assumed to be positive definite. The primary difference between the two methods is that, under the three above assumptions, 3SLS-GMM will always be consistent, while 3SLS will not always be consistent (\citee{W2002}).
+
+It is clear that 2SLS and 3SLS methods have a clear advantage over OLS in that they can both be used to estimate simultaneous equation models. In order to determine which technique provides the best results, we can perform a Hausman test. A Hausman test simply compares two estimators, in this case 2SLS and 3SLS. Under the null hypothesis, both estimators are consistent, but 3SLS is more efficient. Under the alternative hypothesis, 2SLS is consistent and 3SLS is inconsistent. The Hausman statistic, which is chi-squared distributed, is computed as follows (\citee{CT2009}):
+
+\beq H = (\theta_{2sls} - \theta_{3sls})'[V(\theta_{2sls})-V(\theta_{3sls})]^{-1} (\theta_{2sls} - \theta_{3sls})\eeq
+where $\theta_{2sls}$ represents 2SLS estimates, $\theta_{3sls}$ represents 3SLS estimates, and V represents a covariance matrix. Results from these tests give preference to the 2SLS estimators.
+
+\section*{Weak Instruments}
+\addcontentsline{toc}{section}{Weak Instruments}
+
+Two Stage Least Squares and Three Stage Least Squares are both instrumental variable techniques. Predicted values of endogenous explanatory variables are used instead of actual values of endogenous explanatory variables to estimate the models. However, if the variables that are used to predict the endogenous explanatory variables do a poor job, it is said that there is a weak instrument problem. Tests for weak instruments essentially measure how well excluded exogenous explanatory variables can explain included endogenous explanatory variables. For example, in the education equation, instruments would be weak if relative wage, experience, tenure, regional controls, industry controls, and labor self-selection are poor predictors of self-esteem.
+
+In the education equation there is only one endogenous explanatory variable (self-esteem), so a simple F-test can be used to test the strength of our instruments. For the education equation, the F-statistic is specified as follows:
+
+\beq F = \frac{R_{ur}^2/q}{(1-R_{ur}^2)/(df_{ur})}\eeq
+where:
+\beq R_{ur}^2 = \frac{\sum_{i=1}^n\ (\hat{ed_i} - \bar{ed_i})^2}{\sum_{i=1}^n\ (ed_i - \bar{ed_i})^2}\eeq
+In the first equation, $df_{ur}$ represents the degrees of freedom. The value of F will be large if the excluded exogenous explanatory variables (relative wage, tenure, experience, regional controls, industry controls, wage self-selection) explain a lot of the variation in self-esteem. As a general rule of thumb, weak instruments are not an issue if $F\geq10$ (\citee{CT2009}).
+
+Two endogenous explanatory variables appear in both the wage and self-esteem equations, so a different test is needed to assess the relative strength of the available instruments. Instead of simply using the F-statistics, the minimum eigenvalue statistic can be used. This statistic is the minimum eigenvalue of a matrix analog of the F-statistics. If there is only one endogenous explanatory variable (as in the education equation), the F-statistic will be equal to the minimum eigenvalue statistic.
+
+\section*{Self-selection}
+\addcontentsline{toc}{section}{Self-selection}
+
+One necessary assumption for a linear model is random sampling. However, in the wage equation, individuals that are not employed are excluded from the sample, as there is no data on their wages. Since there is likely a difference between individuals in and not in the labor force, there is a good chance that the sample suffers from selection bias. Similarly, self-selection may be present in the education equation as well. Whether an individual graduates from high school may be determined by unobservable factors like taste, cultural background, or budget constraints. For example, an individual may neglect school obligations to help with a family business, despite having the ability to succeed in school. In order to correct for selection bias, a two-step Heckman correction can be employed. The process begins with a probit regression where the dependent variable is the probability of being employed for the wage model and the probability of graduating from high school for the education model. Probit models are useful when dealing with a dependent indicator variable because, unlike linear probability models, the predicted value of the indicator variable is always between 0 and 1. The two probit equations, referred to in the context of self-selection correction as the selection equations, that we employ are specified for the basic wage and education equations, respectively, as follows:
+\begin{eqnarray}
+P(emp_i = 1) = \Phi (\alpha_0 + \alpha_1 ed_i + \alpha_2 se_i + \alpha_3 int_i + \alpha_4 lf_i +\Omega_1' L2_i + \Omega_2' D_i + \Omega_3' B1_i)\\
+P(grad_i = 1) = \Phi (\beta_0 + \beta_1se_i + \beta_2 int_i + \Lambda_1' D_i + \Lambda_2' B3_i)
+\end{eqnarray}
+where "$\Phi$" represents the standard normal cumulative distribution function, "P(emp=1)" represents the probability of being employed, "lf" represents labor force participation status, and "P(grad=1)" represents the probability of graduating from high school. All other variables are coded as they are in Section 3. It should be noted that in the revised model, locus of control is included as an explanatory variable in each of the two above probit models. Each probit model is estimated by maximum likelihood estimation, which maximizes the log-likelihood function. Results from these probit regressions are used to construct z'$\hat{\gamma}$, which is simply the sum of each explanatory variable in the probit model multiplied by its probit coefficient. For the wage equation, this is mathematically expressed as:
+
+\beq z'\hat{\gamma_{wg}} = \hat{\alpha_0} + \hat{\alpha_1} ed_i + \hat{\alpha_2} se_i + \hat{\alpha_3} int_i + \hat{\alpha_4} lf_i +\hat{\Omega_1}' L2_i + \hat{\Omega_2}' D_i + \hat{\Omega_3}' B1_i\eeq
+In the education equation, z'$\hat{\gamma}$ is mathematically expressed as:
+
+\beq z'\hat{\gamma_{ed}} = \hat{\beta_0} + \hat{\beta_1} se_i + \hat{\beta_2} int_i + \hat{\Lambda_1}' D_i + \hat{\Lambda_2}' B3_i\eeq
+In order to correct for selection bias in the wage equation, we must evaluate the inverse Mills ratio at z'$\hat{\gamma_{wg}}$, while correcting for selection bias in the education equation requires that we evaluate the inverse Mills ratio at z'$\hat{\gamma_{ed}}$. The inverse Mills ratio is simply the probability distribution function ("$\phi$(.)") divided by the cumulative distribution function ("$\Phi$(.)"). The inverse Mills ratio at z'$\hat{\gamma_{wg}}$ is added as an explanatory variable to the wage equation as the selection correction variable, and the inverse Mills ratio at z'$\hat{\gamma_{ed}}$ is added as an explanatory variable to the education equation as the selection correction variable (\citee{W2009}).
+So, the basic outcome wage equation is specified as follows:
+
+\beq wg_i = \alpha_0 + \alpha_1 ed_i + \alpha_2 se_i + \alpha_3 int + \Omega_1' L2_i + \Omega_2' D_i + \Omega_3' B1_i + \alpha_4 sel_i^w + \epsilon_i\eeq
+where
+
+\beq sel_i^w = \frac{\phi(z\gamma_{wg})}{\Phi(z\gamma_{wg})}\eeq
+The basic outcome education equation is specified as follows:
+
+\beq ed_i = \beta_0 + \beta_1 se_i + \beta_2 int_i + \Lambda_1' D_i + \Lambda_2' B3_i + \beta_3 sel_i^e + \nu_i\eeq
+where
+
+\beq sel_i^e = \frac{\phi(z\gamma_{ed})}{\Phi(z\gamma_{ed})}\eeq
+
+
+\section*{Latent Ability Variables and Factor Analysis}
+\addcontentsline{toc}{section}{Latent Ability Variables and Factor Analysis}
+
+The effect of educational attainment on wages is a crucial piece of information in our analysis because, without knowing it, we would be unable to calculate the indirect effect of self-esteem on wages via education. Since the effect of education on wages is one of the two pieces involved in calculating the indirect effect of self-esteem on wages, it is absolutely essential to estimate it as well as possible. In order to do this, we must consider the relationship between educational attainment and AFQT (intelligence) and Rotter (locus of control) test scores. It is well-established that intelligence affects educational attainment, and various studies have found that locus of control affects educational attainment (\citee{W1999}, \citee{RB2000}, \citee{CD2003}, \citee{PP2010}). However, studies have also found that educational attainment affects intelligence test scores (\citee{HHM2003}, \citee{HM1994}) and locus of control test scores (\citee{RB2000}. We provide additional evidence of this reverse causality in Table \ref{tab:test}.
+
+\begin{table}
+\caption{\mdseries{The Effect of Education on Test Scores}
+\label{tab:test}}
+\vspace{2pt}
+\centering\begin{tabular}{l|c|c}
+\hline
+\hline
+& \prbf{AFQT Scores} & \prbf{Rotter Scores}\\
+\hline
+Education & 5.258*** & -0.3970***\\
+& (1.739) & (0.1220)\\
+Urban childhood & -3.975*** & -0.1078**\\
+& (0.5620) & (0.0538)\\
+Both parents & 5.383*** & -0.0998*\\
+& (0.7501) & (0.0595)\\
+Siblings & -1.347*** & 0.0632***\\
+& (0.1273) & (0.0128)\\
+Southern childhood & -8.511*** & 0.2107***\\
+& (0.5135) & (0.0518)\\
+Parents' education & 2.815*** & n/a\\
+& (0.2288) & (n/a)\\
+Age & 0.6236 & 0.0625\\
+& (1.025) & (0.0849)\\
+Still in school & -7.554*** & 0.3141***\\
+& (0.7769) & (0.0666)\\
+\hline
+N & 8939 & 11401\\
+Wald Chi-sq & 6235.30 & 693.33\\
+R-sq & 0.4133 & 0.0727\\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Lower Rotter scores represent an internal locus of control}\\
+\end{tabular}
+\end{table}
+
+
+The problem is essentially a measurement error issue. AFQT scores are supposed to measure intelligence, but they are partially determined by educational attainment. Rotter scores are supposed to measure locus of control, but they are also determined by educational attainment. Since intelligence and locus of control determine education, including them in our wage equation naturally deflates the education coefficient. However, the education coefficient is further deflated by the measurement errors in the tests. Therefore, including raw AFQT or Rotter scores provides us with an underestimation of the effect of education on wages.
+
+In order to correct this problem, we follow a two part process. First, we must generate a variable for residualized test score, which is the part of the test score that cannot be explained by various explanatory variables. The model for AFQT test scores is identical to the model developed by \citee{HHM2003}, and it is specified as follows:
+
+\beq afqt_i = \alpha_0 + \alpha_1 ed_i + \alpha_2 pe_i + \alpha_3 age_i + \alpha_4 en_i + \Omega_1'back + \epsilon_i\eeq
+where "afqt" represents AFQT score, "ed" represents educational attainment at time of test, "pe" represents parents' education, "age" represents age at time of test, "en" is an indicator variable for whether the individual was still in enrolled in school when he or she took the test, "back" is a vector of four background variables (number of siblings, born in the south, born in a city, lived with both parents as a child), and epsilon is the error term.
+
+We follow \citee{HHM2003} again and estimate the model by 2SLS, where educational attainment, the endogenous explanatory variable in the model, is instrumented by quarter of birth. The model is estimated as follows:
+
+\beq afqt_i = \alpha_0 + \alpha_1 \hat{ed_i} + \alpha_2 pe_i + \alpha_3 age_i + \alpha_4 en_i + \Omega_1'back + \epsilon_i\eeq
+where $\hat{ed_i}$ represents predicted value of education from quarter of birth. $\epsilon_i$, the error term, is crucial to our analysis because this is the part of AFQT scores that cannot be explained by the above variables. This means that intelligence is contained in this residual. However, it is likely that other unobserved variables are included in the residual, too. Therefore, we must undertake an additional step to isolate intelligence from these other unobserved variables. We use factor analysis to identify the distinct factors that explain variation in residualized AFQT scores, raw AFQT scores, and educational attainment. Factor analysis involves identifying unobservable orthogonal factors that explain the variation in a set of observable variables. We expect that intelligence will be the factor that explains most of the variation in residualized AFQT scores, less variation in raw AFQT scores, and even less variation in educational attainment. This is because the three variables provide progressively more indirect measures of intelligence. Therefore, in order to isolate intelligence, we must analyze the unobservable factors that explain the variation in residualized AFQT scores, raw AFQT scores, and educational attainment. Factors are extracted using the principal-factor method, which means that communalities are estimated as squared multiple correlation coefficients. Extracting factors involves solving the following equation:
+
+\beq RV = \lambda V\eeq
+where R is the correlation matrix of the observed variables with communality estimates in its main diagonal, $\lambda$ is the eigenvalue, and V is the eigenvector. This equation can be further simplified into the following:
+
+\beq Det(R-I\lambda) = 0\eeq
+where one can solve for each eigenvalue. The eigenvalues can be multiplied by the eigenvectors to obtain the factor loadings. In order to generate more easily interpretable results without sacrificing precision, the factor solutions can be rotated. We use the Varimax method of rotation, which maximizes the variance of the squared factor loadings. Mathematically, the following is maximized:
+
+\beq v_j = \frac{n\sum_{i=1}^n\ b_{ij}^4 - (\sum_{i=1}^n\ b_{ij}^2)^2}{n^2}\eeq
+where $b_{ij}$ is the factor loading of variable i on j (\citee{KM1978a}, \citee{KM1978b}).
+
+Following the above process, we find that one factor meets the criteria we have established (explains most of the variation in residualized AFQT scores, less of the variation in raw AFQT scores, and even less of the variation in educational attainment), and we declare that this factor is latent intelligence. While this variable is still positively correlated with educational attainment, as expected, the magnitude of this correlation is smaller than the magnitude of the correlation between AFQT scores and educational attainment.
+
+The latent variable for locus of control is developed nearly identically. The only difference is that parents' education is excluded as a determinant of locus of control. The magnitude of the correlation between our new locus of control measure and educational attainment is smaller than the magnitude of the correlation between Rotter scores and educational attainment, while the signs are the same. Additionally, the correlation between our latent intelligence and locus of control measures is smaller in magnitude than the correlation between AFQT and Rotter scores. This is to be expected since our latent measures have purged the test scores of the effects that educational attainment exerts on them.
+
+\section*{Measures of Self-esteem}
+\addcontentsline{toc}{section}{Measures of Self-esteem}
+
+
+We use both 10-item and 7-item Rosenberg scores as our measures of self-esteem. Since the test only has 10 items, the 10-item measure is simply the entire test. The 7-item measure, suggested by \citee{M2001}, throws out three of the ten questions. Like in the creation of latent ability variables, factor analysis plays a key role here. One factor appears to explain the vast majority of the variation in the responses to the first seven questions of the scale, while another factor becomes important for explaining variation in the responses of the last three questions. This result is robust over time and is seen in 1980, 1987, and 2006. Following \citee{M2001}, the factor that explains the first seven items of the scale is declared self-esteem and information from only the first seven items from the scale is used. The last three items, which may be measuring something other than self-esteem, are discarded.
+
+
+
+\begin{comment} This section will contain a short discussion of the estimation techniques used and how they differ \end{comment}
+
+\chapter{Results and Discussion}
+
+The regression results indicate that self-esteem exerts a significant positive influence on wages, sometimes directly and always indirectly via education. The direct relationship is considerably more significant when we don't control for locus of control, but it is always insignificant in 1987 when we analyze males and females together. However, when males and females are analyzed separately, it becomes apparent that the direct effect is substantially more significant for females than it is for males. The indirect relationship is robust across time, model specification, gender, and estimation technique. We also find that females receive more education and experience a higher rate of return on education than males, but they also receive lower real wages than males for reasons that are, in part, not explained by our control variables. First, we will discuss the direct effects, and then we will discuss the indirect effects. Lastly, we discuss gender differences in self-esteem, wages, and education. Tables \ref{tab:wage80} through \ref{tab:wage06} display results for the basic model that uses 10-item Rosenberg scale scores as the measure for self-esteem, tables \ref{tab:wage80b} through \ref{tab:wage06b} display results for the revised model that uses 10-item Rosenberg scale scores as the measure for self-esteem, tables \ref{tab:wage80c}  through \ref{tab:wage06c} display results for the basic model that uses 7-item Rosenberg scale scores as the measure for self-esteem, and tables \ref{tab:wage80d} through \ref{tab:wage06d} display results for the revised model that uses 7-item Rosenberg scale scores as the measure for self-esteem. Table \ref{tab:ind} summarizes the results from models that analyze males and females together and Table \ref{tab:gender} summarizes the results from models that analyze males and females separately. It should be noted that since our results rely on subjective response data, they must be interpreted with caution as \citee{F1978} and \citee{BM2001} suggest. Results indicate that weak instruments are not an issue in either of the equations of interest.
+
+\section*{Direct effects of self-esteem on wages}
+\addcontentsline{toc}{section}{Direct effects of self-esteem on wages}
+
+Treating educational attainment as endogenous and not controlling for locus of control, we find that self-esteem exhibits a significant direct relationship with real wages in 1980 and 2006 when males and females are analyzed together. However, once we control for locus of control, the relationship is only positive and significant in 2006. The direct effect of self-esteem is generally more significant in models that use 10-item Rosenberg scores as measures of self-esteem in comparison to models that use 7-item Rosenberg scores. Additionally, when males and females are analyzed separately, we find that the direct effect is substantially larger for females, while it is almost never significant for males.
+
+Based on our 2SLS estimates that analyze males and females together, we find that, on average, a one unit increase in self-esteem results in a 2.59 percent increase in real wage. This value is higher for models that don't control for locus of control (3.56 percent) and lower for models that control for locus of control (1.62 percent). A summary of the magnitude of the direct effect of self-esteem on real wages organized by year and model can be found in Table \ref{tab:ind}. Estimates from 3SLS and 3SLS GMM generally yield very similar results, while estimates from OLS are generally lower in magnitude. However, unlike the instrumental variable estimates, OLS estimates are always positive. Using the average direct effect obtained from the 2SLS regressions that analyze males and females together, we find that a one standard deviation increase in 10-item Rosenberg self-esteem is associated with an increase in real wage of approximately 15 percent, while a one standard deviation increase in 7-item Rosenberg self-esteem is associated with an increase in real wage of approximately 4 percent.
+
+\begin{table}
+\caption{\mdseries{Magnitude of the Indirect Effect of Self-esteem on Wages}\label{tab:ind}}
+\vspace{2pt}
+\centering\begin{tabular}{l|c|c|c|cc}
+\hline
+\hline
+\prbf{Model} & \prbf{Year} & \prbf{Direct Effect} & \prbf{Indirect Effect} & \prbf{Indirect/Total}\\
+\hline
+Basic, 10-item Rosenberg & 1980 & 0.0321 & 0.0177 & 0.4423\\
+& 1987 & 0.0177 & 0.1678 & 0.9046\\
+& 2006 & 0.0761 & 0.1856 & 0.7092\\
+& Mean & 0.0420 & 0.1263 & 0.6853\\
+\hline
+Revised, 10-item Rosenberg & 1980 & -0.0114 & 0.1178 & 0.9117\\
+& 1987 & 0.0092 & 0.2101 & 0.9580\\
+& 2006 & 0.1078 & 0.1977 & 0.6472\\
+& Mean & 0.0352 & 0.1752 & 0.8390\\
+\hline
+Basic, 7-item Rosenberg & 1980 & 0.0419 & 0.0490 & 0.5391\\
+& 1987 & -0.0238 & 0.3124 & 0.9292\\
+& 2006 & 0.0697 & 0.3139 & 0.8183\\
+& Mean & 0.0293 & 0.2251 & 0.7622\\
+\hline
+Revised, 7-item Rosenberg & 1980 & -0.0566 & 0.2262 & 0.7999\\
+& 1987 & -0.0500 & 0.4002 & 0.8889\\
+& 2006 & 0.0983 & 0.3364 & 0.7739\\
+& Mean & -0.0028 & 0.3209 & 0.8209\\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+When males and females are analyzed separately, gender-specific differences come to light. Based on 2SLS estimates, we find that, on average, a one unit increase in self-esteem decreases male real wages by 0.41 percent and increases female real wages by 7.74 percent. When locus of control isn't controlled for, the direct effect for males becomes positive (0.67 percent), while the direct effect for females actually decreases slightly to 7.10 percent. When we control for locus of control, the direct effect for males decreases to -1.50 percent and the direct effect for females increases to 8.38 percent. Again, 3SLS and 3SLS GMM results are similar to 2SLS results, while OLS results are typically lower in magnitude but always positive. Using the 2SLS estimates, we find that a one standard deviation increase in 10-item self-esteem increases male real wages by approximately 11 percent and female real wages by approximately 25 percent, and a one standard deviation positive shock in 7-item self-esteem decreases male real wages by approximately 10 percent and increases female real wages by approximately 25 percent.
+
+Our finding that self-esteem is directly related to wages when locus of control is not controlled for and males and females are analyzed together is in line with findings from \citee{GVD1997}, \citee{M2001}, and \citee{W2006}, despite the range in methodology across the studies. \citee{M2001} used NLSY79 data and utilized reliability-based maximum likelihood methods to correct for measurement error in OLS regressions. They found that 1980 self-esteem (age between 15 and 23 depending on the individual) predicted the wages of 27/28 year olds. The magnitude and significance of the self-esteem coefficient is very similar to what we find, despite the fact that our models are very different. They also note that the correlation coefficient between 1980 and 1987 self-esteem is 0.439, which suggests that self-esteem is "a view of self that is affected by experiences" (p. 317). This finding implicitly supports the idea of a reciprocal relationship between wages and self-esteem. \citee{W2006} used panel data from the high school class of 1972 to estimate logit and OLS regression models that control for unobserved heterogeneity. He found that premarket self-esteem and attitude are important determinants of labor market outcomes. Our study is most similar in methodology to \citee{GVD1997}, which is the only study of those above that accounts for simultaneity bias by allowing self-esteem and wages to jointly determine one another. They use data from 1980 and 1987 to estimate their model by 2SLS, but they don't allow self-esteem to effect educational attainment and they don't correct for the endogeneity of AFQT scores and Rotter scale scores. Nevertheless, our results that consider the direct relationship between self-esteem and wages qualitatively agree with theirs in 1980, but not in 1987.
+
+Our results disagree with those from \citee{W1999} and \citee{F2000}, who both controlled for locus of control and found that self-esteem directly effects early career wages. \citee{W1999} used OLS to conclude that self-esteem at age 25 has a significant impact on occupation at age 32. They found self-esteem, which they measured as the score on 4 items of the Rosenberg scale, to be significant at the five percent level. \citee{F2000} used OLS to determine that age ten self-esteem has a significant (beyond the one percent level) impact on wages at age 26, where self-esteem is measured by LAWSEQ scores. Our results further disagree with those of \citee{F2000} in that, unlike them, we find that self-esteem is a more significant direct determinant of wages for females than males.
+
+Regardless of whether we control for locus of control, like \citee{GVD1997} and \citee{M2001}, we find that females still earn significantly less than males, which implies possible labor market discrimination, as our models fail to explain all of the variance in wages. Further discussion of gender discrimination can be found below. Additionally, we find that blacks earn significantly less than non-blacks only once we control for endogenous educational attainment and self-esteem. Not surprisingly, traditional human capital variables such as education, experience, and tenure are also significant determinants of real wage in each of our models. These variables are consistently positive and significant. We find evidence of positive selection after controlling for endogenous education and self-esteem.
+
+We also find evidence that real wages affect self-esteem. This finding is consistent with those of \citee{BO1977} and \citee{GVD1996}. This, combined with the finding that self-esteem directly impacts wages, provides further evidence that the relationship between wages and self-esteem is reciprocal in nature.
+
+
+
+\section*{Indirect effects of self-esteem on wages}
+\addcontentsline{toc}{section}{Indirect effects of self-esteem on wages}
+
+One factor that previous studies that focus on the impact of self-esteem on wages seem to overlook is the indirect effect of self-esteem on wages via education. Interestingly, while \citee{W1999} and \citee{W2006} both found that self-esteem affects educational attainment and wages, neither allowed self-esteem to affect educational attainment in their wage models. We find this indirect effect to be substantial, as self-esteem is consistently a highly significant predictor of educational attainment and educational attainment is consistently a highly significant predictor of wages, regardless of model specification, year, or estimation technique. In fact, we find that the indirect effect of self-esteem is almost always larger than the direct effect of self-esteem on wages, which is occasionally highly significant on its own. Unlike the direct effect, the indirect effect is generally larger when 7-item Rosenberg scores are used to measure self-esteem. The magnitude of the indirect effect is similar for males and females, but it is slightly larger for males.
+
+Using our results, we computed the magnitude of the indirect effect of self-esteem by multiplying the marginal effect of self-esteem on educational attainment by the marginal effect of educational attainment on real wages. We divided this value by the total effect of self-esteem on wages, which was computed as the magnitude of the direct effect plus the magnitude of the indirect effect. We carried out this process for the 2SLS estimates of each of our models. We found that, on average, the indirect effect comprised 77.69 percent of the total effect of self-esteem on wages when males and females are analyzed together. Additionally, we found the indirect effect of self-esteem on wages to be greater than the direct effect in all but two of twelve cases when males and females are analyzed together (a summary of these findings can be found in Table \ref{tab:ind}). When males and females are analyzed separately, on average, the indirect effect comprises 71.16 percent of the full effect of self-esteem for males and 71.92 percent of the full effect of self-esteem for females. These results all indicate that the role of self-esteem in determining wages has likely been understated in previous studies that examine the relationship between the two variables. Once again, 3SLS and 3SLS GMM results are very similar to those estimated by 2SLS, while estimates from OLS are lower in magnitude but have the same sign.
+
+Using 2SLS results that analyze males and females together, we find that, on average, a one unit increase in self-esteem indirectly increases real wages by 21.19 percent. A one standard deviation increase in 10-item self-esteem leads to approximately a 60 percent increase in real wages, while a one standard deviation increase in 7-item self-esteem leads to approximately a 74 percent increase in real wages. When males and females are analyzed separately, we find that a one standard deviation increase in 10-item self-esteem leads to approximately a 53 percent increase in real wages for males and approximately a 56 percent increase in real wages for females. A one standard deviation increase in 7-item self-esteem leads to approximately a 70 percent increase in real wages for males and approximately a 66 percent increase in real wages for females.
+
+In the wage equation, being male proved to be a significant determinant of wage that helped an individual earn more. In the education equation, being male has the opposite effect. Males seem to obtain significantly less education than females. Race appears to matter much less in determining educational attainment than it does in determining wages, as being black appears to generally have no ceteris paribus effect on educational attainment. Variables that one would expect to be significant predictors such as intelligence, age, and background factors generally are important determinants of education. Additionally, we find that selection generally has a positive and significant impact on educational attainment once we control for endogenous self-esteem.
+
+Like in the relationship between wages and self-esteem, we find that educational attainment, while affected by self-esteem, also has a significant impact on self-esteem. In other words, we find evidence of a reciprocal relationship between self-esteem and educational attainment, which is consistent with the findings of \citee{LKR1992}. The result that educational attainment impacts self-esteem is consistent with the findings of  \citee{RSS1989}, \citee{F1998}, and \citee{RB2000}.
+
+Our research may have some policy implications. According to \citee{B2005}, many schools already emphasize the importance of self-esteem. The author views these programs with cynicism, attributing the relationship between self-esteem and education to confounding variables. He writes of the efforts: "Students are encouraged to make collages and lists that celebrate their wonderfulness. Prizes are given to everyone just for showing up" (p. 37). However, some of these programs may be beneficial in keeping students in school. Theoretical justification for these programs is provided by the "self-esteem-frustration" model of dropping out of school discussed in \citee{F1989}, where students perform poorly, receive negative feedback, and perform even more poorly before eventually dropping out. Our results suggest that these programs could be beneficial, as self-esteem and educational attainment appear to be jointly determined.
+
+\section*{Gender, Self-esteem, Education, and Wages}
+\addcontentsline{toc}{section}{Gender, Self-esteem, Education, and Wages}
+
+There are a few notable differences between males and females regarding the relationship between self-esteem, education, and wages that can be seen when males and females are analyzed separately. First, the direct effect of self-esteem on wages is typically more significant and more positive for females than for males. The direct effect is significant for women in four out of twelve of our 2SLS estimations, while it is significant for men in only one out of twelve of our 2SLS estimations. Additionally, the average direct effect of self-esteem for men is nearly 0 (0.4 percent decrease in real wage per one unit increase in self-esteem from 2SLS estimates), but it is clearly non-zero for females (7.74 percent increase in real wage per one unit increase in self-esteem from 2SLS estimates). A summary of these findings can be found in Table \ref{tab:gender}. However, exactly why self-esteem is more important for women is unclear. One possible explanation is that men, on average, have higher self-esteem than women, and being male generally has a positive effect on self-esteem, ceteris paribus. If the supply of females with high self-esteem is relatively lower, than women with high self-esteem may be rewarded more.
+
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Gender Differences in the Effect of Self-esteem}\label{tab:gender}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|cc}
+\hline
+\hline
+& & \multicolumn{3}{|c|}{Males} & \multicolumn{3}{|c}{Females}\\
+\hline
+\prbf{Model} & \prbf{Year} & \prbf{Direct Effect} & \prbf{Indirect Effect} & \prbf{Indirect/Total} & \prbf{Direct Effect} & \prbf{Indirect Effect} & \prbf{Indirect/Total}\\
+\hline
+Basic 10-item & 1980 & 0.0463 & 0.0000 & 0.0000 & 0.0210 & 0.0514 & 0.7099\\
+& 1987 & 0.0047 & 0.1617 & 0.9717 & 0.0366 & 0.1678 & 0.8209\\
+& 2006 & 0.0361 & 0.2039 & 0.8496 & 0.1180 & 0.1524 & 0.5636\\
+& Mean & 0.0290 & 0.1219 & 0.6072 & 0.0585 & 0.1239 & 0.6982\\
+\hline
+Revised 10-item & 1980 & 0.0279 & 0.0248 & 0.4705 & -0.0118 & 0.1144 & 0.9065\\
+& 1987 & -0.0082 & 0.1977 & 0.9602 & 0.0425 & 0.1946 & 0.8207\\
+& 2006 & 0.0547 & 0.2144 & 0.7967 & 0.1712 & 0.1593 & 0.4820\\
+& Mean & 0.0248 & 0.1456 & 0.7425 & 0.0673 & 0.1561 & 0.7364\\
+\hline
+Basic 7-item & 1980 & 0.0363 & 0.0110 & 0.2325 & 0.0621 & 0.0797 & 0.5619\\
+& 1987 & -0.0216 & 0.2717 & 0.9264 & -0.0095 & 0.3365 & 0.9725\\
+& 2006 & -0.0615 & 0.3718 & 0.8581 & 0.1979 & 0.2372 & 0.5451\\
+& Mean & -0.0156 & 0.2182 & 0.6723 & 0.0835 & 0.2178 & 0.6932\\
+\hline
+Revised 7-item & 1980 & -0.0429 & 0.1288 & 0.7501 & 0.0341 & 0.1481 & 0.8128\\
+& 1987 & -0.0498 & 0.3411 & 0.8726 & -0.0113 & 0.3951 & 0.9722\\
+& 2006 & -0.0717 & 0.4081 & 0.8506 & 0.2780 & 0.2393 & 0.4626\\
+& Mean & -0.0548 & 0.2927 & 0.8244 & 0.1003 & 0.2608 & 0.7492\\
+\hline
+\hline
+\end{tabular}
+\end{sidewaystable}
+
+Second, the effect of self-esteem on education is generally larger in magnitude for males than it is for females, but the indirect effect of self-esteem on wages is closer across gender because the higher rate of return on education that females experience closes the gap. Our finding that females experience a higher rate of return on education (34.36 percent average versus 23.35 percent average for males from 2SLS estimates) is consistent with the findings of \citee{P1994} and \citee{J2002}. One possible reason that females experience a higher rate of return on education than males is that females may take advantage of their time in school more than males. Assuming the knowledge acquired during school is relevant to the labor market, and since females generally perform better in school than males (\citee{J2002}), females may, on average, complete each year of school with a larger amount of useful knowledge than males. While the effect of self-esteem on educational attainment is greater in magnitude for males (0.8332 increase in education per one unit increase in self-esteem on average from 2SLS estimates) than it is for females (0.5520 increase in education per one unit increase in self-esteem on average from 2SLS estimates), the effect is highly significant regardless of gender and the difference in average t-statistics for males and females is relatively small (0.5908). However, the difference could have something to do with the findings that females perform better in school, academic performance impacts self-esteem, and individuals with lower self-esteem have fewer resources for dealing with rejection (\citee{SB2002}). These conclusions suggest that male self-esteem may face more of an attack from academics than female self-esteem, and individuals with lower self-esteem may be less likely to weather the attack. If the attack is larger for males than females, then male self-esteem could play a larger role than female self-esteem in determining whether the individual can persevere and continue in school.
+
+Analyzing males and females together can also be useful for identifying differences between the educational and labor market outcomes of males and females. Two clear trends emerge from our results. First, males receive less education than females. According to our 2SLS estimates, ceteris paribus, males receive an average of 0.6423 years fewer years of education than females. Several factors are likely at work in explaining this difference. Since women experience a higher rate of return on education, it makes intuitive sense that they would invest more in education than males. Additionally, according to \citee{J2002}, differences in non-cognitive skills such as academic effort, achievement, classroom behavior, and grade retention explain a large portion of the gap between male and female educational attainment. Another possible explanation is grounded in self-esteem. Since females perform better in school than males and academic performance impacts self-esteem, academics likely benefit female self-esteem more than male self-esteem, so the classroom could be a more positive source of self-esteem for females than it is for males.
+
+Second, females receive lower wages than males. On average, simply being male increases real wages by 19.67 percent, according to our 2SLS estimates. The benefit of being male appears to decrease over time, since this coefficient is always smallest in 2006 (14.77 percent average from 2SLS estimates). Nevertheless, the difference between male and female wages is always significant, which doesn't rule out the possibility of labor market discrimination. However, since we are leaving a large portion of the variance of wages unexplained, we can't definitively say that discrimination is present either. The decreasing wage gap among NLSY respondents over time could reflect the changing wage gap in America from the 1970's to the 1990's. In 1978, males earned nearly 40 percent more than females, while by the mid-1990's, males made about 24 percent more than females (\citee{BK2000}). Of course, our estimation of this gap is significantly smaller, as our control variables explain some of the differences between males and females. \citee{BK1997} found that they could explain 62 percent of the wage gap in 1988 between males and females by controlling for human capital, occupation, industry, and unionism. This, however, still leaves a 12 percent gap between male and female wages that is unexplained.
+
+
+\chapter{Conclusion}
+
+We addressed simultaneity between self-esteem and education and wages, the endogeneity of educational attainment, and the endogeneity of test scores that measure ability and found that self-esteem is still a significant determinant of real wages, sometimes directly and always indirectly. The direct relationship is more significant for females than it is for males, as it is almost never significant for males. The indirect relationship is robust across time, model specification, gender, and estimation technique. We find that the indirect relationship is almost always larger in magnitude than the direct relationship. This suggests that previous studies have understated the role of self-esteem in determining wages, as most studies that examine the relationship between self-esteem and wages treat educational attainment as exogenous. Nonetheless, our study falls in line with a growing body of literature that utilizes various methods and data to show that self-esteem has a positive and significant impact on real wages.
+
+While our model is fairly comprehensive in capturing the direct and indirect relationship between self-esteem and wages, it does have one notable limitation. Previous research by \citee{ET1983} concluded that individuals with high self-esteem received better job interview evaluations and used more efficient job search methods than individuals with low self-esteem, which suggests that the probability of being employed is related to self-esteem. This means that work experience, like education, could be endogenous. While this could be accomplished by adding a fourth equation to our model, it is beyond the scope of this paper, as we believe our results sufficiently illustrate the fact that the majority of the full effect of self-esteem on wages is indirect. Nonetheless, if work experience is endogenous, then we may have understated the importance of this indirect effect, which we estimate comprises upwards of three-fourths of the full effect of self-esteem on wages.
+
+\begin{comment}However, our model may be flawed because education and self-esteem are not likely the only endogenous explanatory variables for real wages., and a 1998 US Census Survey found "attitude" to be the most important factor in hiring decisions (Bureau of the Census - see \citee{BGO2001} for citation). Therefore, it seems plausible that self-esteem could significantly impact the probability of being employed, which is closely linked to work experience. Work experience could be treated as endogenous in the framework of our model by adding a fourth equation, which uses experience as the dependent variable and includes self-esteem as an independent variable. If this relationship is significant, then we may have understated the magnitude of the indirect effect of self-esteem on wages. Additionally, on the econometric front, further study is needed to determine the best methods for utilizing subjective response data in regression analysis.\end{comment}
+
+
+
+
+
+
+\begin{comment} summary of results and recommendations for further study \end{comment}
+
+
+
+\newpage
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendix}
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (10-item 1980 Basic Model)}\label{tab:wage80}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0067** & 0.0321*** & 0.0244** & 0.0223* & 0.0335*** & 0.1418*** & 0.2386*** & 0.1767***\\
+& (0.0032) & (0.0117) & (0.0115) & (0.0116) & (0.0034) & (0.0241) & (0.0206) & (0.0185)\\
+Education & 0.0177* & 0.1795*** & 0.2061*** & 0.2051*** & n/a & n/a & n/a & n/a\\
+& (0.0098) & (0.0483) & (0.0476) & (0.0479) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0005 & 0.0020*** & 0.0015** & 0.0018*** & n/a & n/a & n/a & n/a\\
+& (0.0006) & (0.0007) & (0.0006) & (0.0007) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0019*** & 0.0021*** & 0.0021*** & 0.0019*** & n/a & n/a & n/a & n/a\\
+& (0.0004) & (0.0003) & (0.0003) & (0.0003) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0810*** & 0.0208 & 0.0143 & 0.0164 & -0.0224 & 0.1193*** & 0.0614** & 0.0077\\
+& (0.0152) & (0.0177) & (0.0176) & (0.0176) & (0.0178) & (0.0313) & (0.0288) & (0.0261)\\
+Age & 0.0786*** & -0.0177 & -0.0289 & -0.0293 & 0.2865*** & 0.4484*** & 0.4295*** & 0.4205***\\
+& (0.0090) & (0.0252) & (0.0248) & (0.0250) & (0.0189) & (0.0358) & (0.0274) & (0.0259)\\
+Male & 0.1390*** & 0.1858*** & 0.2036*** & 0.2020*** & -0.2001*** & -0.4646*** & -0.4944*** & -0.3971***\\
+& (0.0245) & (0.0316) & (0.0312) & (0.0314) & (0.0263) & (0.0505) & (0.0475) & (0.0426)\\
+Black & -0.0532 & -0.1550*** & -0.1591*** & -0.1520*** & 0.0149 & 0.2063*** & 0.0749 & 0.0579\\
+& (0.0398) & (0.0424) & (0.0417) & (0.0419) & (0.0337) & (0.0670) & (0.0654) & (0.0591)\\
+Married & 0.0887*** & 0.1506*** & 0.1643*** & 0.1672*** & -0.3068*** & -0.3442*** & -0.3488*** & -0.3665***\\
+& (0.0337) & (0.0410) & (0.0407) & (0.0409) & (0.0467) & (0.0660) & (0.0656) & (0.0621)\\
+Both parents & 0.0335 & -0.0092 & -0.0192 & -0.0201 & 0.1356*** & 0.2350*** & 0.2382*** & 0.1838***\\
+& (0.0302) & (0.0325) & (0.0324) & (0.0325) & (0.0308) & (0.0557) & (0.0546) & (0.0482)\\
+Professional parent & -0.0218 & -0.0632** & -0.0686** & -0.0673** & 0.1025*** & 0.1164** & 0.1561*** & 0.1213***\\
+& (0.0265) & (0.0300) & (0.0298) & (0.0300) & (0.0264) & (0.0509) & (0.0505) & (0.0451)\\
+Children & -0.0186 & 0.0735* & 0.0961** & 0.0953** & -0.4216*** & -0.5195*** & -0.5037*** & -0.5059***\\
+& (0.0382) & (0.0386) & (0.0383) & (0.0385) & (0.0402) & (0.0568) & (0.0545) & (0.0510)\\
+Siblings & -0.0063 & 0.0131** & 0.0156** & 0.0149** & -0.0304*** & -0.0388*** & -0.0444*** & -0.0380***\\
+& (0.0057) & (0.0063) & (0.0063) & (0.0063) & (0.0057) & (0.0101) & (0.0099) & (0.0089)\\
+Select & 0.5679** & 1.376*** & 1.088*** & 1.087*** & -0.7933*** & -0.1018 & -0.0792 & -0.3350\\
+& (0.2591) & (0.2511) & (0.2363) & (0.2417) & (0.0413) & (0.1327) & (0.0996) & (0.0807)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.0578*** & 0.0889*** & 0.0286*** & 0.0348***\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0055) & (0.0089) & (0.0062) & (0.0065)\\
+Urban childhood & n/a & n/a & n/a & n/a & -2.39e-5 & -0.0414 & -0.0533 & -0.0432\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0289) & (0.0522) & (0.0510) & (0.0453)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 0.3953** & 0.5499 & 0.3043 & 0.6289*\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.1671) & (0.3742) & (0.3659) & (0.3283)\\
+\hline
+N & 3387 & 3363 & 3363 & 3363 & 8812 & 3363 & 3363 & 4045\\
+F & 21.68 & 21.08 & 21.32 & & 1281.29 & 196.98 & 209.62 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.1571 & 0.0583 & 0.0423 & 0.0457 & 0.6454 & 0.4289 & 0.2797 & 0.5012\\
+\end{comment}
+
+\newpage
+
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (10-item 1987 Basic Model)}\label{tab:wage87}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0132*** & 0.0177 & -0.0079 & -0.0084 & 0.0577*** & 0.6453*** & 0.7190*** & 0.7255***\\
+& (0.0022) & (0.0135) & (0.0133) & (0.0137) & (0.0055) & (0.0542) & (0.0228) & (0.0298)\\
+Education & 0.0488*** & 0.2601*** & 0.3012*** & 0.3004*** & n/a & n/a & n/a & n/a\\
+& (0.0051) & (0.0233) & (0.0230) & (0.0230) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0011*** & 0.0022*** & 0.0022*** & 0.0022*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0002) & (0.0002) & (0.0002) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0006*** & 0.0008*** & 0.0007*** & 0.0008*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0001) & (0.0001) & (0.0001) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0717*** & -0.0665*** & -0.0731*** & -0.0716*** & 0.2045*** & 0.5231*** & 0.1615*** & 0.1887***\\
+& (0.0115) & (0.0160) & (0.0158) & (0.0159) & (0.0363) & (0.0731) & (0.0494) & (0.0499)\\
+Age & 0.0083* & -0.0399*** & -0.0453*** & -0.0450*** & 0.1044*** & 0.1525*** & 0.1340*** & 0.1279***\\
+& (0.0048) & (0.0069) & (0.0068) & (0.0068) & (0.0094) & (0.0181) & (0.0172) & (0.0161)\\
+Male & 0.1911*** & 0.2167*** & 0.2454*** & 0.2429*** & -0.1981*** & -0.7593*** & -0.5883*** & -0.6328***\\
+& (0.0184) & (0.0224) & (0.0222) & (0.0223) & (0.0435) & (0.0928) & (0.0768) & (0.0747)\\
+Black & -0.0205 & -0.1823*** & -0.1899*** & -0.1886*** & 0.1923*** & 0.5628*** & 0.1009 & 0.1839*\\
+& (0.0265) & (0.0312) & (0.0308) & (0.0310) & (0.0622) & (0.1195) & (0.1030) & (0.0978)\\
+Married & 0.0819*** & 0.0788*** & 0.0929*** & 0.0919*** & -0.1518*** & -0.1095 & -0.2958*** & -0.2530***\\
+& (0.0185) & (0.0236) & (0.0235) & (0.0236) & (0.0473) & (0.0866) & (0.0846) & (0.0794)\\
+Both parents & 0.0104 & -0.1058*** & -0.1294*** & -0.1288*** & 0.2638*** & 0.7940*** & 0.6119*** & 0.6017***\\
+& (0.0221) & (0.0274) & (0.0273) & (0.0273) & (0.0519) & (0.1086) & (0.0923) & (0.0878)\\
+Professional parent & 0.0079 & -0.0769*** & -0.0894*** & -0.0883*** & 0.3060*** & 0.1052 & 0.2372*** & 0.2198***\\
+& (0.0207) & (0.0242) & (0.0241) & (0.0241) & (0.0482) & (0.0894) & (0.0874) & (0.0822)\\
+Children & -0.0179 & 0.0783*** & 0.0908*** & 0.0901*** & -0.2206*** & -0.4749*** & -0.3409*** & -0.3613***\\
+& (0.0120) & (0.0153) & (0.0151) & (0.0152) & (0.0265) & (0.0557) & (0.0461) & (0.0441)\\
+Siblings & -0.0092** & 0.0216*** & 0.0257*** & 0.0254*** & -0.0537*** & -0.0786*** & -0.1033*** & -0.0948***\\
+& (0.0038) & (0.0050) & (0.0050) & (0.0050) & (0.0090) & (0.0170) & (0.0160) & (0.0149)\\
+Select & -0.0795 & 1.904*** & 2.002*** & 1.919*** & -2.343*** & 2.339*** & 0.4265** & 0.6683***\\
+& (0.2508) & (0.2429) & (0.2349) & (0.2391) & (0.1381) & (0.5101) & (0.1665) & (0.2354)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.1496*** & 0.2018*** & 0.0056 & 0.0243***\\
+& (n/a) & (n/a) & (n/a) & (n/a) & 0.0089) & (0.0170) & (0.0062) & (0.0077)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0123 & -0.2722*** & -0.1437 & -0.1607*\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0490) & (0.0932) & (0.0880) & (0.0825)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 0.1898 & 0.4052 & 0.6370 & 0.5798\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.3613) & (0.6596) & (0.6406) & (0.5890)\\
+\hline
+N & 5721 & 5677 & 5677 & 5677 & 7412 & 5677 & 5677 & 6136\\
+F & 55.34 & 53.59 & 54.71 & & 356.40 & 103.90 & 339.71 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.2376 & -0.0257 & -0.1256 & -0.1231 & 0.4028 & -0.5831 & -0.8851 & -0.8663\\
+\end{comment}
+
+
+\newpage
+
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (10-item 2006 Basic Model)}\label{tab:wage06}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0143*** & 0.0761*** & 0.1077*** & 0.0029* & 0.0355*** & 0.5544*** & 0.7982*** & 0.4639***\\
+& (0.0026) & (0.0211) & (0.0205) & (0.0161) & (0.0068) & (0.0505) & (0.0307) & (0.0407)\\
+Education & 0.0847*** & 0.3347*** & 0.2998*** & 0.0986*** & n/a & n/a & n/a & n/a\\
+& (0.0063) & (0.0227) & (0.0220) & (0.0192) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0004*** & 0.0009*** & 0.0010*** & 0.0004*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0001) & (0.0001) & (0.0001) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0003*** & 0.0003*** & 0.0002*** & 0.0003*** & n/a & n/a & n/a & n/a\\
+& (3.02e-5) & (4.21e-5) & (4.08e-5) & (3.17e-5) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0760*** & -0.1157*** & -0.1095*** & 0.0623*** & 0.2806*** & 0.5309*** & 0.5318*** & 0.4420***\\
+& (0.0146) & (0.0224) & (0.0222) & (0.0182) & (0.0482) & (0.0840) & (0.0661) & (0.0672)\\
+Age & -0.0189*** & -0.0220*** & -0.0242*** & -0.0188*** & 0.0150 & -0.0150 & -0.0266 & -0.0064\\
+& (0.0052) & (0.0069) & (0.0068) & (0.0053) & (0.0126) & (0.0840) & (0.0210) & (0.0177)\\
+Male & 0.2214*** & 0.1462*** & 0.1468*** & 0.2193*** & -0.1746*** & -0.5922*** & -0.6240*** & -0.5295***\\
+& (0.0264) & (0.0354) & (0.0343) & (0.0270) & (0.0580) & (0.1032) & (0.0960) & (0.0863)\\
+Black & -0.0082 & -0.3320*** & -0.3712*** & -0.0546 & 0.2324*** & 0.1835 & -0.0176 & 0.1568\\
+& (0.0311) & (0.0506) & (0.0487) & (0.0394) & (0.0791) & (0.1343) & (0.1276) & (0.1108)\\
+Married & 0.0702*** & 0.0132 & 0.0127 & 0.0578** & 0.1217* & -0.1015 & -0.2153** & -0.0647\\
+& (0.0250) & (0.0344) & (0.0341) & (0.0263) & (0.0650) & (0.1102) & (0.1085) & (0.0916)\\
+Both parents & 0.0586** & -0.0331 & -0.0103 & 0.0567* & 0.2263*** & 0.6821*** & 0.8649*** & 0.6075***\\
+& (0.0266) & (0.0398) & (0.0394) & (0.0306) & (0.0705) & (0.1275) & (0.1193) & (0.1059)\\
+Professional parent & 0.0413 & -0.1004*** & -0.0985*** & 0.0284 & 0.3965*** & 0.2042* & 0.2992*** & 0.3168***\\
+& (0.0269) & (0.0352) & (0.0350) & (0.0273) & (0.0661) & (0.1128) & (0.1107) & (0.0941)\\
+Children & 0.0152 & -0.0147 & -0.0134 & 0.0127 & 0.0954*** & 0.1084** & 0.1165*** & 0.1083***\\
+& (0.0111) & (0.0135) & (0.0134) & (0.0104) & (0.0254) & (0.0428) & (0.0426) & (0.0359)\\
+Siblings & -0.0101** & 0.0361*** & 0.0342*** & -0.0067 & -0.0505*** & -0.0456** & -0.1046*** & -0.0614***\\
+& (0.0045) & (0.0068) & (0.0068) & (0.0054) & (0.0124) & (0.0211) & (0.0203) & (0.0175)\\
+Select & -1.226** & 3.026*** & 3.889*** & -0.6936 & -3.890*** & 1.250* & 1.819*** & -0.0186\\
+& (0.5470) & (0.7211) & (0.6646) & (0.5550) & (0.2883) & (0.7152) & (0.3539) & (0.5596)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.1757*** & 0.2439*** & 0.0587** & 0.1902***\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0124) & (0.0220) & (0.0122) & (0.0168)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0811 & -0.0050 & 0.0605 & 0.0531\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0685) & (0.1143) & (0.1121) & (0.0958)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 1.278** & -1.985 & -2.697** & -0.9924\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.5629) & (1.316) & (1.288) & (0.9050)\\
+\hline
+N & 3912 & 3886 & 3886 & 3886 & 5287 & 3886 & 3886 & 4170\\
+F & 44.98 & 36.35 & 37.68 & & 172.13 & 61.92 & 103.88 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.2891 & -0.2320 & -0.2593 & 0.2805 & 0.3137 & -0.4428 & -1.333 & -0.2120\\
+\end{comment}
+
+\newpage
+
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (10-item 1980 Revised Model)}\label{tab:wage80b}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0049 & -0.0114 & -0.0118 & -0.0361* & 0.0357*** & 0.3750*** & 0.4469*** & 0.4110***\\
+& (0.0032) & (0.0196) & (0.0212) & (0.0194) & (0.0035) & (0.0463) & (0.0196) & (0.0245)\\
+Education & 0.0197** & 0.3140*** & 0.3143*** & 0.3781*** & n/a & n/a & n/a & n/a\\
+& (0.0098) & (0.0695) & (0.0702) & (0.0688) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0005 & 0.0024*** & 0.0024*** & 0.0032*** & n/a & n/a & n/a & n/a\\
+& (0.0006) & (0.0007) & (0.0007) & (0.0007) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0019*** & 0.0021*** & 0.0021*** & 0.0017*** & n/a & n/a & n/a & n/a\\
+& (0.0004) & (0.0004) & (0.0003) & (0.0003) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0729*** & 0.0109 & 0.0058 & 0.0065 & -0.0105 & 0.1845*** & 0.0390 & 0.0201\\
+& (0.0155) & (0.0191) & (0.0185) & (0.0190) & (0.0180) & (0.0432) & (0.0367) & (0.0300)\\
+Age & 0.0771*** & -0.0782** & -0.0783** & -0.1081*** & 0.2896*** & 0.6602*** & 0.4787*** & 0.5506***\\
+& (0.0090) & (0.0341) & (0.0338) & (0.0337) & (0.0189) & (0.0568) & (0.0243) & (0.0287)\\
+Male & 0.1364*** & 0.2354*** & 0.2500*** & 0.2754*** & -0.1958*** & -0.6568*** & -0.5795*** & -0.5378***\\
+& (0.0243) & (0.0378) & (0.0372) & (0.0374) & (0.0263) & (0.0734) & (0.0601) & (0.0498)\\
+Black & -0.0434 & -0.1519*** & -0.1686*** & -0.1527*** & 0.0182 & 0.1266 & -0.1016 & -0.0740\\
+& (0.0395) & (0.0451) & (0.0431) & (0.0444) & (0.0337) & (0.0912) & (0.0870) & (0.0690)\\
+Married & 0.0852** & 0.1918*** & 0.1891*** & 0.2095*** & -0.3078*** & -0.2676*** & -0.2936*** & -0.2946***\\
+& (0.0337) & (0.0460) & (0.0449) & (0.0458) & (0.0468) & (0.0897) & (0.0887) & (0.0732)\\
+Both parents & 0.0370 & -0.0366 & -0.0418 & -0.0594* & 0.1332*** & 0.3208*** & 0.2499*** & 0.2451***\\
+& (0.0300) & (0.0359) & (0.0351) & (0.0358) & (0.0309) & (0.0762) & (0.0729) & (0.0565)\\
+Professional parent & -0.0261 & -0.0849** & -0.0856*** & -0.0935*** & 0.1051*** & 0.0981 & 0.1545** & 0.1115**\\
+& (0.0262) & (0.0328) & (0.0320) & (0.0328) & (0.0265) & (0.0687) & (0.0683) & (0.0530)\\
+Children & -0.0220 & 0.1358*** & 0.1415*** & 0.1760*** & -0.4291*** & -0.6414*** & -0.5142*** & -0.5693***\\
+& (0.0381) & (0.0464) & (0.0457) & (0.0461) & (0.0402) & (0.0786) & (0.0716) & (0.0596)\\
+Siblings & -0.0045 & 0.0174** & 0.0177*** & 0.0191*** & -0.0284*** & -0.0245* & -0.0256* & -0.0207**\\
+& (0.0055) & (0.0069) & (0.0067) & (0.0069) & (0.0056) & (0.0137) & (0.0132) & (0.0105)\\
+Locus of control & -0.0369*** & -0.0612*** & -0.0611*** & -0.0809*** & 0.0558*** & 0.3027*** & 0.3480*** & 0.3886***\\
+& (0.0123) & (0.0213) & (0.0220) & (0.0211) & (0.0413) & (0.0427) & (0.0324) & (0.0292)\\
+Select & 0.5644** & 1.596*** & 1.550*** & 1.494*** & -0.7893*** & 0.8284*** & 0.2623*** & 0.2338**\\
+& (0.2579) & (0.2780) & (0.2476) & (0.2676) & (0.0413) & (0.2221) & (0.0753) & (0.0926)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.0590*** & 0.0866*** & 0.0027 & 0.0152**\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0056) & (0.0120) & (0.0045) & (0.0062)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0032 & -0.1193* & -0.1086 & -0.0884*\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0290) & (0.0713) & (0.0677) & (0.0516)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 0.3967** & 0.3782 & 0.0425 & 0.3358\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.1656) & (0.5056) & (0.4882) & (0.3714)\\
+\hline
+N & 3366 & 3363 & 3363 & 3363 & 8749 & 3363 & 3363 & 4045\\
+F & 21.29 & 18.27 & 19.28 & & 1194.24 & 104.26 & 182.55 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.1620 & -0.0657 & -0.0686 & -0.2034 & 0.6473 & -0.0401 & -0.3203 & 0.0171\\
+\end{comment}
+
+\newpage
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (10-item 1987 Revised Model)}\label{tab:wage87b}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0128*** & 0.0092 & -0.0225 & -0.0253* & 0.0580*** & 0.7797*** & 0.8031*** & 0.8305***\\
+& (0.0023) & (0.0148) & (0.0145) & (0.0144) & (0.0055) & (0.0690) & (0.0213) & (0.0329)\\
+Education & 0.0489*** & 0.2694*** & 0.3129*** & 0.3149*** & n/a & n/a & n/a & n/a\\
+& (0.0051) & (0.0244) & (0.0239) & (0.0239) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0011*** & 0.0022*** & 0.0022*** & 0.0022*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0002) & (0.0002) & (0.0002) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0006*** & 0.0008*** & 0.0008*** & 0.0008*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0001) & (0.0001) & (0.0001) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0668*** & -0.0702*** & -0.0743*** & -0.0728*** & 0.2050*** & 0.6284*** & 0.0953* & 0.1441**\\
+& (0.0116) & (0.0162) & (0.0161) & (0.0162) & (0.0388) & (0.0870) & (0.0561) & (0.0581)\\
+Age & 0.0078 & -0.0417*** & -0.0476*** & -0.0480*** & 0.1049*** & 0.1679*** & 0.1346*** & 0.1295***\\
+& (0.0048) & (0.0070) & (0.0069) & (0.0070) & (0.0095) & (0.0209) & (0.0196) & (0.0187)\\
+Male & 0.1887*** & 0.2178*** & 0.2433*** & 0.2434*** & -0.1888*** & -0.8548*** & -0.5614*** & -0.6300***\\
+& (0.0184) & (0.0226) & (0.0224) & (0.0226) & (0.0445) & (0.1082) & (0.0868) & (0.0861)\\
+Black & -0.0228 & -0.1797*** & -0.1814*** & -0.1795*** & 0.1956*** & 0.6472*** & -0.0076 & 0.0991\\
+& (0.0267) & (0.0315) & (0.0312) & (0.0314) & (0.0613) & (0.1379) & (0.1170) & (0.1133)\\
+Married & 0.0800*** & 0.0820*** & 0.0982*** & 0.0988*** & -0.1551*** & -0.1038 & -0.3529*** & -0.3372***\\
+& (0.0186) & (0.0239) & (0.0238) & (0.0239) & (0.0479) & (0.0991) & (0.0965) & (0.09225)\\
+Both parents & 0.0109 & -0.1108*** & -0.1350*** & -0.1360*** & 0.2513*** & 0.9144*** & 0.5829*** & 0.5893***\\
+& (0.0223) & (0.0278) & (0.0277) & (0.0278) & (0.0526) & (0.1274) & (0.1046) & (0.1016)\\
+Professional parent & 0.0062 & -0.0784*** & -0.0891*** & -0.0891*** & 0.3019*** & 0.0718 & 0.2162** & 0.1963**\\
+& (0.0206) & (0.0244) & (0.0243) & (0.0244) & (0.0461) & (0.1024) & (0.0996) & (0.0955)\\
+Children & -0.0170 & 0.0817*** & 0.0939*** & 0.0938*** & -0.2166*** & -0.5347*** & -0.3054*** & -0.3372***\\
+& (0.0121) & (0.0155) & (0.0154) & (0.0155) & (0.0274) & (0.0652) & (0.0523) & (0.0510)\\
+Siblings & -0.0093** & 0.0223*** & 0.0262*** & 0.0261*** & -0.0525*** & -0.0818*** & -0.0929*** & -0.0862***\\
+& (0.0038) & (0.0051) & (0.0051) & (0.0051) & (0.0090) & (0.0195) & (0.0182) & (0.0173)\\
+Locus of control & -0.0269*** & -0.0217* & -0.0298*** & -0.0306*** & 0.0168 & 0.2056*** & 0.2097*** & 0.2423***\\
+& (0.0091) & (0.0112) & (0.0111) & (0.0112) & (0.0210) & (0.0484) & (0.0446) & (0.0436)\\
+Select & -0.0584 & 1.887*** & 1.963*** & 1.907*** & -2.375*** & 3.357*** & 0.2643* & 0.7010***\\
+& (0.2518) & (0.2450) & (0.2379) & (0.2407) & (0.1561) & (0.6281) & (0.1502) & (0.2559)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.1506*** & 0.2134*** & 0.0003 & 0.0182**\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0097) & (0.0195) & (0.0057) & (0.0082)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0108 & -0.3247*** & -0.1663* & -0.1854*\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0486) & (0.1071) & (0.1002) & (0.0958)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 0.1921 & 0.6177 & 0.8045 & 0.7139\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.2903) & (0.7548) & (0.7318) & (0.6350)\\
+\hline
+N & 5685 & 5677 & 5677 & 5677 & 7362 & 5677 & 5677 & 6136\\
+F & 54.83 & 51.13 & 51.86 & & 270.49 & 75.68 & 454.52 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.2400 & -0.0411 & -0.1651 & -0.1736 & 0.4031 & -1.0647 & -1.2210 & -1.2828\\
+\end{comment}
+
+\newpage
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (10-item 2006 Revised Model)}\label{tab:wage06b}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0139*** & 0.1078*** & 0.1737*** & 0.0039 & 0.0361*** & 0.6218*** & 0.8426*** & 0.5257***\\
+& (0.0026) & (0.0257) & (0.0241) & (0.0182) & (0.0068) & (0.0573) & (0.0308) & (0.0457)\\
+Education & 0.0849*** & 0.3180*** & 0.2311*** & 0.1148*** & n/a & n/a & n/a & n/a\\
+& (0.0063) & (0.0243) & (0.0229) & (0.0197) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0004*** & 0.0010*** & 0.0011*** & 0.0004*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0001) & (0.0001) & (0.0001) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0003*** & 0.0002*** & 0.0002*** & 0.0003*** & n/a & n/a & n/a & n/a\\
+& (3.01e-5) & (4.37e-5) & (4.27e-5) & (3.18e-5) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0693*** & -0.1117*** & -0.0809*** & 0.0531*** & 0.2972*** & 0.5638*** & 0.5431*** & 0.4889***\\
+& (0.0145) & (0.0234) & (0.0230) & (0.0184) & (0.0540) & (0.0889) & (0.0701) & (0.0726)\\
+Age & -0.0193*** & -0.0230*** & -0.0259*** & -0.0189*** & 0.0160 & -0.0114 & -0.0214 & -0.0029\\
+& (0.0053) & (0.0071) & (0.0070) & (0.0053) & (0.0127) & (0.0226) & (0.0225) & (0.0188)\\
+Male & 0.2215*** & 0.1266*** & 0.1075*** & 0.2363*** & -0.1742*** & -0.6108*** & -0.6154*** & -0.5565***\\
+& (0.0264) & (0.0374) & (0.0360) & (0.0277) & (0.0588) & (0.1100) & (0.1018) & (0.0915)\\
+Black & -0.0161 & -0.3705*** & -0.4080*** & -0.0362 & 0.2418*** & 0.1517 & -0.0545 & 0.1397\\
+& (0.0312) & (0.0546) & (0.0521) & (0.0409) & (0.0779) & (0.1434) & (0.1358) & (0.1170)\\
+Married & 0.0681*** & 0.0047 & -0.0065 & 0.0669** & 0.1233* & -0.1428 & -0.2550** & -0.0957\\
+& (0.0251) & (0.0357) & (0.0353) & (0.0266) & (0.0647) & (0.1181) & (0.1157) & (0.0971)\\
+Both parents & 0.0580** & -0.0136 & 0.0465 & 0.0386 & 0.2290*** & 0.7224*** & 0.8748*** & 0.6644***\\
+& (0.0266) & (0.0419) & (0.0412) & (0.0312) & (0.0723) & (0.1362) & (0.1266) & (0.1129)\\
+Professional parent & 0.0389 & -0.1001*** & -0.0793** & 0.0255 & 0.3903*** & 0.1846 & 0.2888** & 0.3010***\\
+& (0.0268) & (0.0363) & (0.0360) & (0.0275) & (0.0633) & (0.1202) & (0.1177) & (0.0996)\\
+Children & 0.0141 & -0.0133 & -0.0062 & 0.0109 & 0.0960*** & 0.1081** & 0.1147** & 0.1084***\\
+& (0.0111) & (0.0139) & (0.0138) & (0.0104) & (0.0264) & (0.0456) & (0.0455) & (0.0380)\\
+Siblings & -0.0100** & 0.0355*** & 0.0277*** & -0.0055 & -0.0503*** & -0.0415* & -0.0989*** & -0.0607***\\
+& (0.0045) & (0.0071) & (0.0070) & (0.0055) & (0.0119) & (0.0226) & (0.0216) & (0.0185)\\
+Locus of control & -0.0333*** & 0.0197 & 0.0381** & -0.0337*** & 0.0263 & 0.1784*** & 0.2230*** & 0.1571***\\
+& (0.0107) & (0.0177) & (0.0173) & (0.0131) & (0.0294) & (0.0547) & (0.0530) & (0.0464)\\
+Select & -1.203** & 3.773*** & 4.529*** & -1.011* & -3.812*** & 1.554** & 1.707*** & 0.4190\\
+& (0.5485) & (0.8089) & (0.7353) & (0.5944) & (0.3175) & (0.7513) & (0.3366) & (0.0464)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.1795*** & 0.2504*** & 0.0620*** & 0.1930***\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0135) & (0.0233) & (0.0122) & (0.0178)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0827 & -0.0199 & 0.0524 & 0.0561\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0677) & (0.1220) & (0.1209) & (0.1005)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 1.278*** & -2.092 & -2.557* & -1.020\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.4553) & (1.404) & (1.389) & (0.9516)\\
+\hline
+N & 3890 & 3886 & 3886 & 3886 & 5258 & 3886 & 3886 & 4170\\
+F & 44.53 & 33.39 & 33.33 & & 150.03 & 51.56 & 98.02 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.2925 & -0.3096 & -0.5036 & 0.2805 & 0.3138 & -0.6401 & -1.5136 & -0.3642\\
+\end{comment}
+
+\newpage
+
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (7-item 1980 Basic Model)}\label{tab:wage80c}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0101** & 0.0419** & 0.0253 & 0.0210 & 0.0495*** & 0.2653*** & 0.4164*** & 0.2996***\\
+& (0.0045) & (0.0202) & (0.0199) & (0.0200) & (0.0049) & (0.0415) & (0.0328) & (0.0306)\\
+Education & 0.0176* & 0.1847*** & 0.2238*** & 0.2241*** & n/a & n/a & n/a & n/a\\
+& (0.0098) & (0.0529) & (0.0522) & (0.0524) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0005 & 0.0021*** & 0.0019*** & 0.0020*** & n/a & n/a & n/a & n/a\\
+& (0.0006) & (0.0007) & (0.0006) & (0.0007) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0019*** & 0.0020*** & 0.0020*** & 0.0018*** & n/a & n/a & n/a & n/a\\
+& (0.0004) & (0.0003) & (0.0003) & (0.0003) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0813*** & 0.0242 & 0.0182 & 0.0200 & -0.0238 & 0.1217*** & 0.0629** & 0.0105\\
+& (0.0151) & (0.0176) & (0.0174) & (0.0175) & (0.0178) & (0.0326) & (0.0293) & (0.0263)\\
+Age & 0.0789*** & -0.0182 & -0.0358 & -0.0368 & 0.2847*** & 0.4788*** & 0.4615*** & 0.4449***\\
+& (0.0090) & (0.0271) & (0.0268) & (0.0270) & (0.0189) & (0.0386) & (0.0271) & (0.0266)\\
+Male & 0.1399*** & 0.1922*** & 0.2132*** & 0.2132*** & -0.1944*** & -0.4644*** & -0.4785*** & -0.3799***\\
+& (0.0244) & (0.0320) & (0.0315) & (00317) & (0.0262) & (0.0514) & (0.0478) & (0.0421)\\
+Black & -0.0531 & -0.15011*** & -0.1549*** & -0.1470*** & 0.0192 & 0.1932*** & 0.0609 & 0.0600\\
+& (0.0398) & (0.0423) & (0.0416) & (0.0419) & (0.0337) & (0.0699) & (0.0677) & (0.0597)\\
+Married & 0.0894*** & 0.1547*** & 0.1688*** & 0.1722*** & -0.3041*** & -0.3218*** & -0.3164*** & -0.4000***\\
+& (0.0337) & (0.0412) & (0.0409) & (0.0411) & (0.0466) & (0.0690) & (0.0685) & (0.0631)\\
+Both parents & 0.0337 & -0.0093 & -0.0220 & -0.0234 & 0.1344*** & 0.2501*** & 0.2539*** & 0.1957***\\
+& (0.0302) & (0.0329) & (0.0327) & (0.0329) & (0.0308) & (0.0582) & (0.0103) & (0.0489)\\
+Professional parent & -0.0219 & -0.0637** & -0.0706** & -0.0697** & 0.1036*** & 0.1185** & 0.1572*** & 0.1286***\\
+& (0.0265) & (0.0302) & (0.0300) & (0.0301) & (0.0264) & (0.0529) & (0.0525) & (0.0456)\\
+Children & -0.0194 & 0.0724* & 0.0999** & 0.1010** & -0.4217*** & -0.5497*** & -0.5412*** & -0.5373***\\
+& (0.0381) & (0.0724) & (0.0398) & (0.0400) & (0.0400) & (0.0599) & (0.0566) & (0.0520)\\
+Siblings & -0.0062 & 0.0132** & 0.0158** & 0.0152** & -0.0309*** & -0.0371*** & -0.0410*** & -0.0374***\\
+& (0.0057) & (0.0063) & (0.0063) & (0.0063) & (0.0057) & (0.0105) & (0.0103) & (0.0090)\\
+Select & 0.5717** & 1.383*** & 1.194*** & 1.139*** & -0.8006*** & 0.0077 & 0.0239 & -0.2689***\\
+& (0.2586) & (0.2518) & (0.2394) & (0.2444) & (0.0409) & (0.1419) & (0.0964) & (0.0828)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.0566*** & 0.0804*** & 0.0194*** & 0.0302***\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0055) & (0.0094) & (0.0057) & (0.0064)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0037 & -0.0328 & -0.0346 & -0.0245\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0288) & (0.0539) & (0.0528) & (0.0457)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 0.3956** & 0.4477 & 0.1609 & 0.5357\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.1661) & (0.3903) & (0.3821) & (0.3329)\\
+\hline
+N & 3387 & 3363 & 3363 & 3363 & 8812 & 3363 & 3363 & 4045\\
+F & 21.61 & 20.99 & 21.19 & & 1280.76 & 182.62 & 200.60 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.1572 & 0.0593 & 0.0330 & 0.0349 & 0.6456 & 0.3819 & 0.1780 & 0.4626\\
+\end{comment}
+
+\newpage
+
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (7-item 1987 Basic Model)}\label{tab:wage87c}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0158*** & -0.0238 & -0.1106*** & -0.1098*** & 0.0870*** & 1.025*** & 1.099*** & 1.148***\\
+& (0.0033) & (0.0231) & (0.0218) & (0.0219) & (0.0078) & (0.0858) & (0.0332) & (0.0466)\\
+Education & 0.0494*** & 0.3048*** & 0.3928*** & 0.3867*** & n/a & n/a & n/a & n/a\\
+& (0.0051) & (0.0260) & (0.0248) & (0.0249) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0011*** & 0.0022*** & 0.0023*** & 0.0023*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0002) & (0.0002) & (0.0002) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0006*** & 0.0008*** & 0.0008*** & 0.0008*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0001) & (0.0001) & (0.0001) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0728*** & -0.0674*** & -0.0757*** & -0.0707*** & 0.1993*** & 0.4740*** & 0.0889* & 0.1278**\\
+& (0.0115) & (0.0168) & (0.0165) & (0.0166) & (0.0362) & (0.0759) & (0.0519) & (0.0522)\\
+Age & 0.0081 & -0.0464*** & -0.0579*** & -0.0569*** & 0.1040*** & 0.1460*** & 0.1239*** & 0.1221***\\
+& (0.0048) & (0.0072) & (0.0070) & (0.0070) & (0.0094) & (0.0191) & (0.0183) & (0.0172)\\
+Male & 0.1927*** & 0.2292*** & 0.2711*** & 0.2685*** & -0.1902*** & -0.6897*** & -0.4889*** & -0.5638***\\
+& (0.0184) & (0.0234) & (0.0230) & (0.0231) & (0.0434) & (0.0947) & (0.0811) & (0.0784)\\
+Black & -0.0153 & -0.1726*** & -0.1864*** & -0.1805*** & 0.1959*** & 0.6218*** & 0.1444 & 0.2610**\\
+& (0.0265) & (0.0325) & (0.0318) & (0.0321) & (0.0621) & (0.1285) & (0.1098) & (0.1045)\\
+Married & 0.0836*** & 0.0893*** & 0.1105*** & 0.1094*** & -0.1484*** & -0.0479 & -0.2281** & -0.1774**\\
+& (0.0185) & (0.0247) & (0.0245) & (0.0246) & (0.0472) & (0.0930) & (0.0904) & (0.0848)\\
+Both parents & 0.0103 & -0.1300*** & -0.1816*** & -0.1780*** & 0.2652*** & 0.8348*** & 0.6287*** & 0.6338***\\
+& (0.0222) & (0.0293) & (0.0289) & (0.0290) & (0.0518) & (0.1161) & (0.0982) & (0.0936)\\
+Professional parent & 0.0085 & -0.0842*** & -0.1068*** & -0.1048*** & 0.3058*** & 0.1085 & 0.2355** & 0.2067**\\
+& (0.0207) & (0.0255) & (0.0253) & (0.0254) & (0.0481) & (0.0955) & (0.0934) & (0.0878)\\
+Children & -0.0179 & 0.0925*** & 0.1199*** & 0.1164*** & -0.2193*** & -0.4819*** & -0.3321*** & -0.3663***\\
+& (0.0120) & (0.0163) & (0.0159) & (0.0160) & (0.0265) & (0.0591) & (0.0490) & (0.0468)\\
+Siblings & -0.0095** & 0.0260*** & 0.0357*** & 0.0346*** & -0.0546*** & -0.0952*** & -0.1151*** & -0.1080***\\
+& (0.0038) & (0.0055) & (0.0054) & (0.0054) & (0.0089) & (0.0184) & (0.0170) & (0.0159)\\
+Select & -0.1133 & 1.846*** & 1.965*** & 1.834*** & -2.357*** & 2.413*** & 0.2931* & 0.7479***\\
+& (0.2511) & (0.2548) & (0.2376) & (0.2422) & (0.1369) & (0.5241) & (0.1497) & (0.2337)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.1482*** & 0.1851*** & -0.0022 & 0.0177**\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0089) & (0.0179) & (0.0055) & (0.0075)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0182 & -0.1857* & -0.0035 & -0.0527\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0490) & (0.0978) & (0.0899) & (0.0844)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 0.1715 & 0.0528 & 0.1682 & 0.2494\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.3610) & (0.7049) & (0.6562) & (0.6055)\\
+\hline
+N & 5721 & 5677 & 5677 & 5677 & 7412 & 5677 & 5677 & 6136\\
+F & 55.20 & 48.40 & 53.11 & & 357.94 & 92.10 & 380.30 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.2362 & -0.1351 & -0.5394 & -0.5152 & 0.4039 & -0.8122 & -1.0526 & -1.1441\\
+\end{comment}
+
+\newpage
+
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (7-item 2006 Basic Model)}\label{tab:wage06c}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0176*** & 0.0697** & 0.0886*** & 0.0486* & 0.0544*** & 0.8885*** & 1.214*** & 0.7685***\\
+& (0.0039) & (0.0340) & (0.0334) & (0.0259) & (0.0097) & (0.0828) & (0.0464) & (0.0646)\\
+Education & 0.0848*** & 0.3533*** & 0.3519*** & 0.0941*** & n/a & n/a & n/a & n/a\\
+& (0.0063) & (0.0238) & (0.0233) & (0.0200) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0003*** & 0.0008*** & 0.0009*** & 0.0004*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0001) & (0.0001) & (0.0001) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0003*** & 0.0003*** & 0.0003*** & 0.0003*** & n/a & n/a & n/a & n/a\\
+& (3.02e-5) & (4.13e-5) & (3.95e-5) & (3.13e-5) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0768*** & -0.1174*** & -0.1241*** & 0.0644*** & 0.2800*** & 0.5343*** & 0.5237*** & 0.4354***\\
+& (0.0146) & (0.0224) & (0.0222) & (0.0182) & (0.0482) & (0.0893) & (0.0690) & (0.0693)\\
+Age & -0.0188*** & -0.0207*** & -0.0224*** & -0.0191*** & 0.0148 & -0.0193 & -0.0316 & -0.0109\\
+& (0.0053) & (0.0069) & (0.0068) & (0.0053) & (0.0126) & (0.0225) & (0.0224) & (0.0186)\\
+Male & 0.2233*** & 0.1649*** & 0.1702*** & 0.2156*** & -0.1745*** & -0.6186*** & -0.6319*** & -0.5548***\\
+& (0.0263) & (0.0357) & (0.0346) & (0.0273) & (0.0579) & (0.1103) & (0.1019) & (0.0906)\\
+Black & -0.0026 & -0.2908*** & -0.3299*** & -0.0523 & 0.2344*** & 0.1972 & 0.0186 & 0.1565\\
+& (0.0311) & (0.0499) & (0.0481) & (0.0388) & (0.0790) & (0.1429) & (0.1353) & (0.1160)\\
+Married & 0.0721*** & 0.0249 & 0.0316 & 0.0610** & 0.1242* & -0.0415 & -0.1158 & -0.0274\\
+& (0.0251) & (0.0341) & (0.0338) & (0.0261) & (0.0650) & (0.1165) & (0.1150) & (0.0958)\\
+Both parents & 0.0586** & -0.0484 & -0.0478 & 0.0626** & 0.2299*** & 0.7649*** & 0.9478*** & 0.7006***\\
+& (0.0265) & (0.0410) & (0.0406) & (0.0316) & (0.0705) & (0.1379) & (0.1270) & (0.1129)\\
+Professional parent & 0.0417 & -0.1020*** & -0.1113*** & 0.0300 & 0.3966*** & 0.1947 & 0.3074*** & 0.3266***\\
+& (0.0269) & (0.0352) & (0.0349) & (0.0273) & (0.0660) & (0.1202) & (0.1177) & (0.0988)\\
+Children & 0.0149 & -0.0178 & -0.0206 & 0.0123 & 0.0950*** & 0.0943** & 0.0970** & 0.0992***\\
+& (0.0111) & (0.0134) & (0.0133) & (0.0103) & (0.0253) & (0.0456) & (0.0454) & (0.0378)\\
+Siblings & -0.0104** & 0.0365*** & 0.0381*** & -0.0076 & -0.0509*** & -0.0545** & -0.1210*** & -0.0704***\\
+& (0.0045) & (0.0069) & (0.0068) & (0.0055) & (0.0124) & (0.0225) & (0.0215) & (0.0184)\\
+Select & -1.315** & 2.279*** & 3.353*** & -0.6789 & -3.900*** & 1.441* & 1.699*** & 0.1558\\
+& (0.5465) & (0.7207) & (0.6694) & (0.5527) & (0.2865) & (0.7595) & (0.3374) & (0.5656)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.1749*** & 0.2347*** & 0.0345*** & 0.1739***\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0124) & (0.0231) & (0.0117) & (0.0167)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0823 & 0.0083 & 0.0980 & 0.0628\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0685) & (0.1216) & (0.1177) & (0.1009)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 1.272** & -2.291 & -2.865** & -1.207\\
+& (n/a) & (n/a) & (n/a) & (n/a) & 0.5626) & (1.405) & (1.355) & (0.9545)\\
+\hline
+N & 3912 & 3886 & 3886 & 3886 & 5287 & 3886 & 3886 & 4170\\
+F & 44.69 & 36.23 & 38.92 & & 172.54 & 55.20 & 102.72 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.2879 & -0.2271 & -0.2629 & 0.2738 & 0.3142 & -0.6374 & -1.5467 & -0.3941\\
+\end{comment}
+
+\newpage
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (7-item 1980 Revised Model)}\label{tab:wage80d}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0077* & -0.0566 & -0.1192*** & -0.1353*** & 0.0519*** & 0.5725*** & 0.6625*** & 0.6171***\\
+& (0.0046) & (0.0369) & (0.0390) & (0.0351) & (0.0050) & (0.0731) & (0.0277) & (0.0379)\\
+Education & 0.0195** & 0.3951*** & 0.5056*** & 0.5421*** & n/a & n/a & n/a & n/a\\
+& (0.0098) & (0.0861) & (0.0858) & (0.0824) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0005 & 0.0024*** & 0.0028*** & 0.0039*** & n/a & n/a & n/a & n/a\\
+& (0.0006) & (0.0008) & (0.0007) & (0.0007) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0019*** & 0.0021*** & 0.0021*** & 0.0015*** & n/a & n/a & n/a & n/a\\
+& (0.0004) & (0.0004) & (0.0003) & (0.0003) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0729*** & 0.0079 & 0.0005 & -0.0017 & -0.0128 & 0.1800*** & 0.0369 & 0.0178\\
+& (0.0154) & (0.0206) & (0.0197) & (0.0203) & (0.0179) & (0.0445) & (0.0376) & (0.0301)\\
+Age & 0.0773*** & -0.1154*** & -0.1644*** & -0.1829*** & 0.2872*** & 0.6616*** & 0.4808*** & 0.5563***\\
+& (0.0090) & (0.0420) & (0.0412) & (0.0402) & (0.0188) & (0.0588) & (0.0237) & (0.0292)\\
+Male & 0.1370*** & 0.2617*** & 0.3213*** & 0.3327*** & -0.1898*** & -0.5944*** & -0.5038*** & -0.4627***\\
+& (0.0243) & (0.0417) & (0.0406) & (0.0405) & (0.0262) & (0.0716) & (0.0609) & (0.0485)\\
+Black & -0.0436 & -0.1485*** & -0.1596*** & -0.1469*** & 0.0226 & 0.1253 & -0.0884 & -0.0562\\
+& (0.0395) & (0.0482) & (0.0456) & (0.0470) & (0.0337) & (0.0941) & (0.0895) & (0.0691)\\
+Married & 0.0857** & 0.2129*** & 0.2410*** & 0.2522*** & -0.3050*** & -0.2419*** & -0.2598*** & -0.2576***\\
+& (0.0336) & (0.0500) & (0.0485) & (0.0494) & (0.0467) & (0.0931) & (0.0915) & (0.0738)\\
+Both parents & 0.0371 & -0.0539 & -0.0834** & -0.0986** & 0.1317*** & 0.3261*** & 0.2543*** & 0.2508***\\
+& (0.0301) & (0.0397) & (0.0387) & (0.0393) & (0.0308) & (0.0788) & (0.0751) & (0.0568)\\
+Professional parent & -0.0261 & -0.0975** & -0.1152*** & -0.1180*** & 0.1065*** & 0.1079 & 0.1562** & 0.1352**\\
+& (0.0262) & (0.0358) & (0.0348) & (0.0355) & (0.0265) & (0.0709) & (0.0704) & (0.0531)\\
+Children & -0.0225 & 0.1755*** & 0.2363*** & 0.2646*** & -0.4289*** & -0.6718*** & -0.5473*** & -0.6128***\\
+& (0.0380) & (0.0548) & (0.0537) & (0.0534) & (0.0401) & (0.0824) & (0.0737) & (0.0603)\\
+Siblings & -0.0045 & 0.0197*** & 0.0227*** & 0.0237*** & -0.0289*** & -0.0242* & -0.0228* & -0.0241**\\
+& (0.0055) & (0.0075) & (0.0072) & (0.0074) & (0.0056) & (0.0142) & (0.0135) & (0.0105)\\
+Locus of control & -0.0373*** & -0.0794*** & -0.1085*** & -0.1167*** & 0.0513*** & 0.2638*** & 0.2970*** & 0.2880***\\
+& (0.0123) & (0.0232) & (0.0237) & (0.0225) & (0.0122) & (0.0407) & (0.0135) & (0.0278)\\
+Select & 0.5681** & 1.702*** & 1.769*** & 1.590*** & -0.7985*** & 0.7799*** & 0.1972*** & 0.2011**\\
+& (0.2574) & (0.3019) & (0.2624) & (0.2808) & (0.0409) & (0.2243) & (0.0673) & (0.0923)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.0577*** & 0.0698*** & -0.0040 & 0.0021\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0055) & (0.0127) & (0.0039) & (0.0060)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0072 & -0.0767 & -0.0414 & -0.0282\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0289) & (0.0725) & (0.0660) & (0.0490)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 0.3970** & 0.2160 & -0.3726 & 0.0549\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.1646) & (0.5237) & (0.4752) & (0.3530)\\
+\hline
+N & 3366 & 3363 & 3363 & 3363 & 8479 & 3363 & 3363 & 4045\\
+F & 21.24 & 16.00 & 17.77 & & 1193.38 & 97.91 & 193.36 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.1621 & -0.2226 & -0.5593 & -0.6958 & 0.6474 & -0.1074 & -0.3576 & -0.0373\\
+\end{comment}
+
+
+\newpage
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (7-item 1987 Revised Model)}\label{tab:wage87d}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0151*** & -0.0500* & -0.1585*** & -0.1567*** & 0.0877*** & 1.230*** & 1.283*** & 1.318***\\
+& (0.0033) & (0.0262) & (0.0243) & (0.0239) & (0.0079) & (0.1092) & (0.0350) & (0.0524)\\
+Education & 0.0495*** & 0.3254*** & 0.4171*** & 0.4106*** & n/a & n/a & n/a & n/a \\
+& (0.0051) & (0.0283) & (0.0263) & (0.0263) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0011*** & 0.0023*** & 0.0023*** & 0.0023*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0002) & (0.0002) & (0.0002) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0006*** & 0.0008*** & 0.0008*** & 0.0008*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0001) & (0.0001) & (0.0001) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0678*** & -0.0726*** & -0.0739*** & -0.0684*** & 0.1997*** & 0.5688*** & 0.0185 & 0.0814\\
+& (0.0117) & (0.0174) & (0.0170) & (0.0171) & (0.0387) & (0.0898) & (0.0600) & (0.0608)\\
+Age & 0.0076 & -0.0497*** & -0.0615*** & -0.0609*** & 0.1045*** & 0.1598*** & 0.1240*** & 0.1234***\\
+& (0.0048) & (0.0076) & (0.0072) & (0.0073) & (0.0095) & (0.0221) & (0.0210) & (0.0200)\\
+Male & 0.1903*** & 0.2311*** & 0.2718*** & 0.2717*** & -0.1807*** & -0.7656*** & -0.4722*** & -0.5549***\\
+& (0.0184) & (0.0242) & (0.0237) & (0.0239) & (0.0443) & (0.1101) & (0.0927) & (0.0903)\\
+Black & -0.0178 & -0.1703*** & -0.1649*** & -0.1687*** & 0.1995*** & 0.7158*** & -0.0690 & 0.1951\\
+& (0.0267) & (0.0336) & (0.0328) & (0.0331) & (0.0613) & (0.1492) & (0.1237) & (0.1208)\\
+Married & 0.0818*** & 0.0944*** & 0.1205*** & 0.1203*** & -0.1515*** & -0.0300 & -0.2779*** & -0.2180**\\
+& (0.0186) & (0.0256) & (0.0253) & (0.0254) & (0.0479) & (0.1068) & (0.1036) & (0.0983)\\
+Both parents & 0.0109 & -0.1412*** & -0.1951*** & -0.1908*** & 0.2527*** & 0.9586*** & 0.6265*** & 0.6312***\\
+& (0.0223) & (0.0307) & (0.0300) & (0.0301) & (0.0525) & (0.1365) & (0.1123) & (0.1081)\\
+Professional parent & 0.0068 & -0.0876*** & -0.1052*** & -0.1066*** & 0.3016*** & 0.0774 & 0.1734 & 0.1765*\\
+& (0.0207) & (0.0263) & (0.0261) & (0.0263) & (0.0460) & (0.1096) & (0.1068) & (0.1017)\\
+Children & -0.0171 & 0.0997*** & 0.1284*** & 0.1215*** & -0.2155*** & -0.5413*** & -0.3328*** & -0.3450***\\
+& (0.0121) & (0.0171) & (0.0166) & (0.0167) & (0.0273) & (0.0694) & (0.0557) & (0.0541)\\
+Siblings & -0.0096** & 0.0281*** & 0.0288*** & 0.0360*** & -0.0534*** & -0.1015*** & -0.0072 & -0.1001***\\
+& (0.0038) & (0.0057) & (0.0053) & (0.0056) & (0.0090) & (0.0212) & (0.0047) & (0.0184)\\
+Locus of control & -0.0277*** & -0.0333*** & -0.0525*** & -0.0521*** & 0.0167 & 0.2161*** & 0.2275*** & 0.2522***\\
+& (0.0091) & (0.0122) & (0.0120) & (0.0121) & (0.0210) & (0.0518) & (0.0480) & (0.0463)\\
+Select & -0.0917 & 1.820*** & 1.907*** & 1.785*** & -2.388*** & 3.404*** & 0.2945* & 0.8400***\\
+& (0.2521) & (0.2633) & (0.2419) & (0.2441) & (0.1549) & (0.6443) & (0.1556) & (0.2591)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.1492*** & 0.1932*** & -0.0001 & 0.0158*\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0096) & (0.0205) & (0.0057) & (0.0081)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0166 & -0.2183* & 0.0114 & -0.0550\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0486) & (0.1124) & (0.1013) & (0.0962)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 0.1738 & 0.1979 & 0.3041 & 0.2890\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.2908) & (0.8089) & (0.7394) & (0.6911)\\
+\hline
+N & 5685 & 5677 & 5677 & 5677 & 7362 & 5677 & 5677 & 6136\\
+F & 54.62 & 44.09 & 49.44 & & 272.92 & 66.65 & 473.73 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.2386 & -0.2104 & -0.7662 & -0.7345 & 0.4042 & -1.3825 & -1.6180 & -1.6638\\
+\end{comment}
+
+\newpage
+\begin{sidewaystable}
+\small
+\caption{\mdseries{Direct  and Indirect Effect of Self-esteem on Wages (7-item 2006 Revised Model)}\label{tab:wage06d}}
+\vspace{2pt}
+\centering\begin{tabular}{lc|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{4}{|c|}{Wage Equation} & \multicolumn{4}{|c}{Education Equation}\\
+\hline
+& \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM} & \prbf{OLS} & \prbf{2SLS} & \prbf{3SLS} & \prbf{3SLS GMM}\\
+\hline
+Self-esteem & 0.0169*** & 0.0983** & 0.1595*** & 0.0058 & 0.0549*** & 0.9836*** & 1.275*** & 0.8601***\\
+& (0.0039) & (0.0401) & (0.0392) & (0.0292) & (0.0098) & (0.0932) & (0.0462) & (0.0720)\\
+Education & 0.0851*** & 0.3420*** & 0.3011*** & 0.1148*** & n/a & n/a & n/a & n/a\\
+& (0.0063) & (0.0251) & (0.0244) & (0.0207) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Experience & 0.0003*** & 0.0008*** & 0.0010*** & 0.0004*** & n/a & n/a & n/a & n/a\\
+& (0.0001) & (0.0001) & (0.0001) & (0.0001) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Tenure & 0.0003*** & 0.0003*** & 0.0002*** & 0.0003*** & n/a & n/a & n/a & n/a\\
+& (3.05e-5) & (4.17e-5) & (4.07e-5) & (3.12e-5) & (n/a) & (n/a) & (n/a) & (n/a)\\
+Intelligence & 0.0698*** & -0.1159*** & -0.1048*** & 0.0535*** & 0.2963*** & 0.5639*** & 0.5343*** & 0.4782***\\
+& (0.0145) & (0.0229) & (0.0226) & (0.0185) & (0.0539) & (0.0943) & (0.0733) & (0.0750)\\
+Age & -0.0193*** & -0.0216*** & -0.0242*** & -0.0190*** & 0.0158 & -0.0162 & -0.0272 & -0.0078\\
+& (0.0053) & (0.0070) & (0.0069) & (0.0053) & (0.0127) & (0.0240) & (0.0239) & (0.0199)\\
+Male & 0.2233*** & 0.1529*** & 0.1399*** & 0.2350*** & -0.1741*** & -0.6359*** & -0.6246*** & -0.5797***\\
+& (0.0263) & (0.0369) & (0.0358) & (0.0280) & (0.0587) & (0.1174) & (0.1080) & (0.0964)\\
+Black & -0.0106 & -0.3117*** & -0.3528*** & -0.0355 & 0.2440*** & 0.1704 & -0.0119 & 0.1411\\
+& (0.0311) & (0.0523) & (0.0504) & (0.0401) & (0.0779) & (0.1522) & (0.1437) & (0.1231)\\
+Married & 0.0701*** & 0.0223 & 0.0247 & 0.0675** & 0.1261* & -0.0726 & -0.1463 & -0.0519\\
+& (0.0251) & (0.0344) & (0.0341) & (0.0263) & (0.0647) & (0.1243) & (0.1224) & (0.1019)\\
+Both parents & 0.0579** & -0.0348 & 0.0247 & 0.0388 & 0.2324*** & 0.8080*** & 0.9615*** & 0.7624***\\
+& (0.0266) & (0.0424) & (0.0420) & (0.0324) & (0.0723) & (0.1742) & (0.1347) & (0.1210)\\
+Professional parent & 0.0394 & -0.1013*** & -0.0970*** & 0.0256 & 0.3909*** & 0.1773 & 0.2996** & 0.3137***\\
+& (0.0269) & (0.0354) & (0.0352) & (0.0275) & (0.0633) & (0.1278) & (0.1251) & (0.1051)\\
+Children & 0.0138 & -0.0174 & -0.0166 & 0.0108 & 0.0957*** & 0.0925* & 0.0946* & 0.0980**\\
+& (0.0112) & (0.0135) & (0.0134) & (0.0104) & (0.0263) & (0.0485) & (0.0484) & (0.0402)\\
+Siblings & -0.0102** & 0.0358*** & 0.0326*** & -0.0056 & -0.0507*** & -0.0517** & -0.1172*** & -0.0707***\\
+& (0.0045) & (0.0069) & (0.0069) & (0.0055) & (0.0119) & (0.0239) & (0.0228) & (0.0195)\\
+Locus of control & -0.0345*** & 0.0046 & 0.0153 & -0.0339*** & 0.0255 & 0.1705*** & 0.2007*** & 0.1586***\\
+& (0.0107) & (0.0171) & (0.0169) & (0.0130) & (0.0294) & (0.0579) & (0.0561) & (0.0487)\\
+Select & -1.291** & 2.699*** & 3.827*** & -0.9957* & -3.824*** & 1.702** & 1.595*** & 0.5424\\
+& (0.5480) & (0.7865) & (0.7389) & (0.5908) & (0.3152) & (0.7958) & (0.3205) & (0.6075)\\
+Parents' education & n/a & n/a & n/a & n/a & 0.1787*** & 0.2391*** & 0.0353*** & 0.1744***\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0135) & (0.0244) & (0.0116) & (0.0177)\\
+Urban childhood & n/a & n/a & n/a & n/a & 0.0839 & -0.0035 & 0.0897 & 0.0711\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.0677) & (0.1296) & (0.1277) & (0.1062)\\
+Foreign childhood & n/a & n/a & n/a & n/a & 1.273*** & -2.405 & -2.903** & -1.220\\
+& (n/a) & (n/a) & (n/a) & (n/a) & (0.4546) & (1.497) & (1.469) & (1.008)\\
+\hline
+N & 3890 & 3886 & 3886 & 3886 & 5258 & 3886 & 3886 & 4170\\
+F & 44.19 & 34.84 & 35.52 & & 150.45 & 46.05 & 98.21 & \\
+\hline
+\hline
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+*p-value<0.10, **p-value<0.05, ***p-value<0.01}\\
+\end{tabular}
+\begin{tabular}{p{6.25in}}\footnotesize{
+Note: Regional and Industry control coefficients from wage equation are omitted from table}\\
+\end{tabular}
+\end{sidewaystable}
+
+\begin{comment}R-sq & 0.2912 & -0.2425 & -0.2962 & 0.2803 & 0.3143 & -0.8560 & -1.7323 & -0.5777\\
+\end{comment}
+
+\newpage
+\chapter*{Sources Consulted}
+\addcontentsline{toc}{chapter}{Sources Consulted}
+\begin{singlespace}
+\nocite{*}
+\bibliographystyle{econometrica}
+\bibliography{sources}
+\end{singlespace}
+
+\end{document} 
