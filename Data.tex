@@ -1,0 +1,196 @@
+\documentclass[12pt,a4paper,english,fleqn]{article}
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{2}
+\usepackage{setspace}
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{plainnat}
+\usepackage{babel}
+
+\renewcommand\headrulewidth{0pt}
+\renewcommand\headheight{17pt}
+
+% Caption formatting
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+
+
+% Reduce font size for section
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}
+{-5ex \@plus -1ex \@minus -.2ex}{2.3ex \@plus.2ex}{\normalfont\large\bf}}
+
+%Reduce font size for subsection
+\renewcommand\subsection{\@startsection{subsection}{2}
+{\z@}{-3.25ex\@plus -1ex \@minus -.2ex}{1.5ex \@plus .2ex}{\normalfont\bf}}
+
+
+% Enforce proper line breaks and avoid widows and orphans
+% \tolerance 1414
+% \hbadness 1414
+% \emergencystretch 1.5em
+% \hfuzz 0.3pt
+% \widowpenalty = 10000
+% \clubpenalty=10000
+% \vfuzz \hfuzz
+% \raggedbottom
+
+%Set date to empty
+\date{02/24/16}
+
+% Format footnotes
+
+% Footnote formatting
+\usepackage[hang]{footmisc}
+\renewcommand{\hangfootparindent}{1em}
+\renewcommand{\hangfootparskip}{0em}
+\renewcommand{\footnotemargin}{0.00001pt}
+\def\footnotelayout{\hspace{1em}}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Place your own additions to the preable HERE, that is, BEFORE the following
+% call to hyperref
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Hyperlink settings for linkcolors and initial view
+\usepackage[%
+colorlinks=true,%
+linkcolor=black,%
+citecolor=black,%
+urlcolor=EconomicsDarkBlue,%
+pdfstartview=FitH,%
+pdfview=FitH,%
+pdfpagemode=UseNone]{hyperref}
+
+%Define font for hyperlinks
+\def\UrlFont{\normalfont}
+
+% Some fine-tuning of layout
+%\usepackage{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Put your additions to the preable above the call to hyperref, not here, unless you
+% want to modify hyperref settings, as is the case with the precvious two commands
+
+% \@ifundefined{showcaptionsetup}{}{%
+%  \PassOptionsToPackage{caption=false}{subfig}}
+% \usepackage{subfig}
+% \AtBeginDocument{
+%   \def\labelitemi{\tiny\(\bullet\)}
+% }
+
+% \makeatother
+
+\begin{document}
+
+\title{Here is the Title of Your Paper}
+
+
+\author{Alan Yeung%
+\thanks{Give your affiliation and thanks here.%
+}.}
+\maketitle
+\begin{abstract}
+\noindent Here comes your abstract.
+
+This is a template for documents prepared with \LaTeX{} for the journal
+Economics-The Open Access, Open Assessment E-Journal (www.economics-ejournal.org).
+
+You find further instructions in the Introduction. Please read them.
+
+\noindent \medskip{}
+
+
+\noindent \emph{Keywords: }Insert the keywords here, separated by
+commas.
+
+\noindent \emph{Journal of Economic Literature Classification: }Insert
+the classification numbers, such as \ J7, B54,\emph{ }etc. here\emph{.}
+\end{abstract}
+\newpage{}
+
+\doublespacing
+
+\section{Data}
+
+We use data from a selective medium sized liberal arts college in the mid-west, henceforth referred to as the institution, for which we have data on 5 cohorts (2011-2015). Classroom level data is used in our regressions as it has been shown to generate stronger results than other group level measures, as discussed by \citet{burke2013classroom}. Additionally, we use student point bidding data from the years in our selection model in an attempt to correct for any selection bias that may exist. 
+\subsection{Classroom Data}
+
+We choose to use only data on the first class taken by first year students in order to mitigate selection bias. First year students must select their first course before the semester begins using a point bidding system. Students are accepted into the institution from a variety of areas and backgrounds, and it is very unlikely that students were able to select courses based on any previous relationships. This reduces the likelihood of selection bias effecting our model. In addition, first year students choose courses for a variety of reasons, and these reasons add an element of randomness to the course selection, which also helps to mitigate selection bias. 
+
+The classroom level data on first year students in their first class at the institution is primarily used in the second stage (primary) regression.\footnote{Some classroom level data was also used in the first stage regression. See Point Data for details.} Grade is the primary outcome of interest, and is the grade received by a student after taking the course. Courses are graded on a four point scale, and there are eleven possible grades ranging from an ``A'' (4.0) to ``F'' (0.0).\footnote{The possible grades are A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D+ = 1.3, D = 1.0, F = 0.0} As a measure for student ability we follow the literature and use a proxy measure developed on data prior to college enrollment, Academic Rating. The Academic Rating is a number assigned to all students at the institution. It is a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. As suggested by the literature these variables are all common (and ``good'') indicators of college academic performance. We used the Academic Rating variable to create our peer measure variables PctTopX, PctBotX, and PctMidY. PctTopX represents the proportion of students in the top X percent of the sample based on academic rating. For instance, PctTop5 represents the proportion of students in the class that are in the top five percent of the sample based on Academic Rating. PctBotX is defined similarly for the bottom X percentage in terms of Academic Rating. PctMidY is simply the proportion of students in a class that are not in the top X percent or bottom X percent of the sample in terms of Academic Rating. The remaining variables, Minority, Female, In-State, International, Needy, Class Size, Underrepresented Minority, Year, Division, and Professor, were used as control variables in the regression. 
+
+\subsection{Points Data}
+
+At this institution a bidding system is used to ration classes. Students are allotted twenty points and must rank eight classes in terms of their preferences. After classes are ranked students then must bid a number between zero and twenty (inclusive) points per class on their list. Students with the highest number of points bid per class are allotted seats, and ties are broken randomly. If a student does not make it into any class on his or her preference list, then a class is chosen at random. 
+
+In an attempt to further control for selection bias we use this ranking list and point data in the first stage of our selection model. The dependent variable in the first stage regression is Ranking, a number between one and eight specifying the student's preference for the course (where one is a high preference and eight is a low preference). Demand, the total number of points bid on a course divided by the number of bidders, is an independent variable we created specifically for the first stage regression. We used the remaining variables in the first stage regression, Minority, Female, In-State, International, Needy, Academic Rating, Underrepresented Minority, and Subject as control variables. 
+\subsection{Summary Statistics}
+
+The descriptive statistics for the non-dummy variables are given below in Table 2.1.4 The outcome of interest, Grade, has a mean of 3.14 on a 4 point scale and a standard deviation of 0.855. The student ability measure (Academic Rating) ranges from a minimum of 18 to a maximum of 65, and has a mean of 51.12. On average 4.68 points were bid on a class, with the minimum demand being 0.84 points and the maximum being 14.12 points. PctTop5 has a minimum value of 0 and maximum value of 0.44, while PctBot5 has a minimum value of 0 and maximum value of 0.53. Finally, our dataset has an average class size of 12 with a standard deviation of 3. 
+
+It may be valuable to note that several studies suggest that smaller class sizes have a positive impact on average student achievement (measured by grades and test scores). 5 The primary reasoning for the inverse relationship between achievement and class size is that students have more quality time to interact with teachers and peers as class size decreases. As this institution has relatively small class sizes, we may expect to find magnified peer effects. 
+
+
+%\newpage{}
+
+\medskip
+
+\bibliography{references}
+
+%\begin{thebibliography}{99}
+
+% \bibitem{Foster06}
+% Foster, G. (2006). It's not your peers, and it's not your friends: Some progress toward understanding the educational peer effect mechanism. \emph{Journal of Public Economics}, 90(8-9), 1455-1475.
+
+% \bibitem{Mcewan06}
+% McEwan, P., \& Soderberg, K. (2006). Roommate effects on grades: Evidence from first-year housing assignments. \emph{Research in Higher Education}, 47(3), 347-370.
+% \bibitem{Carman12}
+% Carman, K. G., \& Zhang, L. (2012). Classroom Peer Effects and Academic Achievement: Evidence from a Chinese Middle School. \emph{China Economic Review}, 23(2), 223-237. doi:http://dx.doi.org/10.1016/j.chieco.2011.10.004
+% \bibitem{Kang07}
+% Kang, C. (2007). Classroom Peer Effects and Academic Achievement: Quasi-randomization Evidence from South Korea. \emph{Journal Of Urban Economics}, 61(3), 458-495. doi:http://dx.doi.org/10.1016/j.jue.2006.07.006
+% \bibitem{Betts99}
+% Betts, J. R., \& Morell, D. (1999). The Determinants of Undergraduate Grade Point Average: The Relative Importance of Family Background, High School Resources, and Peer Group Effects. \emph{Journal Of Human Resources}, 34(2), 268-293.
+% \bibitem{Dooley12}
+% Dooley, M. D., Payne, A. A., \& Robb, A. L. (2012). Persistence and Academic Success in University. \emph{Canadian Public Policy}, 38(3), 315-339.
+% \bibitem{Diette15}
+% Diette, T. M., \& Raghav, M. (2015). Class Size Matters: Heterogeneous Effects of Larger Classes on College Student Learning.\emph{Eastern Economic Journal},41(2), 273-283.
+% \bibitem{kokkelenberg08}
+% Kokkelenberg, E. C., Dillon, M., \& Christy, S. M. (2008). The Effects of Class Size on Student Grades at a Public University.\emph{Economics Of Education Review},27(2), 221-233. doi:http://dx.doi.org/10.1016/j.econedurev.2006.09.011
+% \bibitem{Greene}
+% Greene, W. H. (2002). LIMDEP Version 8.0 Econometric Modeling Guide, vol. 2. Plainview, NY: Econometric Software.
+% \bibitem{Kang07}
+% Kang, C. (2007). Classroom Peer Effects and Academic Achievement: Quasi-randomization Evidence from South Korea.\emph{Journal Of Urban Economics},61(3), 458-495. doi:http://dx.doi.org/10.1016/j.jue.2006.07.006
+% \bibitem{Carman12}
+% Carman, K. G., \& Zhang, L. (2012). Classroom Peer Effects and Academic Achievement: Evidence from a Chinese Middle School.\emph{China Economic Review},23(2), 223-237. doi:http://dx.doi.org/10.1016/j.chieco.2011.10.004
+% \bibitem{Burke13}
+% Burke, M. A., \& Sass, T. R. (2013). Classroom Peer Effects and Student Achievement. \emph{Journal Of Labor Economics},31(1), 51-82.
+% \bibitem{Lavy08}
+% Lavy, V., Paserman, M. D., \& Schlosser, A. (2012). Inside the Black Box of Ability Peer Effects: Evidence from Variation in the Proportion of Low Achievers in the Classroom. \emph{Economic Journal}, 122(559), 208-237.
+% \bibitem{Lavy12}
+% Lavy, V., Silva, O., \& Weinhardt, F. (2012). The Good, the Bad, and the Average: Evidence on Ability Peer Effects in Schools. \emph{Journal Of Labor Economics},30(2), 367-414.
+% \bibitem{Tversky91}
+% Tversky, A., \& Kahneman, D. (1991). Loss Aversion in Riskless Choice: A Reference-Dependent Model. \emph{Quarterly Journal Of Economics},106(4), 1039-1061.
+% \bibitem{Shalev02}
+% Shalev, J. (2002). Loss Aversion and Bargaining. \emph{Theory And Decision},52(3), 201-232.
+% \bibitem{Goette04}
+% Goette, L., Huffman, D., \& Fehr, E. (2004). Loss Aversion and Labor Supply. \emph{Journal Of The European Economic Association},2(2-3), 216-228.
+% \bibitem{Griffith14}
+% Griffith, A. L., \& Rask, K. N. (2014). Peer Effects in Higher Education: A Look at Heterogeneous Impacts. \emph{Economics Of Education Review},3965-77. doi:http://dx.doi.org/10.1016/j.econedurev.2014.01.003
+% \bibitem{Zimmerman03}
+% Zimmerman, D. J. (2003). Peer Effects in Academic Outcomes: Evidence from a Natural Experiment. \emph{Review Of Economics And Statistics}, 85(1), 9-23.
+% \bibitem{Sacerdote01}
+% Sacerdote, B. (2001). Peer Effects with Random Assignment: Results for Dartmouth Roommates. \emph{Quarterly Journal Of Economics}, 116(2), 681-704.
+% \bibitem{Heckman79}
+% Heckman, J. J. (1979). Sample Selection Bias as a Specification Error. \emph{Econometrica},47(1), 153-161.
+
+% \end{thebibliography}
+
+\end{document}
