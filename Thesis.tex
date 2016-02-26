@@ -13,6 +13,7 @@
 \usepackage{babel}
 \usepackage{rotating}
 \usepackage{nameref}
+\usepackage{amsmath}
 \usepackage{chngcntr}
 \counterwithin{table}{section}
 
@@ -345,8 +346,73 @@ N & 226 & & 292 & & 290 & & 285 & & 319\\
 \end{sidewaystable}
 \newpage{}
 \section{Empirical Methodology}\label{methods}
+
+In an effort to correct for selection bias we use a two stage selection model, similar to the one described in \citet{heckman1979sample}. Our two stage selection model uses an ordered probit model in the first stage and an OLS model in the second stage. From the first stage ordered probit model we take the calculated inverse mills ratios and use them as a control variable in the second stage regressions. The inverse mills ratios are calculated estimates, that when used in the second stage regression, help to control for selection bias.\footnote{For more information see \citet{greene2002limdep}}
+
+For the first stage regression we use an ordered probit model, defined as follows:
+
+\setlength{\belowdisplayskip}{1pt} \setlength{\belowdisplayshortskip}{1pt}
+\setlength{\abovedisplayskip}{1pt} \setlength{\abovedisplayshortskip}{1pt}
+
+\begin{equation}\label{eq:1}
+R_{i}^{*} = \alpha_{1} D_{i} + \overrightarrow{\alpha} \overrightarrow{\omega} + \epsilon_{i}
+\end{equation}
+
+\begin{equation}\label{eq:2}
+R_{i} = 
+\begin{cases}
+  1 \ \ if \ \ - \infty < R_{i}^{*} \leq \mu_{1} \\
+  \vdots \\
+  j \ \ if \ \ \mu_{j} < R_{i}^{*} < \infty
+\end{cases}
+\end{equation}
+
+Where $D_{i}$ is the demand for the student's selected class, $\overrightarrow{\omega}$ is a vector of control variables\footnote{Specifically the variables include Minority, Female, InState, Intl, Needy, AcadRating, URM (Underrepresented Minority), and Subject. See \tablelabel{tab:def1} and \tablelabel{tab:def2} for definitions.}, and $\epsilon_{i}$ is the error term. 
+In \eqref{eq:2} we see that the unobserved selection variable $R_{i}^{*}$ corresponds to the observed $R_{i}$ through $\mu$, a vector of unknown cutoffs. 
+The variable $j$ represents the number of selection categories there are, where in any of our regressions $j$ is at least two and at most four. 
+For example, if $j$ is equal to two, then $R_{i}$ equal to one represents those students who selected into their first choice class and $R_{i}$ equal to two represents those students who did not select into their first choice class (instead selecting into their second choice, third choice, etc.). 
+The ordered probit model ultimately estimates the probability that $R_{i}$ is equal to $j$ using $R_{i}^{*}$, that is, 
+
+\setlength{\belowdisplayskip}{5pt} \setlength{\belowdisplayshortskip}{1pt}
+\setlength{\abovedisplayskip}{-4pt} \setlength{\abovedisplayshortskip}{1pt}
+
+\begin{equation}\label{eq:3}
+Pr(R_{i} = j) \ = \ Pr(\mu_{j-1} < R_{i}^{*} \leq \mu_{j})
+\end{equation}
+
+\noindent Once we calculate the first stage ordered probit, we use the inverse mills ratios in the second stage OLS regression.
+
+We use an OLS regression for our second stage model, that is as follows:
+
+\begin{equation}\label{eq:4}
+G_{i} = \beta_{0} + \beta_{1} Ability_{i} + \beta_{2} Ability_{i}^{CM1} + \beta_{3} Ability_{i}^{CM2} + \beta_{4} \lambda_{i} + \overrightarrow{\beta} \overrightarrow{z} + \epsilon_{i}
+\end{equation}
+
+Where $G_{i}$ is the grade received by student i in their first course at the institution, $Ability_{i}$ is a proxy for the student's academic ability (Academic Rating)\footnote{For more information see \sectlabel{data}}, $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are classmate ability measures, $\lambda_{i}$ is the calculated inverse mills ratio for student $i$ (calculated in the first stage), $\overrightarrow{z}$ is a vector of control variables\footnote{Control variables included Minority, Female, InState, International, Needy, Class Size, URM, Year, Division, and Professor. See \tablelabel{tab:def1} and \tablelabel{tab:def2} for definitions.}, and $\epsilon_{i}$ is the error term. 
+$Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are our peer measures and are defined as one of the following, the proportion of high achieving, middle achieving, or low achieving students in a class4\footnote{Unfortunately due to data limitations only the proportion of high achievers and low achievers in a class was used for our peer measures, for more details see \sectlabel{results}.}(as defined by cutoffs in academic rating), and $Ability_{i}^{CM1}$ is not the same measure as  $Ability_{i}^{CM2}$. 
+Thus $\beta_{2}$ and $\beta_{3}$ are the primary coefficients of interest, as they estimate the impact of the classmate abilities variables (our peer measures) on a student's grade. 
+The OLS regression is run on the subset of students that are not part of the peer measures. 
+For example, if $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ were defined as the proportion of high achievers in a class and the proportion of low achievers in a class respectively, then the model would be run on the middle achievers. 
+Furthermore, the calculation of different inverse mills ratios for each of the possible selection categories makes it necessary for a separate regression to be run on each of the students who selected into a particular selection category.\footnote{This is why there are Grade1, Grade2, etc. categories in the regressions seen in \sectlabel{results}.}
+As an example, suppose $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ were defined as the proportion of high achievers in a class and the proportion of low achievers in a class respectively and the number of selection categories ($j$) is equal to two. 
+The OLS model will first be regressed on the middle achievers who selected into their first choice class, then on the middle achievers who did not select into their first choice class, producing two sets of regression outputs. 
+
+\subsection{Controlling Selection Bias}
+
+By using the ranking and points data in the two stage selection model we are attempting to correct for selection bias, a serious problem in many peer effect models. 
+Specifically, with this data we are controlling for any selection bias that results from students selecting into their X choice class (where for our purposes X may be their first, second, third, or beyond third choice class). 
+The idea being that there exists an unobservable variable that correlates with both the X choice class the student selects into and the grade received in the class, which would then bias our coefficients of interest ($\beta_{2}$ and $\beta_{3}$). 
+We chose to control for this type of selection bias for a few reasons. 
+First, the institution had the necessary data readily available and it was simple to access. 
+Additionally, other obvious types of selection bias (such as selection into a certain subject area) make the selection model impossible to run because there are too few observations. 
+Furthermore, the first stage selection model requires an independent variable that does not correlate with the outcome of interest in the second stage regression, for example we used the Demand variable. 
+It may be quite difficult to find and acquire the data on a different independent variable that satisfies the necessary requirements, if we choose to use a different outcome of interest in our first stage model. 
+Lastly, it makes sense for us to be controlling for this type of selection bias. 
+It is plausible to believe that an unobservable (such as motivation) is both correlated with the student's preference for a course and the final course grade the student receives. 
+
 \section{Results}\label{results}
-\section{Conclusion}\label{Conclusion}             
+\section{Conclusion}\label{Conclusion}
+             
 \newpage{}
 
 \singlespacing
