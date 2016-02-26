@@ -1,0 +1,356 @@
+\documentclass[12pt,a4paper,english,fleqn]{article}
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{2}
+\usepackage{setspace}
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{agsm}
+\usepackage{babel}
+\usepackage{rotating}
+\usepackage{nameref}
+\usepackage{chngcntr}
+\counterwithin{table}{section}
+
+\renewcommand\headrulewidth{0pt}
+\renewcommand\headheight{17pt}
+\newcommand{\prbf}[1]{\textbf{#1}}
+
+% Section variables used throughout
+\newcommand{\sectlabel}[1]{section~\ref{#1} (\nameref{#1})}
+\newcommand{\tablelabel}[1]{Table~\ref{#1}}
+
+% \newcommand{\introduction}{section 1 (Introduction)}
+% \newcommand{\litreview}{section 2 (Literature Review)}
+% \newcommand{\data}{section 3 (Data)}
+% \newcommand{\introduction}{section 3.1 (Class Room Data)}
+
+% Caption formatting
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+
+
+% Reduce font size for section
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}
+{-5ex \@plus -1ex \@minus -.2ex}{2.3ex \@plus.2ex}{\normalfont\large\bf}}
+
+%Reduce font size for subsection
+\renewcommand\subsection{\@startsection{subsection}{2}
+{\z@}{-3.25ex\@plus -1ex \@minus -.2ex}{1.5ex \@plus .2ex}{\normalfont\bf}}
+
+
+% Enforce proper line breaks and avoid widows and orphans
+% \tolerance 1414
+% \hbadness 1414
+% \emergencystretch 1.5em
+% \hfuzz 0.3pt
+% \widowpenalty = 10000
+% \clubpenalty=10000
+% \vfuzz \hfuzz
+% \raggedbottom
+
+%Set date to empty
+\date{02/24/16}
+
+% Format footnotes
+
+% Footnote formatting
+\usepackage[hang]{footmisc}
+\renewcommand{\hangfootparindent}{1em}
+\renewcommand{\hangfootparskip}{0em}
+\renewcommand{\footnotemargin}{0.00001pt}
+\def\footnotelayout{\hspace{1em}}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Place your own additions to the preable HERE, that is, BEFORE the following
+% call to hyperref
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Hyperlink settings for linkcolors and initial view
+\usepackage[%
+colorlinks=true,%
+linkcolor=black,%
+citecolor=black,%
+urlcolor=EconomicsDarkBlue,%
+pdfstartview=FitH,%
+pdfview=FitH,%
+pdfpagemode=UseNone]{hyperref}
+
+%Define font for hyperlinks
+\def\UrlFont{\normalfont}
+
+% Some fine-tuning of layout
+%\usepackage{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Put your additions to the preable above the call to hyperref, not here, unless you
+% want to modify hyperref settings, as is the case with the precvious two commands
+
+% \@ifundefined{showcaptionsetup}{}{%
+%  \PassOptionsToPackage{caption=false}{subfig}}
+% \usepackage{subfig}
+% \AtBeginDocument{
+%   \def\labelitemi{\tiny\(\bullet\)}
+% }
+
+% \makeatother
+
+\begin{document}
+
+\title{Here is the Title of Your Paper}
+
+
+\author{Alan Yeung%
+\thanks{Give your affiliation and thanks here.%
+}.}
+\maketitle
+\begin{abstract}
+\noindent Here comes your abstract.
+
+This is a template for documents prepared with \LaTeX{} for the journal
+Economics-The Open Access, Open Assessment E-Journal (www.economics-ejournal.org).
+
+You find further instructions in the Introduction. Please read them.
+
+\noindent \medskip{}
+
+
+\noindent \emph{Keywords: }Insert the keywords here, separated by
+commas.
+
+\noindent \emph{Journal of Economic Literature Classification: }Insert
+the classification numbers, such as \ J7, B54,\emph{ }etc. here\emph{.}
+\end{abstract}
+
+
+\newpage{}
+
+\doublespacing
+
+\section{Introduction}\label{intro}
+
+One way to judge the quality of an institution is to use the quality of the student body as a proxy measure. 
+Although, there is no standard to measure student quality, there are performance measures that are used to judge the quality of a student body (also referred to as peer quality).
+Indeed, for institutions of higher education it is now standard practice to use performance measures of the student body as an indicator of institutional quality.
+For example, the average high school GPA, average SAT score, and average class rank are all common reported characteristics of an institutions student body.
+The underlying idea of using the quality of the student body as a measure for the quality of the institution, is that the quality of one's peers matter.
+Using this idea as our foundation, this paper seeks to answer the question, how does the quality of one's classmates impact a student's grade?
+If the quality of one's peers has a strong impact on one's educational experience, than one of the most obvious places for an effect to exist is in the classroom. 
+
+\section{Literature Review}\label{litreview}
+
+There has been a fair amount of recent literature on peer effects in educational institutions.
+Specifically, roommate peer effects research has been a trending topic due to the natural quasi-random roommate assignments made by many institutions of higher education.
+Quasi-random roommate assignments, such as those used in \citet{griffith2014peer} and \citet{zimmerman2003peer}, allow researchers to avoid the perils of selection bias and lead to theoretically more accurate results.
+However, most of the literature is divided on whether or not roommate peer effects exist \citep{griffith2014peer,zimmerman2003peer,sacerdote2000peer,foster2006s,mcewan2006roommate}.
+This is a testament to the difficulty of finding peer effects and the difficulty of solving all the econometric problems to ensure that they actually exist.
+
+Much of the literature on peer effects in the classroom exploits quasi-random classroom assignments, in a similar vain to the roommate peer effects literature.
+For instance, researchers in \citet{kang2007classroom} exploit the quasi-random classroom assignments in South Korean middle schools, and \citet{carman2012classroom} utilize the fact that students are assigned to Chinese middle schools either randomly or through an admissions test.
+Both studies focused on determining the significance of peer effects on classroom grades, and find evidence of peer effects.
+\citet{kang2007classroom} finds that strong students have a positive impact on the academic performance other students, while weak students have a negative effect on the performance of other students. 
+\citet{carman2012classroom} find somewhat mixed results, but in general they find evidence of positive and significant peer effects on the impact of classmate quality on the academic performance of other students.
+Other studies use econometric techniques, such as fixed effects modeling, to correct for any selection bias.\footnote{See \citet{burke2013classroom} as an additional example.}
+For example, \citet{schlosser2008inside} and \citet{lavy2012good} control for fixed effects when studying the peer effects of underachievers and overachievers on other students in secondary schools.
+Both studies find evidence of peer effects where a larger proportion of lower achieving students in a high school class has a negative impact on the achievement of ``regular'' students in the class.
+\citet{lavy2012good} in particular also find a positive peer effect from high achieving peers on girls.
+In general, the majority of the literature finds a larger proportion of higher achievers in a class has a positive impact on the academic performance of other students, and a larger proportion of low achievers in a class has a negative impact on the academic performance of other students.\footnote{See the \nameref{results} section for the reasoning.}
+
+We seek to add to the literature by analyzing the peer effects (if any) in higher education, whereas the majority of other studies focus on K-12 education. 
+It is possible that the peer dynamics change in the transition from secondary education to higher education, and our dataset gives us a unique opportunity to analyze these peer dynamics.
+Our dataset comes from a small liberal arts institution which should make it an excellent environment to see magnified peer effects.\footnote{For more details see \sectlabel{summarystats}.}
+
+\section{Data}\label{data}
+
+Our data set comes from a selective medium sized liberal arts college in the mid-west, henceforth referred to as the institution, for which we have data on 5 cohorts (2011-2015). 
+We use classroom level data in our regressions as it has been shown to generate stronger results than other group level measures \citep{burke2013classroom}. 
+
+In total we have 1,412 observations and use 18 variables. 
+Additionally, we use two different types of data in this study. 
+The first type is classroom data, that consists of individual student level characteristics as well as classroom characteristics. 
+We use data from the first class taken by first year students in order to mitigate selection bias\footnote{Discussed in the \nameref{methods} section.}.
+The second type of data we use is point data, which consists of the number of points students bid on classes and their preferences for certain classes. 
+
+\subsection{Classroom Data}\label{classdata}
+
+%We choose to use only data on the first class taken by first year students in order to mitigate selection bias. First year students must select their first course before the semester begins using a point bidding system. Students are accepted into the institution from a variety of areas and backgrounds, and it is very unlikely that students were able to select courses based on any previous relationships. This reduces the likelihood of selection bias effecting our model. In addition, first year students choose courses for a variety of reasons, and these reasons add an element of randomness to the course selection, which also helps to mitigate selection bias. 
+
+The classroom level data on first year students in their first class at the institution is primarily used in the second stage (primary) regression.\footnote{Some classroom level data was also used in the first stage regression. See \sectlabel{pointsdata} for details.}
+There are five key variables in our primary regression, Grade, AcadRating (Academic Rating), PctTopX, PctBotX, and PctMidY. 
+Grade is the primary outcome of interest, and is the grade received by a student after taking the course. 
+Courses are graded on a four point scale, and there are eleven possible grades ranging from an ``A'' (4.0) to ``F'' (0.0).\footnote{The possible grades are A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D+ = 1.3, D = 1.0, F = 0.0} 
+%TODO: Add to citations
+As a measure for student ability we follow the literature and use a proxy measure developed on data prior to college enrollment, Academic Rating \citep{griffith2014peer}. 
+The Academic Rating is a number assigned to all students at the institution. 
+It is a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. 
+As suggested by the literature these variables are all common (and ``good'') indicators of college academic performance \citep{betts2003determinants,dooley2012persistence}.
+The Academic Rating variable ranges from a low of 1 (representing a low ability student) to a high of 65 (representing a high ability student).
+
+We used the Academic Rating variable to create our peer measure variables PctTopX, PctBotX, and PctMidY. 
+PctTopX represents the proportion of students in the class that are in the top X percent of the sample based on Academic Rating. 
+For instance, PctTop5 represents the proportion of students in the class that are in the top five percent of the sample based on Academic Rating.
+PctBotX is defined similarly for the bottom X percentage in terms of Academic Rating. 
+PctMidY is the proportion of students in a class that are not in the top X percent or bottom X percent of the sample in terms of Academic Rating. 
+The remaining variables, Minority, Female, InState, Intl (International), Needy, ClassSize, URM (Underrepresented Minority), Year, Division, and Professor, were used as control variables in the regression.
+Refer to \tablelabel{tab:def1} below for the definitions of all the class level variables used. 
+
+\clearpage{}
+
+\begin{table}[htb]
+\centering
+\caption{Classroom Variable Definitions}\label{tab:def1}
+ \begin{tabular}{|p{0.15\linewidth}|p{0.8\linewidth}|} 
+ \hline\hline
+ Variable & Definition \\ [0.5ex] 
+ \hline\hline
+ Grade & The grade recieved by a student after taking the course. \\ 
+ \hline
+ AcadRating & Reffered to as Academic Rating, a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. \\
+ \hline
+ PctTopX & The proportion of students in the class in the top X percent of the sample based on Academic Rating \\
+ \hline
+ PctBotX & The proportion of students in the class in the bottom X percent of the sample based on Academic Rating \\
+ \hline
+ PctMidY & The proportion of students in a class that are not in the top X percent or bottom X percent of the sample in terms of Academic Rating. \\
+ \hline
+ Minority & A dummy variable representing whether or not the student is non-caucasian. 1 = non-caucasian \& 0 = caucasian\\
+ \hline
+ Female & A dummy variable representing whether or not the student identifies as a female. 1 = female \& 0 = male\\
+ \hline
+ InState & A dummy variable inidicating whether or not the student is an in-state student.  1 = in-state \& 0 = out of state\\
+ \hline
+ Intl & A dummy variable inidicating whether or not the student is an international student.  1 = international \& 0 = not international\\
+ \hline
+%TODO: Check this
+ Needy & Whether or not a student qualified for need based financial aid.  1 = financial aid \& 0 = no financial aid\\
+ \hline
+ ClassSize & An integer the represents the total number of students in a class. \\
+ \hline
+ URM & Under Represented Minority, a dummy variable inidicating whether or not the student is non-caucaian or Asian.  1 = Asian or Caucasian \& 0 = other ethnicity \\
+ \hline
+ Year & The year the class took place. \\
+ \hline
+ Division & The subject area of the class, either Natural Science, Social Sciences, or Humanities. \\
+ \hline
+ Professor & An identifier for the professor teaching the class. \\
+[1ex] 
+ \hline\hline
+\end{tabular}
+\end{table}
+
+\clearpage{}
+
+\subsection{Points Data}\label{pointsdata}
+
+At this institution a bidding system is used to ration classes. 
+From 2011-2014 the bidding system was as follows: 
+students are allotted 20 points and must rank eight classes in terms of their preferences, 
+after classes are ranked students then must bid a number between 0 and 20 (inclusive) points per class on their list, 
+students with the highest number of points bid per class are allotted seats, and ties are broken randomly. 
+If a student does not make it into any class on his or her preference list, then a class is chosen for the student at random. 
+
+In the year 2015, the bidding system was changed in an effort to allow more students to select into a class higher on their preference list. 
+The system was changed in the following ways:
+students are allotted 100 points and must rank eight classes in terms of their preferences,
+after classes are ranked students then must bid a number between 1 and 20 (inclusive) points per class on their list.
+The remaining rules from the original system are the same. 
+This new system effectively forces students to spread their points into multiple classes (whereas in the original system all points could be placed into one class) and therefore decreases the standard deviation.
+
+The changes to the bidding system affect one of our key variables in the first stage regression, Demand. 
+The Demand variable represents the total number of points bid on a course divided by the number of bidders. 
+In an attempt to correct for the changes in the bidding system, the 2015 Demand calculations were divided by five, because students recieved five times the number of points compared to the original system. 
+This corrected the mean of Demand in 2015, however the affect on standard deviation still remains. 
+Due to the nature of the bidding system changes, we are unable to correct the affect on the standard deviation, but fortunately this does not affect the overall results.\footnote{See the \nameref{results} section for more details.} 
+
+Another key variable in our first stage regression is Ranking. 
+Ranking is our dependent variable in the first stage regression, and is a number between one and eight that specifies the student's preference for the course, where one is a high preference, eight is a low preference, and preferences are not repeated. 
+We used the remaining variables in the first stage regression, Minority, Female, InState, Intl (International), Needy, AcadRating, URM (Underrepresented Minority), and Subject as control variables. Refer to \tablelabel{tab:def2} below for the definitions of the unique variables used in the first stage regression. 
+
+\begin{table}[htb]
+  \centering
+  \caption{Points Data Variable Definitions}\label{tab:def2}
+  \begin{tabular}{|p{0.15\linewidth}|p{0.8\linewidth}|} 
+    \hline\hline
+    Variable & Definition \\ [0.5ex] 
+    \hline\hline
+    Ranking & A number between one and eight specifying the student's preference for the course, where one is a high preference and eight is a low preference. \\ 
+    \hline
+    Demand & The total number of points bid on a course divided by the number of bidders. For the year 2015, this variable was divided by five to correct for the bidding system changes.\\
+    \hline
+    %TODO: Create full list
+    Subject & The specific subject of the course, such as mathematics, anthropology, chemistry, psychology, etc. For a full list of subjects see Appendix A. \\
+    [1ex] 
+    \hline\hline
+  \end{tabular}
+\end{table}
+
+\subsection{Summary Statistics}\label{summarystats}
+
+The descriptive statistics for the non-dummy variables are given below in \tablelabel{tab:summarystats}.\footnote{Control variables, such as Year, Professor, Division, and Subject where not summarized.} 
+The outcome of interest, Grade, has a mean that changes slightly over time, while the standard deviation remains fairly constant. 
+From 2011-2012 the mean Grade was 3.115, then from 2013-2015 the mean grade increased to 3.15. 
+This suggests that their might have been some grade inflation over the years as the mean Academic Rating, a measure of student ability, remained fairly consistent from 2011-2014 (jumping by about 2 points in 2015). 
+The variables PctTopX, PctBotX, and PctMidY all vary slightly from their expected values, indicating that the distribution of abilities is not uniform every year. 
+That is, one would expect the mean of PctTop5 to always be about 0.05, however this is not the case since the Academic Rating cuttoffs are not exact\footnote{Exactly 5\% of students do not have an Academic Rating higher than our cuttoff. Instead the number is about 0.048\% and this is true for all of our defined cuttoffs.} and the distribution of abilities is not uniform. 
+In fact, the distribution of abilities seems to be bias towards recent years as the higher mean Academic Rating, PctTop5, and PctTop10 in 2015 indicate. 
+The ClassSize variable jumps from a mean of 11 in 2011-2014 to 14.27 in 2015 because fewer classes were offered and more students were in the incoming class.
+The average number of classes offered fell from 29 in 2012-2014 to 25 in 2015.\footnote{In 2011 the mean class size was also 25, however there were fewer students in the incoming class.}
+As expected, the Demand variable has a lower standard deviation in 2015 compared to 2011-2014 because the bidding system changes. 
+
+It may be valuable to note that several studies suggest that smaller class sizes have a positive impact on average student achievement (measured by grades and test scores) \citep{diette2015class,kokkelenberg2008effects}. 
+The primary reasoning for the inverse relationship between achievement and class size is that students have more quality time to interact with teachers and peers as class size decreases. 
+As this institution has relatively small class sizes, we may expect to find magnified peer effects. 
+
+\begin{sidewaystable}
+\caption{Summary Statistics}\label{tab:summarystats}
+\centering\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\hline
+& \multicolumn{2}{|c|}{2011 Data} & \multicolumn{2}{|c|}{2012 Data} & \multicolumn{2}{|c|}{2013 Data} & \multicolumn{2}{|c|}{2014 Data}  & \multicolumn{2}{|c|}{2015 Data}\\
+\hline
+\prbf{Variable} & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.}  & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.}\\
+\hline
+            Grade    & 3.12  & 0.96 & 3.11  & 0.87 & 3.17  & 0.78 & 3.15  & 0.81 & 3.16  & 0.87 \\
+            AcadRa{\textasciitilde}g & 50.72 & 6.09 & 50.89 & 5.9  & 49.98 & 6.25 & 50.95 & 6.44 & 52.80 & 6.19 \\
+            PctTopQ  & 0.30  & 0.13 & 0.28  & 0.17 & 0.22  & 0.17 & 0.27  & 0.15 & 0.41  & 0.14 \\
+            PctTop5  & 0.08  & 0.10 & 0.06  & 0.10 & 0.06  & 0.07 & 0.04  & 0.07 & 0.14  & 0.10 \\
+            PctTop10 & 0.16  & 0.12 & 0.14  & 0.13 & 0.14  & 0.11 & 0.16  & 0.13 & 0.26  & 0.13 \\
+            PctBotQ  & 0.23  & 0.11 & 0.19  & 0.11 & 0.28  & 0.17 & 0.18  & 0.10 & 0.13  & 0.10 \\
+            PctBot5  & 0.04  & 0.06 & 0.05  & 0.08 & 0.06  & 0.12 & 0.06  & 0.08 & 0.04  & 0.06 \\
+            PctBot10 & 0.08  & 0.08 & 0.07  & 0.08 & 0.10  & 0.14 & 0.08  & 0.08 & 0.06  & 0.08 \\
+            PctMid50 & 0.47  & 0.16 & 0.54  & 0.16 & 0.50  & 0.17 & 0.54  & 0.14 & 0.46  & 0.14 \\
+            PctMid90 & 0.87  & 0.11 & 0.89  & 0.12 & 0.87  & 0.14 & 0.90  & 0.12 & 0.82  & 0.10 \\
+            PctMid80 & 0.77  & 0.14 & 0.78  & 0.14 & 0.76  & 0.16 & 0.76  & 0.16 & 0.68  & 0.13 \\
+            Minority & 0.21  & 0.41 & 0.37  & 0.48 & 0.46  & 0.50 & 0.35  & 0.48 & 0.39  & 0.49 \\
+            Female   & 0.47  & 0.50 & 0.55  & 0.50 & 0.53  & 0.50 & 0.51  & 0.50 & 0.54  & 0.50 \\
+            InState  & 0.15  & 0.35 & 0.13  & 0.33 & 0.15  & 0.36 & 0.12  & 0.33 & 0.15  & 0.36 \\
+            Intl     & 0.02  & 0.15 & 0.01  & 0.08 & 0.06  & 0.23 & 0.05  & 0.22 & 0.07  & 0.25 \\
+            Needy    & 0.39  & 0.49 & 0.36  & 0.48 & 0.36  & 0.48 & 0.32  & 0.47 & 0.43  & 0.50 \\
+            ClassS{\textasciitilde}e & 10.85 & 3.09 & 11.91 & 3.05 & 11.11 & 2.48 & 11.39 & 2.62 & 14.27 & 2.47 \\
+            URM      & 0.11  & 0.31 & 0.29  & 0.45 & 0.36  & 0.48 & 0.27  & 0.44 & 0.30  & 0.46 \\
+            Ranking  & 1.77  & 1.54 & 1.70  & 1.44 & 1.79  & 1.41 & 1.91  & 1.79 & 2.14  & 1.41 \\
+            Demand   & 2.81  & 0.83 & 2.62  & 0.75 & 2.28  & 0.86 & 2.37  & 0.86 & 2.44  & 0.22 \\
+\hline
+N & 226 & & 292 & & 290 & & 285 & & 319\\
+\hline
+\hline
+\end{tabular}
+\end{sidewaystable}
+\newpage{}
+\section{Empirical Methodology}\label{methods}
+\section{Results}\label{results}
+\section{Conclusion}\label{Conclusion}             
+\newpage{}
+
+\singlespacing
+
+\bibliography{references}
+
+\end{document}
