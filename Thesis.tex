@@ -164,8 +164,8 @@ Both studies find evidence of peer effects where a larger proportion of lower ac
 In general, the majority of the literature finds a larger proportion of higher achievers in a class has a positive impact on the academic performance of other students, and a larger proportion of low achievers in a class has a negative impact on the academic performance of other students.\footnote{See the \nameref{results} section for the reasoning.}
 
 We seek to add to the literature by analyzing the peer effects (if any) in higher education, whereas the majority of other studies focus on K-12 education. 
-It is possible that the peer dynamics change in the transition from secondary education to higher education, and our dataset gives us a unique opportunity to analyze these peer dynamics.
-Our dataset comes from a small liberal arts institution which should make it an excellent environment to see magnified peer effects.\footnote{For more details see \sectlabel{summarystats}.}
+It is possible that the peer dynamics change in the transition from secondary education to higher education, and our data set gives us a unique opportunity to analyze these peer dynamics.
+Our data set comes from a small liberal arts institution which should make it an excellent environment to see magnified peer effects.\footnote{For more details see \sectlabel{summarystats}.}
 
 \section{Data}\label{data}
 
@@ -210,9 +210,9 @@ Refer to \tablelabel{tab:def1} below for the definitions of all the class level 
  \hline\hline
  Variable & Definition \\ [0.5ex] 
  \hline\hline
- Grade & The grade recieved by a student after taking the course. \\ 
+ Grade & The grade received by a student after taking the course. \\ 
  \hline
- AcadRating & Reffered to as Academic Rating, a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. \\
+ AcadRating & Referred to as Academic Rating, a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. \\
  \hline
  PctTopX & The proportion of students in the class in the top X percent of the sample based on Academic Rating \\
  \hline
@@ -220,20 +220,20 @@ Refer to \tablelabel{tab:def1} below for the definitions of all the class level 
  \hline
  PctMidY & The proportion of students in a class that are not in the top X percent or bottom X percent of the sample in terms of Academic Rating. \\
  \hline
- Minority & A dummy variable representing whether or not the student is non-caucasian. 1 = non-caucasian \& 0 = caucasian\\
+ Minority & A dummy variable representing whether or not the student is non-Caucasian. 1 = non-Caucasian \& 0 = Caucasian\\
  \hline
  Female & A dummy variable representing whether or not the student identifies as a female. 1 = female \& 0 = male\\
  \hline
- InState & A dummy variable inidicating whether or not the student is an in-state student.  1 = in-state \& 0 = out of state\\
+ InState & A dummy variable indicating whether or not the student is an in-state student.  1 = in-state \& 0 = out of state\\
  \hline
- Intl & A dummy variable inidicating whether or not the student is an international student.  1 = international \& 0 = not international\\
+ Intl & A dummy variable indicating whether or not the student is an international student.  1 = international \& 0 = not international\\
  \hline
 %TODO: Check this
  Needy & Whether or not a student qualified for need based financial aid.  1 = financial aid \& 0 = no financial aid\\
  \hline
  ClassSize & An integer the represents the total number of students in a class. \\
  \hline
- URM & Under Represented Minority, a dummy variable inidicating whether or not the student is non-caucaian or Asian.  1 = Asian or Caucasian \& 0 = other ethnicity \\
+ URM & Under Represented Minority, a dummy variable indicating whether or not the student is non-Caucasian or Asian.  1 = Asian or Caucasian \& 0 = other ethnicity \\
  \hline
  Year & The year the class took place. \\
  \hline
@@ -265,7 +265,7 @@ This new system effectively forces students to spread their points into multiple
 
 The changes to the bidding system affect one of our key variables in the first stage regression, Demand. 
 The Demand variable represents the total number of points bid on a course divided by the number of bidders. 
-In an attempt to correct for the changes in the bidding system, the 2015 Demand calculations were divided by five, because students recieved five times the number of points compared to the original system. 
+In an attempt to correct for the changes in the bidding system, the 2015 Demand calculations were divided by five, because students received five times the number of points compared to the original system. 
 This corrected the mean of Demand in 2015, however the affect on standard deviation still remains. 
 Due to the nature of the bidding system changes, we are unable to correct the affect on the standard deviation, but fortunately this does not affect the overall results.\footnote{See the \nameref{results} section for more details.} 
 
@@ -298,7 +298,7 @@ The outcome of interest, Grade, has a mean that changes slightly over time, whil
 From 2011-2012 the mean Grade was 3.115, then from 2013-2015 the mean grade increased to 3.15. 
 This suggests that their might have been some grade inflation over the years as the mean Academic Rating, a measure of student ability, remained fairly consistent from 2011-2014 (jumping by about 2 points in 2015). 
 The variables PctTopX, PctBotX, and PctMidY all vary slightly from their expected values, indicating that the distribution of abilities is not uniform every year. 
-That is, one would expect the mean of PctTop5 to always be about 0.05, however this is not the case since the Academic Rating cuttoffs are not exact\footnote{Exactly 5\% of students do not have an Academic Rating higher than our cuttoff. Instead the number is about 0.048\% and this is true for all of our defined cuttoffs.} and the distribution of abilities is not uniform. 
+That is, one would expect the mean of PctTop5 to always be about 0.05, however this is not the case since the Academic Rating cutoffs are not exact\footnote{Exactly 5\% of students do not have an Academic Rating higher than our cutoff. Instead the number is about 0.048\% and this is true for all of our defined cutoffs.} and the distribution of abilities is not uniform. 
 In fact, the distribution of abilities seems to be bias towards recent years as the higher mean Academic Rating, PctTop5, and PctTop10 in 2015 indicate. 
 The ClassSize variable jumps from a mean of 11 in 2011-2014 to 14.27 in 2015 because fewer classes were offered and more students were in the incoming class.
 The average number of classes offered fell from 29 in 2012-2014 to 25 in 2015.\footnote{In 2011 the mean class size was also 25, however there were fewer students in the incoming class.}
