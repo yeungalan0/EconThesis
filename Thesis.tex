@@ -14,6 +14,9 @@
 \usepackage{rotating}
 \usepackage{nameref}
 \usepackage{amsmath}
+\usepackage[flushleft]{threeparttable}
+\usepackage{longtable}
+\usepackage{setspace}
 \usepackage{chngcntr}
 \counterwithin{table}{section}
 
@@ -361,9 +364,9 @@ Thus $\beta_{2}$ and $\beta_{3}$ are the primary coefficients of interest, as th
 The OLS regression is run on the subset of students that are not part of the peer measures. 
 For example, if $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ were defined as the proportion of high achievers in a class and the proportion of low achievers in a class respectively, then the model would be run on the middle achievers. 
 
-However, because our sample is nonrandom\footnote{Unfortunately students are not assigned to classes and institutions randomly, instead the institution selects specific students, students next select the institution, and students then select into classes.} the calculated coefficients of model \eqref{eq:0} are at risk of being bias \citep{heckman1979sample}. This bias, known as selection bias, is a serious threat to this type of peer effects model because self selection often exists and leads to a nonrandom sample \citep{carman2012classroom,betts2003determinants,ding2007peers}. Therefore, we must update our model in order to correct for any selection bias that may exist.
+However, because our sample is nonrandom\footnote{Unfortunately students are not assigned to classes and institutions randomly, instead the institution selects specific students, students next select the institution, and students then select into classes.} the calculated coefficients of model \eqref{eq:0} are at risk of being bias \citep{heckman1979sample}.\footnote{For more details see \sectlabel{methods:csb}} This bias, known as selection bias, is a serious threat to this type of peer effects model because self selection often exists and leads to a nonrandom sample \citep{carman2012classroom,betts2003determinants,ding2007peers}. Therefore, we must update our model in order to correct for any selection bias that may exist.
 
-\subsection{Two Stage Selection Model}\label{tssmodel}
+\subsection{Two Stage Selection Model}\label{methods:tssmodel}
 
 In an effort to correct for selection bias we use a two stage selection model, similar to the one described in \citet{heckman1979sample}. Our two stage selection model uses an ordered probit model in the first stage and an OLS model in the second stage. From the first stage ordered probit model we take the calculated inverse mills ratios and use them as a control variable in the second stage regressions. The inverse mills ratios are calculated estimates, that when used in the second stage regression, help to control for selection bias \citep{heckman1979sample}.\footnote{For more information see \citet{greene2002limdep}.}
 
@@ -415,21 +418,21 @@ However, the calculation of different inverse mills ratios for each of the possi
 As an example, suppose $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ were defined as the proportion of high achievers in a class and the proportion of low achievers in a class respectively and the number of selection categories ($j$) is equal to two. 
 The second stage OLS model will first be regressed on the middle achievers who selected into their first choice class, then on the middle achievers who did not select into their first choice class, producing two sets of regression outputs. 
 
-\subsection{Controlling Selection Bias}
+\subsection{Controlling Selection Bias}\label{methods:csb}
 
 By using the ranking and points data in the two stage selection model we are attempting to correct for selection bias, a serious problem in many peer effect models \citep{carman2012classroom,betts2003determinants,ding2007peers}. 
-Specifically, with this data we are controlling for any selection bias that results from students selecting into their X choice class (where for our purposes X may be their first, second, third, or beyond third choice class). 
-The idea is that there are unobservable factors that correlate with both the X choice class the student selects into and the grade received in the class, which would then bias our coefficients of interest ($\beta_{2}$ and $\beta_{3}$). 
-For instance, it may be that 
-We chose to control for this type of selection bias for a few reasons. 
-First, the institution had the necessary data readily available and it was simple to access. 
-Additionally, other obvious types of selection bias (such as selection into a certain subject area) make the selection model impossible to run because there are too few observations. 
-Furthermore, the first stage selection model requires an independent variable that does not correlate with the outcome of interest in the second stage regression, for example we used the Demand variable. 
-It may be quite difficult to find and acquire the data on a different independent variable that satisfies the necessary requirements, if we choose to use a different outcome of interest in our first stage model. 
-Lastly, it makes sense for us to be controlling for this type of selection bias. 
-It is plausible to believe that an unobservable (such as motivation) is both correlated with the student's preference for a course and the final course grade the student receives. 
+Specifically, our model is controlling for any selection bias that results from students selecting into classes high on their preference list. 
+The idea is that there are unobservable factors that correlate with both student class preferences and the grade received in the class, which would then bias our coefficients of interest ($\beta_{2}$ and $\beta_{3}$). 
+For instance, it may be that popular courses draw a higher proportion of high achieving students, while the majority of middle achieving students are drawn into those same courses because they enjoy the subject. 
+In this case a higher proportion of high achievers is not causal to the increased grades of middle achievers. 
+Instead, an unobservable variable (passion for the subject) drives middle achievers to self select into courses where they will achieve higher grades and there happen to be a higher proportion of high achievers. 
+In such a case, the self-selection of middle achieving students would bias our coefficients of interest and our results would be inaccurate.
+By using the two stage regression model, we are attempting to correct for this type of selection bias.
 
 \section{Results}\label{results}
+
+\input{results.tex}
+
 \section{Conclusion}\label{Conclusion}
              
 \newpage{}

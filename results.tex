@@ -1,0 +1,253 @@
+We begin the section with an analysis of the results from our main regressions, where we find the most prominent results are seen by the impact of high achievers on the grades of middle achievers. 
+The results lend significant evidence to the idea that a higher proportion of high achievers in a classroom has a negative impact on the final grade of a middle achieving student. 
+We also find evidence indicating that a higher proportion of low achievers in a class has a positive impact on the grades of middle achieving students. 
+These results are contradictory to those found in the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good} and we discuss some possible explanations for this below. 
+Next, we analyze the threat of selection bias to our original OLS model by comparing our overall results. 
+We conclude by evaluating the significance of our results. 
+Overall, we find that the estimated coefficients are too small to have a significant impact on final student grades, however if these trends continue in the long run then it may be possible that these trends impact cumulative GPA. 
+
+The main results of this paper will focus on the impact of high achievers and low achievers on the grades of middle achievers. 
+Unfortunately, data limitations made it impossible to run regressions on the high achievers and low achievers (for any of our peer measures). 
+There were simply not enough data points within either group to run the two stage regression model. 
+However, the regressions run on the middle achievers still make an important contribution because the majority of students are middle achievers, so we are finding the peer effects that affect most of the population.
+
+\subsection{Regression Analysis}\label{results:reganalysis}
+
+Table 4.1, Table 4.2, and Table 4.3 show the relevant results\footnote{The results of the regression for all the variables can be found in Appendix A. (TO BE ADDED)} of the two stage selection model\footnote{Outlined in \sectlabel{methods}} run on the middle achievers, where the first stage is a two category ordered probit, three category ordered probit, and four category ordered probit respectively. 
+Each table contains the relevant results from three regressions where the major difference between each regression within a table is the measure of the ``peer'' used. 
+For the regressions found in Table 4.1, 4.2, and 4.3, we use the proportion of high achievers and low achievers in a class as a peer measure and regress on middle achieving students. 
+After each regression, the measures used for a high and low achieving peer become stricter (and therefore the measure for the middle achievers becomes less strict). 
+For instance, regression 1 (labeled Top/Bottom 25\%) in Table 4.1 focuses on the impact of the proportion of high achievers, defined as the twenty-five percent with the highest academic rating in the sample, and the proportion of low achievers, the twenty-five percent with the lowest academic rating in the sample, on the grades of the middle achievers (those that are not high or low achievers). 
+In each regression, GradeX refers to the regression run on the middle achievers that selected into their X choice class based on the first stage ordered probit.\footnote{For more details see \sectlabel{methods:tssmodel}} 
+
+\clearpage{}
+
+\begin{table}[htb]
+  \centering
+  \begin{threeparttable}
+    \caption{Two Selection Categories}\label{tab:2sc}
+    \begin{tabular}{l l l l} 
+      \hline
+      \hline
+               & Top/Bott{\textasciitilde}25\% & Top/Bott{\textasciitilde}10\% & Top/Bott{\textasciitilde}5\% \\
+               & (Std. Err.)                   & (Std. Err.)                   & (Std. Err.)                  \\
+      \hline
+      Grade1   &                               &                               &                              \\
+      PctBotQ  & -0.150                        &                               &                              \\
+               & (0.53)                        &                               &                              \\
+      PctTopQ  & -0.787**                      &                               &                              \\
+               & (0.41)                        &                               &                              \\
+      PctBot10 &                               & 0.612                         &                              \\
+               &                               & (0.54)                        &                              \\
+      PctTop10 &                               & -0.741***                     &                              \\
+               &                               & (0.33)                        &                              \\
+      PctBot5  &                               &                               & 1.001**                      \\
+               &                               &                               & (0.60)                       \\
+      PctTop5  &                               &                               & -0.702**                     \\
+               &                               &                               & (0.41)                       \\
+      \hline
+      Grade2   &                               &                               &                              \\
+      PctBotQ  & 1.720**                       &                               &                              \\
+               & (1.00)                        &                               &                              \\
+      PctTopQ  & 0.660                         &                               &                              \\
+               & (0.70)                        &                               &                              \\
+      PctBot10 &                               & 0.370                         &                              \\
+               &                               & (0.78)                        &                              \\
+      PctTop10 &                               & 0.827**                       &                              \\
+               &                               & (0.49)                        &                              \\
+      PctBot5  &                               &                               & -0.061                       \\
+               &                               &                               & (0.70)                       \\
+      PctTop5  &                               &                               & 0.198                        \\
+               &                               &                               & 0.198                        \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05 \\Note: Regressions run using 3 different peer measures and a two choice ordered probit for the first stage.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+\begin{table}[htb]
+  \centering
+  \begin{threeparttable}
+    \caption{Three Selection Categories}\label{tab:3sc}
+    \begin{tabular}{l l l l} 
+      \hline
+      \hline
+               & Top/Bott{\textasciitilde}25\% & Top/Bott{\textasciitilde}10\% & Top/Bott{\textasciitilde}5\% \\
+               & (Std. Err.)                   & (Std. Err.)                   & (Std. Err.)                  \\
+      \hline
+      Grade1   &                               &                               &                              \\
+      PctBotQ  & -0.314                        &                               &                              \\
+               & (0.52)                        &                               &                              \\
+      PctTopQ  & -0.840***                     &                               &                              \\
+               & (0.39)                        &                               &                              \\
+      PctBot10 &                               & 0.602                         &                              \\
+               &                               & (0.54)                        &                              \\
+      PctTop10 &                               & -0.705***                     &                              \\
+               &                               & (0.33)                        &                              \\
+      PctBot5  &                               &                               & 1.008**                      \\
+               &                               &                               & (0.60)                       \\
+      PctTop5  &                               &                               & -0.667*                      \\
+               &                               &                               & (0.41)                       \\
+      \hline
+      Grade2   &                               &                               &                              \\
+      PctBotQ  & 1.248                         &                               &                              \\
+               & (1.41)                        &                               &                              \\
+      PctTopQ  & 1.614**                       &                               &                              \\
+               & (0.92)                        &                               &                              \\
+      PctBot10 &                               & -0.138                        &                              \\
+               &                               & (1.02)                        &                              \\
+      PctTop10 &                               & 0.439                         &                              \\
+               &                               & (0.70)                        &                              \\
+      PctBot5  &                               &                               & -0.819                       \\
+               &                               &                               & (0.88)                       \\
+      PctTop5  &                               &                               & -0.585                       \\
+               &                               &                               & (1.00)                       \\
+      \hline
+      Grade3   &                               &                               &                              \\
+      PctBotQ  & 1.215                         &                               &                              \\
+               & (1.54)                        &                               &                              \\
+      PctTopQ  & -0.961                        &                               &                              \\
+               & (1.16)                        &                               &                              \\
+      PctBot10 &                               & 0.002                         &                              \\
+               &                               & (1.18)                        &                              \\
+      PctTop10 &                               & 0.541                         &                              \\
+               &                               & (0.63)                        &                              \\
+      PctBot5  &                               &                               & -0.170                       \\
+               &                               &                               & (1.13)                       \\
+      PctTop5  &                               &                               & -0.031                       \\
+               &                               &                               & (0.83)                       \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05 \\Note: Regressions run using 3 different peer measures and a three choice ordered probit for the first stage.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+\begin{table}[htb]
+  \centering
+  \begin{threeparttable}
+    \caption{Four Selection Categories}\label{tab:4sc}
+    \begin{tabular}{l @{\hskip 1in} l} 
+      \hline
+      \hline
+              & Top/Bott{\textasciitilde}5\% \\
+              & (Std. Err.)                  \\
+      \hline
+      Grade1  &                              \\
+      PctBot5 & 0.998**                      \\
+              & (0.61)                       \\
+      PctTop5 & -0.669*                      \\
+              & (0.41)                       \\
+      \hline
+      Grade2  &                              \\
+      PctBot5 & -0.791                       \\
+              & (0.88)                       \\
+      PctTop5 & -0.530                       \\
+              & (1.01)                       \\
+      \hline
+      Grade3  &                              \\
+      PctBot5 & 2.443*                       \\
+              & (1.64)                       \\
+      PctTop5 & -0.215                       \\
+              & (1.52)                       \\
+      \hline
+      Grade4  &                              \\
+      PctBot5 & -0.417                       \\
+              & (1.72)                       \\
+      PctTop5 & -2.847***                    \\
+              & (1.18)                       \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05 blah \\Note: Regressions run using 3 different peer measures and a three choice ordered probit for the first stage.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+When looking at the results in Table 4.1, 4.2, and 4.3 there are a few important patterns to note. 
+First, the majority of the statistically significant results are found in students who selected into their first choice (Grade1), and students who selected into their second choice or below (Grade2, Grade3, etc.) show inconsistent results. 
+Next, all the significant results in Grade1 are consistent, in that the proportion of high achievers has a negative impact on the grades of middle achievers and the proportion of low achievers has a positive impact on the grades of middle achievers. 
+Furthermore, the majority of significant results appear as the peer measure becomes stricter, that is more significant results appear as the peer measure changes from the top/bottom twenty five percent, to ten percent, and finally to five percent. 
+
+First, we'll explore the possible reasons behind the inconsistent results in the regressions run on students who selected into a class that was not their first choice. 
+One reason, may be that for students who do not select into their first choice class, the peer effect dynamics change and aren't as strong. 
+Perhaps the students who did not select into their first choice class have less motivation (or something of the sort) to perform in their non-first choice class, and this leads to less peer interactions (or interactions of a different kind) that ultimately lead to smaller/unmeasurable peer effects. 
+Another explanation, one that we believe is more likely, is that there are simply fewer students who select into a course that is not their first choice. 
+In the best cases the number of people who do not select into their first choice is about one half of the number of people who do select into their first choice.\footnote{TODO: See Table X and \sectlabel{data} for more details} 
+That is, for a two option ordered probit selection model (used in Table 4.1), the number of students who are regressed in the Grade1 calculations (those who selected into their first choice class) is twice that of the number of students are regressed in the Grade2 calculations (those who did not select into their first choice class).\footnote{For more details see \sectlabel{methods}} 
+Additionally, as the number of options in the selection model increases (as is the case in Table 4.2 and 4.3) the number of students who did not select into their first choice class is further divided into those who selected into their second choice class, third choice class, etc. and regressed on. 
+This essentially means that the regressions run on the students who did not select into their first choice class (Grade2, Grade3, Grade4) have far fewer data points than the regression run on students who did select into their first choice class (Grade1). 
+This is a troubling problem as it suggests that the results from the Grade2, Grade3, and Grade4 regressions are far more unreliable than the results of the Grade1 regressions. 
+However, the only way to resolve this problem is to collect several more years of data, which is not feasible at this time. 
+Therefore, we will focus on the Grade1 regression results for the remainder of the section, and since the majority of students select into their first choice class, they are arguably the most relevant results regardless. 
+ 
+The Grade1 results in Table 4.1, 4.2, and 4.3 show a consistent pattern. 
+The proportion of high achievers in a classroom has a negative impact on the grade of middle achievers, regardless of the strictness of the peer measure. 
+As the peer measure becomes stricter (specifically at the five percent threshold), we see that the proportion of low achievers in a classroom has a positive impact on the grades of middle achievers. 
+It is interesting to note that there is some precedence for using the five percent threshold and finding peer impact results. 
+In Lavy et al. (2012) researchers also found strong peer effects using the top and bottom five percent as their peer measures. 
+The researchers in Lavy et al. (2012) argue that their use of the top and bottom five percent is not arbitrary by showing that it is precisely those students around the five percent threshold that have a strong peer impact on fellow students. 
+That is, they showed that students in the middle ninety percent of the ability distribution do not show strong peer effects of any sort, while the top and bottom five percent are the students who are the most influential. 
+
+Our results run counter to those found in the current literature (granted that the current literature is rather scarce especially in the area of higher education). 
+Most of the current literature finds that low achievers hurt the grades of middle achieving students and high achievers help the grades of middle achieving students. 
+The reasoning being that low achieving students may disrupt learning (possibly by instilling bad study habits in the middle achieving students) and the high achieving students may facilitate learning (possibly by asking more relevant questions or helping to tutor middle achieving students). 
+This kind of reasoning is what many people would expect to happen (and has been discovered in other areas of peer effects literature) \citep{griffith2014peer,zimmerman2003peer,sacerdote2000peer}, which makes our results of the contrary all the more puzzling. 
+It is important to note that most of the literature does not focus on higher education, instead choosing to focus on K-12 education in order to reduce any bias from self-selection. 
+Therefore, it is reasonable to suppose that peer effects at institutions of higher education may differ from those seen in K-12 education. 
+We have developed two possible explanations for these results. 
+One possibility is that since most of the previous literature does not focus on courses in higher education, peer dynamics have changed in the transition from K-12 education to undergraduate education. 
+It is possible that high achieving students in college have a negative peer effect on grades, perhaps through demoralizing other students, and low achieving students have a positive peer effect on grades, perhaps through increasing the number of group study sessions. 
+Another possibility is that grade curving is occurring in many of the classes, and is overpowering any actual peer effects. 
+That is to say, a student's class grade is determined by her relative performance to her classmates instead of by her absolute performance. 
+Unfortunately, due to the time span of the data and faculty changes, it is not feasible to uncover which classes were truly graded on a curve (in which case these findings would not be surprising) and which classes were not. 
+Furthermore, if grade curving is the underlying cause of the results we are finding, then it is still possible that peer effects that are in line with the literature exist, but the curving effects are simply overwhelming any peer effects that are occurring. 
+
+Another interesting trend is that our results are somewhat imbalanced. That is to say, high achieving students clearly have a negative impact on middle achieving students throughout the majority of our regressions, but low achieving students only have a statistically significant positive impact on middle achieving students when the peer measure becomes stricter. 
+One explanation may be that it was pure statistical chance that top achievers had a significant negative affect more often than low achievers had a significant positive affect. 
+Our sample size of 903 students who selected into their first choice class is not as large as some found in the literature (which reach into the many thousands) \citep{kang2007classroom,lavy2012good}. 
+Another possibility is that top students are very effective at having a negative impact on student grades, and this result is simply robust to changes in the peer measure. 
+Finally, if grade curving is the underlying cause of our results, it may be that high achieving students dull out a middle achieving student's performance more than a low achieving student helps a middle achieving student shine. 
+Since professors may curve grades in a subjective fashion, they may be effected by this psychological phenomenon. 
+Currently we do not have an explanation for this phenomena, although there is evidence of similar kinds of psychological imbalance in other areas. 
+For example take the well documented theory of loss aversion. 
+As explained by Tversky and Kahneman (1991), loss aversion implies that people experience greater impact from a loss when compared to a gain equal in magnitude, and this phenomena has been found in many different areas of human behavior \citep{shalev2002loss,goette2004loss}. 
+It is possible that the same psychological mechanisms driving the imbalance in losses and gains (loss aversion) are also driving the imbalance in the effect of the proportion of high achievers and low achievers on a middle achievers grades. 
+
+\subsection{Threat of Selection Bias}\label{results:tsb}
+
+In order for selection bias (a common problem in peer effect models) to affect our model, one must argue that there exists unobservable factors that correlate with both course interests and academic performance. 
+This is a challenging argument to make, but nonetheless it must be considered as a serious threat to our model. 
+Thus, to correct for any selection bias we use a two stage selection model based on the technique described by Heckman (1979). 
+However, even after correcting for selection bias, it seems that our overall results are quite similar to those found when using standard OLS regressions. 
+This suggests that selection bias is most likely not affecting our model to any significant degree. 
+
+\subsection{Significance of Results}\label{results:sor}
+
+The above results indicate the presence of an interesting trend at this institution, but should the students or administration even care if this trend exists? In order to shed some light on the implications of our results, we must analyze the magnitudes of the estimated coefficients. 
+The average class size in our dataset is twelve students (which has remained fairly constant throughout the time period of our dataset), and if we define high achievers as the top five percent of students then there is one student per class that is a high achiever,  assuming a uniform distribution of high achievers. 
+At the five percent threshold, our results indicate that for every ten percent increase in the proportion of high achievers in the classroom the GPA of a middle achiever falls by roughly 0.072 points. 
+In order for the proportion of high achievers in an average class to be high enough to have a significant\footnote{Defined as at least changing the sign of a student's grade which takes about 0.3 grade points.} influence on the grades of middle achieving students, forty percent of the average class (five students) must be high achievers.\footnote{0.4 * 0.72 = 0.288} Using the five percent threshold, there are two classes (about 1.5 percent) in our entire dataset which have a proportion of high achievers of at least forty percent. 
+It is clear that having a class consist of at least forty percent high achievers is an unlikely scenario, and should not be a concern for most students. 
+Similar calculations can be done to show that having a high enough number of low achieving students in a classroom to significantly affect grades is also quite uncommon. 
+However, two considerations must be taken into account. 
+First, if these results continued in further classes, then the cumulated effect on the GPA may be significant. 
+Depending on a student's degree path, they may be more likely to select into classes with a high proportion of low achieving students or classes with a high proportion of high achieving students. 
+Higher level classes at the institution may number under 10 students (depending on the popularity of the degree), therefore if these trends continue it is possible for the cumulative GPA (as well as class grades) of a student to be affected. 
+This may be a serious problem in unpopular degrees with abnormally small class sizes. 
+In addition, the coefficients are estimates, and it may be that the real coefficients are much larger or smaller than those estimated. 
+The calculations above show that even though these trends exist, in the short run, the impact on final grades in the first course is most likely not a concern to most students. 
+However, more research need to be conducted to determine the long run implications of these results. 
+
