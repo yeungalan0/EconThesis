@@ -17,6 +17,7 @@
 \usepackage[flushleft]{threeparttable}
 \usepackage{longtable}
 \usepackage{setspace}
+\usepackage{breakcites}
 \usepackage{chngcntr}
 \counterwithin{table}{section}
 
@@ -90,7 +91,7 @@ pdfpagemode=UseNone]{hyperref}
 \def\UrlFont{\normalfont}
 
 % Some fine-tuning of layout
-%\usepackage{microtype}
+\usepackage{microtype}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -186,7 +187,7 @@ The second type of data we use is point data, which consists of the number of po
 
 %We choose to use only data on the first class taken by first year students in order to mitigate selection bias. First year students must select their first course before the semester begins using a point bidding system. Students are accepted into the institution from a variety of areas and backgrounds, and it is very unlikely that students were able to select courses based on any previous relationships. This reduces the likelihood of selection bias effecting our model. In addition, first year students choose courses for a variety of reasons, and these reasons add an element of randomness to the course selection, which also helps to mitigate selection bias. 
 
-The classroom level data on first year students in their first class at the institution is primarily used in the second stage (primary) regression.\footnote{Some classroom level data was also used in the first stage regression. See \sectlabel{pointsdata} for details.}
+The classroom level data on first year students in their first class at the institution is primarily used in the second stage (primary) regression.\footnote{Some classroom level data is also used in the first stage regression. See \sectlabel{pointsdata} for details.}
 There are five key variables in our primary regression, Grade, AcadRating (Academic Rating), PctTopX, PctBotX, and PctMidY. 
 Grade is the primary outcome of interest, and is the grade received by a student after taking the course. 
 Courses are graded on a four point scale, and there are eleven possible grades ranging from an ``A'' (4.0) to ``F'' (0.0).\footnote{The possible grades are A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D+ = 1.3, D = 1.0, F = 0.0} 
@@ -268,7 +269,7 @@ The remaining rules from the original system are the same.
 This new system effectively forces students to spread their points into multiple classes (whereas in the original system all points could be placed into one class) and therefore decreases the standard deviation.
 
 The changes to the bidding system affect one of our key variables in the first stage regression, Demand. 
-The Demand variable represents the total number of points bid on a course divided by the number of bidders. 
+The Demand variable is an exclusion restriction that represents the total number of points bid on a course divided by the number of bidders. 
 In an attempt to correct for the changes in the bidding system, the 2015 Demand calculations were divided by five, because students received five times the number of points compared to the original system. 
 This corrected the mean of Demand in 2015, however the affect on standard deviation still remains. 
 Due to the nature of the bidding system changes, we are unable to correct the affect on the standard deviation, but fortunately this does not affect the overall results.\footnote{See the \nameref{results} section for more details.} 
@@ -359,12 +360,12 @@ G_{i} = \beta_{0} + \beta_{1} Ability_{i} + \beta_{2} Ability_{i}^{CM1} + \beta_
 \end{equation}
 
 This is an OLS model, where $G_{i}$ is the grade received by student $i$ in their first course at the institution, $Ability_{i}$ is a proxy for the student's academic ability (Academic Rating)\footnote{For more information see \sectlabel{data}.}, $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are classmate ability measures, $\overrightarrow{z}$ is a vector of control variables\footnote{Control variables included Minority, Female, InState, International, Needy, Class Size, URM, Year, Division, and Professor. See \tablelabel{tab:def1} and \tablelabel{tab:def2} for definitions.}, and $\epsilon_{i}$ is the error term. 
-$Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are our peer measures and are defined as one of the following, the proportion of high achieving, middle achieving, or low achieving students in a class\footnote{Unfortunately due to data limitations only the proportion of high achievers and low achievers in a class was used for our peer measures, for more details see \sectlabel{results}.}(as defined by cutoffs in academic rating), and $Ability_{i}^{CM1}$ is not the same measure as  $Ability_{i}^{CM2}$. 
+$Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are our peer measures and are defined as one of the following, the proportion of high achieving, middle achieving, or low achieving students in a class\footnote{Unfortunately due to data limitations only the proportion of high achievers and low achievers in a class is used for our peer measures, for more details see \sectlabel{results}.}(as defined by cutoffs in academic rating), and $Ability_{i}^{CM1}$ is not the same measure as  $Ability_{i}^{CM2}$. 
 Thus $\beta_{2}$ and $\beta_{3}$ are the primary coefficients of interest, as they estimate the impact of the classmate abilities variables (our peer measures) on a student's grade. 
 The OLS regression is run on the subset of students that are not part of the peer measures. 
 For example, if $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ were defined as the proportion of high achievers in a class and the proportion of low achievers in a class respectively, then the model would be run on the middle achievers. 
 
-However, because our sample is nonrandom\footnote{Unfortunately students are not assigned to classes and institutions randomly, instead the institution selects specific students, students next select the institution, and students then select into classes.} the calculated coefficients of model \eqref{eq:0} are at risk of being bias \citep{heckman1979sample}.\footnote{For more details see \sectlabel{methods:csb}} This bias, known as selection bias, is a serious threat to this type of peer effects model because self selection often exists and leads to a nonrandom sample \citep{carman2012classroom,betts2003determinants,ding2007peers}. Therefore, we must update our model in order to correct for any selection bias that may exist.
+However, because our sample is nonrandom\footnote{Unfortunately students are not assigned to classes and institutions randomly, instead the institution selects specific students, students next select the institution, and students then select into classes.} the calculated coefficients of model \eqref{eq:0} are at risk of being bias \citep{heckman1979sample}.\footnote{For more details see \sectlabel{methods:csb}} This bias, known as selection bias, is a serious threat to this type of peer effects model because self selection often exists and leads to a nonrandom sample \citep{carman2012classroom,burke2013classroom,ding2007peers}. Therefore, we must update our model in order to correct for any selection bias that may exist.
 
 \subsection{Two Stage Selection Model}\label{methods:tssmodel}
 
@@ -420,7 +421,7 @@ The second stage OLS model will first be regressed on the middle achievers who s
 
 \subsection{Controlling Selection Bias}\label{methods:csb}
 
-By using the ranking and points data in the two stage selection model we are attempting to correct for selection bias, a serious problem in many peer effect models \citep{carman2012classroom,betts2003determinants,ding2007peers}. 
+By using the ranking and points data in the two stage selection model we are attempting to correct for selection bias, a serious problem in many peer effect models \citep{carman2012classroom,burke2013classroom,ding2007peers}. 
 Specifically, our model is controlling for any selection bias that results from students selecting into classes high on their preference list. 
 The idea is that there are unobservable factors that correlate with both student class preferences and the grade received in the class, which would then bias our coefficients of interest ($\beta_{2}$ and $\beta_{3}$). 
 For instance, it may be that popular courses draw a higher proportion of high achieving students, while the majority of middle achieving students are drawn into those same courses because they enjoy the subject. 
@@ -434,7 +435,12 @@ By using the two stage regression model, we are attempting to correct for this t
 \input{results.tex}
 
 \section{Conclusion}\label{Conclusion}
-             
+      
+We find small but significant effects from the proportion of high achievers and low achievers in a class on the grades of middle achievers using a two stage selection model to control for selection bias. 
+The results indicate that the proportion of high achievers in a class has a negative impact on the grades of middle achievers, while the proportion of low achievers in a class has a positive impact on the grades of middle achievers. 
+These results run counter to those found in the majority of the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}, which may be due to changing peer dynamics from K-12 education to higher education or grade curving occuring in the majority of first year classes at the institution. 
+
+       
 \newpage{}
 
 \singlespacing
