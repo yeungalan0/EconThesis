@@ -195,7 +195,7 @@ In \citet{lavy2012good} researchers also found strong peer effects using the top
 \citet{lavy2012good} argue that their use of the top and bottom five percent is not arbitrary by showing that it is precisely those students around the five percent threshold that have a strong peer impact on fellow students. 
 That is, they showed that students in the middle ninety percent of the ability distribution do not show strong peer effects of any sort, while the top and bottom five percent are the students who are the most influential. 
 
-Our results run counter to those found in the current literature, granted that the current literature is rather scarce especially in the area of higher education \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}. 
+Our results run counter to those found in the current literature\footnote{\citet{burke2013classroom} do find one result similar to ours, but they do not provide any explaination for their finding.}, granted that the current literature is rather scarce especially in the area of higher education \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}. 
 Most of the current literature finds that low achievers hurt the grades of middle achieving students and high achievers help the grades of middle achieving students. 
 Similar results have also been discovered in roommate peer effects literature \citep{griffith2014peer,zimmerman2003peer,sacerdote2000peer}.
 The reasoning being that low achieving students may disrupt learning (possibly by instilling bad study habits in the middle achieving students) and the high achieving students may facilitate learning (possibly by asking more relevant questions or helping to tutor middle achieving students). 
@@ -234,9 +234,13 @@ For example take the well documented theory of loss aversion.
 As explained by \citet{tversky1991loss}, loss aversion implies that people experience greater impact from a loss when compared to a gain equal in magnitude, and this phenomena has been found in many different areas of human behavior \citep{shalev2002loss,goette2004loss}. 
 It is possible that the same psychological mechanisms driving the imbalance in losses and gains (loss aversion) are also driving the imbalance in the effect of the proportion of high achievers and low achievers on a middle achievers grades. 
 
-It is important to note that when comparing our results from the two stage selection model to the OLS model outlined in \eqref{eq:0}, the overall results are the same.\footnote{TODO: See Appendix X for the regular OLS results.} 
-The proportion of high achievers in a class has a negative impact on middle achieving student grades, and the proportion of low achievers in a class has a positive impact on middle achieving student grades.
-This suggests that selection bias is most likely not affecting our sample to any significant degree. However, selection bias may still be a concern with any future studies that utilize a different sample.
+There are two concerns with the methodology used in this paper that need to be addressed.
+One concern is selection bias and the other is the change in 2015 Demand\footnote{See \sectlabel{data:pointsdata} for more details.} which may affect the model and overall results.
+In order to correct for selection bias we use the two stage selection model outlined in \sectlabel{methods:tssmodel}, and after comparing our results to the OLS model outlined in \eqref{eq:0}, the overall results are the same.\footnote{TODO: See Appendix X for the regular OLS results.} 
+This suggests that selection bias is most likely not affecting our sample to any significant degree, but selection bias may still be a concern with any future studies that utilize a different sample.
+To address our second concern, we corrected Demand in 2015\footnote{See \sectlabel{data:pointsdata} for more details on the correction methods we used.} to eliminate some of the effects of the changes in the bidding system, however some effects persisted\footnote{In particular the standard deviation of Demand in 2015 was still affected.} and may have affected our results.
+In order to verify the robustness of our results we reran the regressions on the same data from the years 2011-2014, with the original bidding system, and found that the same overall results persist.\footnote{TODO: See appendix X for the full results.}
+Therefore neither of our initial concerns had a significant affect on the overall results of the paper.
 
 \subsection{Discussion}\label{results:discussion}
 
@@ -259,21 +263,21 @@ There are two types of policies that the majority of the literature discusses, `
 Streaming refers to the policy of grouping students of similar ability levels, while mixing generally refers to the policy of combining students of different ability levels \citep{ding2007peers}.
 However, in this case it is difficult to suggest any policy implications without restricting student course choices and without knowing how high achievers and low achievers are affected by classmates of different ability levels. 
 As suggested by \citet{burke2013classroom}, \citet{carman2012classroom}, and \citet{ding2007peers} and an optimal policy prescription may not exist.
-Suppose that the grades of high achievers benefit from middle achievers and low achievers, while the grade of low achievers are harmed by middle achievers and high achievers,\footnote{TODO: Which is what Appendix X suggests to be the case.} then a trade off will need to be made if a policy were to be implemented. 
+Suppose that the grades of high achievers benefit from middle achievers and low achievers, while the grade of low achievers are harmed by middle achievers and high achievers,\footnote{TODO: Which is what Appendix X suggests to be the case.} then a trade off will need to be made if a policy is to be implemented. 
 In this case, there is no grouping which would lead to a positive impact on all student grades. 
 For instance, if middle achievers are prioritized, since there are more of them, then they should be placed into classes with as many low achievers as possible. 
 However, this leads to two problems.
 First, the grades of low achievers would be harmed in this case.
 Additionally only a select group of middle achievers could benefit from this policy since there are far fewer low achievers and if too many middle achievers are placed into a class, the proportion of low achievers would be diluted to a point where the affects are insignificant. 
-If, on the other hand, the grades of low achievers were positively impacted by the proportion of middle achievers in the class, then by grouping low achievers and middle achievers the grades of both may be maximized.
+If, on the other hand, the grades of low achievers are positively impacted by the proportion of middle achievers in the class, then by grouping low achievers and middle achievers the grades of both may be maximized.
 Again, only a select group of middle achievers would benefit, but this would still maximize the average grade received by all groups overall.
-However, to effectively create this optimal grouping, the institution would need to decide to restrict student course choices based on their ability levels, which may not be a popular decision among current or prospective students.\footnote{Institutions could also incentivise students of certain ability levels to take certain courses, however this may be considered unfair to those who were not incentivised.}
+However, to effectively create this optimal grouping, the institution would need to decide to restrict student course choices based on their ability levels, which may not be a popular decision among current or prospective students.\footnote{Institutions could also incentivise students of certain ability levels to take certain courses, however this may be considered unfair to those who are not incentivised.}
 
 Unfortunately, this study is somewhat limited by the sample size. 
 With more observations we may be able to determine how high achievers and low achievers are affected by each other and middle achievers.
 Additionally, it is an open question as to whether or not these results may be generalized to other types of institutions. 
 This study was conducted on data from a small private liberal arts college and the results may differ at different types of institutions with potentially different peer interactions (such as at large universities). 
-Also, due to the time span of the data, we were unable to determine whether peer effects, grade curving, or both were responsible for our results. 
+Also, due to the time span of the data, we are unable to determine whether peer effects, grade curving, or both were responsible for our results. 
 
 Fortunately, these limitations may lead to promising areas of future research. 
 In a few years there may be enough observations to rerun the regressions on high and low achievers and discover how they are affected by students of other ability levels in the class. 

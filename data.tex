@@ -1,0 +1,178 @@
+The data set comes from a selective medium sized liberal arts college in the mid-west, henceforth referred to as the institution, for which data is collected on five cohorts (2011-2015). 
+Classroom level data is used in our regressions as it has been shown to generate stronger results than other group level measures \citep{burke2013classroom}. 
+
+In total there are 1,412 observations and 18 variables. 
+Additionally, two different types of data are used in this study. 
+The first type is classroom data, that consists of individual student level characteristics as well as classroom characteristics. 
+We use data from the first class taken by first year students in order to mitigate selection bias\footnote{Discussed in the \nameref{methods} section.}. %TODO: Check this
+The second type of data we use is point data, which consists of the number of points students bid on classes and their preferences for certain classes. 
+
+\subsection{Classroom Data}\label{data:classdata}
+
+%We choose to use only data on the first class taken by first year students in order to mitigate selection bias. First year students must select their first course before the semester begins using a point bidding system. Students are accepted into the institution from a variety of areas and backgrounds, and it is very unlikely that students were able to select courses based on any previous relationships. This reduces the likelihood of selection bias effecting our model. In addition, first year students choose courses for a variety of reasons, and these reasons add an element of randomness to the course selection, which also helps to mitigate selection bias. 
+
+The classroom level data on first year students in their first class at the institution is primarily used in the outcome equation.\footnote{Some classroom level data is also used in the selection equation. See \sectlabel{data:pointsdata} for details.}
+There are five key variables in our outcome equation, Grade, AcadRating (Academic Rating), PctTopX, PctBotX, and PctMidY. 
+The dependent variable, Grade is the primary outcome of interest, and is the grade received by a student after taking the course. 
+Courses are graded on a four point scale, and there are eleven possible grades ranging from an ``A'' (4.0) to ``F'' (0.0).\footnote{The possible grades are A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D+ = 1.3, D = 1.0, F = 0.0} 
+As a measure of student ability we follow the literature and use a proxy measure developed on data prior to college enrollment, Academic Rating \citep{griffith2014peer,smith2015new}. 
+The Academic Rating is a number assigned to all students at the institution. 
+It is a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. 
+As suggested by \citet{betts2003determinants} and \citet{dooley2012persistence} these variables are all common (and ``good'') indicators of college academic performance.
+The Academic Rating variable ranges from a low of one (representing a low ability student) to a high of sixty-five (representing a high ability student).
+
+The Academic Rating variable is used to create our peer measure variables PctTopX, PctBotX, and PctMidY. 
+PctTopX represents the proportion of students in the class that are in the top X percent of the sample based on Academic Rating. 
+For instance, PctTop5 represents the proportion of students in the class that are in the top five percent of the sample based on Academic Rating.
+PctBotX is defined similarly for the bottom X percentage in terms of Academic Rating. 
+PctMidY is the proportion of students in a class that are not in the top X percent or bottom X percent of the sample in terms of Academic Rating. 
+The remaining variables, Minority, Female, InState, Intl (International), Needy, ClassSize, URM (Underrepresented Minority), Year, Division, and Professor, are used as control variables in the regression.
+\tablelabel{tab:def1} displays the definitions of all the class level variables used. 
+
+\clearpage{}
+
+\begin{table}[htb]
+\centering
+\caption{Classroom Variable Definitions}\label{tab:def1}
+ \begin{tabular}{p{0.15\linewidth}|p{0.8\linewidth}} 
+ \hline\hline
+ Variable & Definition \\ [0.5ex] 
+ \hline\hline
+ Grade & The grade received by a student after taking the course. \\ 
+ \hline
+ AcadRating & Referred to as Academic Rating, a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. \\
+ \hline
+ PctTopX & The proportion of students in the class in the top X percent of the sample based on Academic Rating \\
+ \hline
+ PctBotX & The proportion of students in the class in the bottom X percent of the sample based on Academic Rating \\
+ \hline
+ PctMidY & The proportion of students in a class that are not in the top X percent or bottom X percent of the sample in terms of Academic Rating. \\
+ \hline
+ Minority & A dummy variable representing whether or not the student is non-Caucasian. 1 = non-Caucasian \& 0 = Caucasian\\
+ \hline
+ Female & A dummy variable representing whether or not the student identifies as a female. 1 = female \& 0 = male\\
+ \hline
+ InState & A dummy variable indicating whether or not the student is an in-state student.  1 = in-state \& 0 = out of state\\
+ \hline
+ Intl & A dummy variable indicating whether or not the student is an international student.  1 = international \& 0 = not international\\
+ \hline
+ Needy & Whether or not a student qualified for need based financial aid.  1 = financial aid \& 0 = no financial aid\\
+ \hline
+ ClassSize & An integer the represents the total number of students in a class. \\
+ \hline
+ URM & Under Represented Minority, a dummy variable indicating whether or not the student is non-Caucasian or Asian.  1 = Asian or Caucasian \& 0 = other ethnicity \\
+ \hline
+ Year & The year the class took place. \\
+ \hline
+ Division & The subject area of the class, either Natural Science, Social Sciences, or Humanities. \\
+ \hline
+ Professor & An identifier for the professor teaching the course. \\
+[1ex] 
+ \hline\hline
+\end{tabular}
+\end{table}
+
+\clearpage{}
+
+\subsection{Points Data}\label{data:pointsdata}
+
+At this institution a bidding system is used to ration classes to students. 
+From 2011-2014 the bidding system was as follows: 
+students are allotted twenty points and must rank eight classes in terms of their preferences, 
+after classes are ranked students then must bid a number between zero and twenty (inclusive) points per class on their list, 
+students with the highest number of points bid per class are allotted seats, and ties are broken randomly. 
+If a student does not make it into any class on his or her preference list, then a class is chosen for the student at random. 
+
+In the year 2015, the bidding system was changed in an effort to allow more students to select into a class higher on their preference list. 
+The system was changed in the following ways:
+students are allotted 100 points and must rank eight classes in terms of their preferences,
+after classes are ranked students then must bid a number between one and twenty (inclusive) points per class on their list.
+The remaining rules from the original system are the same. 
+This new system effectively forces students to spread their points into multiple classes (whereas in the original system all points could be placed into one class).
+
+The changes to the bidding system affect one of our key variables, Demand. 
+The Demand variable is an exclusion restriction in our selection equation that represents the total number of points bid on a course divided by the number of bidders. 
+In an attempt to correct for the changes in the bidding system, the 2015 Demand calculations are divided by five, because students receive five times the number of points compared to the original system. 
+This corrects the mean of Demand in 2015, however an effect on standard deviation persists. 
+
+Another key variable in our selection equation is Ranking. 
+Ranking is the dependent variable in the selection equation, and is a number between one and eight that specifies the student's preference for the course, where one is a high preference, eight is a low preference, and preferences are not repeated. 
+The remaining variables in the first stage regression, Minority, Female, InState, Intl (International), Needy, AcadRating, URM (Underrepresented Minority), and Subject are used as control variables. Refer to \tablelabel{tab:def2} for the definitions of the unique variables used in the first stage regression. 
+
+\begin{table}[htb]
+  \centering
+  \caption{Points Data Variable Definitions}\label{tab:def2}
+  \begin{tabular}{p{0.15\linewidth}|p{0.8\linewidth}} 
+    \hline\hline
+    Variable & Definition \\ [0.5ex] 
+    \hline\hline
+    Ranking & A number between one and eight specifying the student's preference for the course, where one is a high preference and eight is a low preference. \\ 
+    \hline
+    Demand & The total number of points bid on a course divided by the number of bidders. For the year 2015, this variable was divided by five to correct for the bidding system changes.\\
+    \hline
+    %TODO: Create full list
+    Subject & The specific subject of the course, such as mathematics, anthropology, chemistry, psychology, etc. TODO: For a full list of subjects see Appendix X. \\
+    [1ex] 
+    \hline\hline
+  \end{tabular}
+\end{table}
+
+\subsection{Summary Statistics}\label{summarystats}
+
+The descriptive statistics for the non-dummy variables are displayed in \tablelabel{tab:summarystats}.\footnote{Control variables, such as Year, Professor, Division, and Subject where not summarized.} 
+The outcome of interest, Grade, has a mean that changes slightly over time, while the standard deviation remains fairly constant. 
+From 2011-2012 the mean Grade was 3.115, then from 2013-2015 the mean grade increased to 3.15. 
+This suggests that there might have been some grade inflation over the years as the mean Academic Rating, a measure of student ability, remained fairly consistent from 2011-2014 (jumping by about two points in 2015). 
+The variables PctTopX, PctBotX, and PctMidY all vary slightly from their expected values, indicating that the distribution of abilities is not uniform every year. 
+That is, one would expect the mean of PctTop5 to always be about 0.05, however this is not the case since the Academic Rating cutoffs are not exact\footnote{Exactly 5\% of students do not have an Academic Rating higher than our cutoff. Instead the number is about 0.048\% and this is true for all of our defined cutoffs.} and the distribution of abilities is not uniform. 
+In fact, the distribution of abilities seems to be biased towards recent years, meaning the majority of high achieving students were enrolled in more recent years, as the higher mean Academic Rating, PctTop5, and PctTop10 in 2015 indicate. 
+ClassSize jumps from a mean of 11 in 2011-2014 to 14.27 in 2015 because fewer classes were offered and more students were in the incoming class.
+The average number of classes offered fell from 29 in 2012-2014 to 25 in 2015.\footnote{In 2011 the mean class size was also 25, however there were fewer students in the incoming class.}
+As expected, the Demand variable has a lower standard deviation in 2015 compared to 2011-2014 because of the bidding system changes. 
+
+% It may be important to note that several studies suggest that smaller class sizes have a positive impact on average student achievement (measured by grades and test scores) \citep{diette2015class,kokkelenberg2008effects}. 
+% The primary reasoning for the inverse relationship between achievement and class size is that students have more quality time to interact with teachers and peers as class size decreases. 
+% As this institution has relatively small class sizes, we may expect to find magnified peer effects. 
+
+\begin{sidewaystable}
+\caption{Summary Statistics}\label{tab:summarystats}
+\centering\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c|c|c}
+\hline
+\hline
+& \multicolumn{2}{|c|}{2011 Data} & \multicolumn{2}{|c|}{2012 Data} & \multicolumn{2}{|c|}{2013 Data} & \multicolumn{2}{|c|}{2014 Data}  & \multicolumn{2}{|c|}{2015 Data} & \multicolumn{2}{|c}{Overall} \\
+\hline
+\prbf{Variable} & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.}  & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.} \\
+\hline
+            Grade                    & 3.12  & 0.96 & 3.11  & 0.87 & 3.17  & 0.78 & 3.15  & 0.81 & 3.16  & 0.87 & 3.14  & 0.86 \\
+            AcadRa{\textasciitilde}g & 50.72 & 6.09 & 50.89 & 5.9  & 49.98 & 6.25 & 50.95 & 6.44 & 52.80 & 6.19 & 51.12 & 6.26 \\
+            PctTopQ                  & 0.30  & 0.13 & 0.28  & 0.17 & 0.22  & 0.17 & 0.27  & 0.15 & 0.41  & 0.14 & 0.30  & 0.17 \\
+            PctTop5                  & 0.08  & 0.10 & 0.06  & 0.10 & 0.06  & 0.07 & 0.04  & 0.07 & 0.14  & 0.10 & 0.08  & 0.10 \\
+            PctTop10                 & 0.16  & 0.12 & 0.14  & 0.13 & 0.14  & 0.11 & 0.16  & 0.13 & 0.26  & 0.13 & 0.18  & 0.13 \\
+            PctBotQ                  & 0.23  & 0.11 & 0.19  & 0.11 & 0.28  & 0.17 & 0.18  & 0.10 & 0.13  & 0.10 & 0.20  & 0.13 \\
+            PctBot5                  & 0.04  & 0.06 & 0.05  & 0.08 & 0.06  & 0.12 & 0.06  & 0.08 & 0.04  & 0.06 & 0.05  & 0.08 \\
+            PctBot10                 & 0.08  & 0.08 & 0.07  & 0.08 & 0.10  & 0.14 & 0.08  & 0.08 & 0.06  & 0.08 & 0.08  & 0.09 \\
+            PctMid50                 & 0.47  & 0.16 & 0.54  & 0.16 & 0.50  & 0.17 & 0.54  & 0.14 & 0.46  & 0.14 & 0.50  & 0.16 \\
+            PctMid90                 & 0.87  & 0.11 & 0.89  & 0.12 & 0.87  & 0.14 & 0.90  & 0.12 & 0.82  & 0.10 & 0.87  & 0.12 \\
+            PctMid80                 & 0.77  & 0.14 & 0.78  & 0.14 & 0.76  & 0.16 & 0.76  & 0.16 & 0.68  & 0.13 & 0.75  & 0.15 \\
+            Minority                 & 0.21  & 0.41 & 0.37  & 0.48 & 0.46  & 0.50 & 0.35  & 0.48 & 0.39  & 0.49 & 0.36  & 0.48 \\
+            Female                   & 0.47  & 0.50 & 0.55  & 0.50 & 0.53  & 0.50 & 0.51  & 0.50 & 0.54  & 0.50 & 0.52  & 0.50 \\
+            InState                  & 0.15  & 0.35 & 0.13  & 0.33 & 0.15  & 0.36 & 0.12  & 0.33 & 0.15  & 0.36 & 0.14  & 0.35 \\
+            Intl                     & 0.02  & 0.15 & 0.01  & 0.08 & 0.06  & 0.23 & 0.05  & 0.22 & 0.07  & 0.25 & 0.04  & 0.20 \\
+            Needy                    & 0.39  & 0.49 & 0.36  & 0.48 & 0.36  & 0.48 & 0.32  & 0.47 & 0.43  & 0.50 & 0.37  & 0.48 \\
+            ClassS{\textasciitilde}e & 10.85 & 3.09 & 11.91 & 3.05 & 11.11 & 2.48 & 11.39 & 2.62 & 14.27 & 2.47 & 12.00 & 3.01 \\
+            URM                      & 0.11  & 0.31 & 0.29  & 0.45 & 0.36  & 0.48 & 0.27  & 0.44 & 0.30  & 0.46 & 0.27  & 0.45 \\
+            Ranking                  & 1.77  & 1.54 & 1.70  & 1.44 & 1.79  & 1.41 & 1.91  & 1.79 & 2.14  & 1.41 & 1.87  & 1.53 \\
+            Demand                   & 2.81  & 0.83 & 2.62  & 0.75 & 2.28  & 0.86 & 2.37  & 0.86 & 2.44  & 0.22 & 2.49  & 0.76 \\
+\hline
+            N                        & 226   &      & 292   &      & 290   &      & 285   &      & 319   &      & 1,412        \\
+\hline
+\hline
+\end{tabular}
+\end{sidewaystable}
+
+\newpage{}
+
+Our data gives us a unique opportunity to study peer effects in higher education.
+First, our data comes from an institution with relatively small class sizes which \citet{diette2015class} and \citet{kokkelenberg2008effects} show have a positive impact on average student achievement (measured by grades and test scores).
+The primary reasoning for the inverse relationship between achievement and class size is that students have more quality time to interact with teachers and peers as class size decreases, suggesting that we may expect to find magnified peer effects at this institution. 
+Additionally, the data on student preferences (Ranking) and class demands (Demand) enable us to use a two stage selection model, a model generally not used in other classroom peer effects literature\footnote{See \sectlabel{litreview} for more details.}, to combat selection bias and analyze the data. 

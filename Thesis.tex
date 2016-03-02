@@ -5,6 +5,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{fancyhdr}
+%Remove headers on pages with only floats
+\fancyhead[LE,RO]{\iffloatpage{}{\slshape\rightmark}}
+\fancyhead[LO,RE]{\iffloatpage{}{\slshape\leftmark}}
 \pagestyle{fancy}
 \setcounter{secnumdepth}{2}
 \usepackage{setspace}
@@ -28,11 +31,6 @@
 % Section variables used throughout
 \newcommand{\sectlabel}[1]{section~\ref{#1} (\nameref{#1})}
 \newcommand{\tablelabel}[1]{Table~\ref{#1}}
-
-% \newcommand{\introduction}{section 1 (Introduction)}
-% \newcommand{\litreview}{section 2 (Literature Review)}
-% \newcommand{\data}{section 3 (Data)}
-% \newcommand{\introduction}{section 3.1 (Class Room Data)}
 
 % Caption formatting
 \usepackage[font=footnotesize,labelfont=bf]{caption}
@@ -141,308 +139,93 @@ the classification numbers, such as \ J7, B54,\emph{ }etc. here\emph{.}
 
 \section{Introduction}\label{intro}
 
-One way to judge the quality of an institution is to use the quality of the student body as a proxy measure. 
-Although, there is no standard to measure student quality, there are performance measures that are used to judge the quality of a student body (also referred to as peer quality).
-Indeed, for institutions of higher education it is now standard practice to use performance measures of the student body as an indicator of institutional quality.
-For example, the average high school GPA, average SAT score, and average class rank are all common reported characteristics of an institutions student body.
-The underlying idea of using the quality of the student body as a measure for the quality of the institution, is that the quality of one's peers matter.
-Using this idea as our foundation, this paper seeks to answer the question, how does the quality of one's classmates impact a student's grade?
-If the quality of one's peers has a strong impact on one's educational experience, than one of the most obvious places for an effect to exist is in the classroom. 
+In higher education, economists and prospective students often use the performance measures of the student body as a proxy measure for the quality of the institution \citep{smith2015new,sarmiento2015quality,black2006estimating}.
+For example, the average high school GPA, average SAT score, and average class rank are all common reported characteristics of an institution and indicators of institutional quality.
+The underlying idea of using the quality of the student body as a measure for the quality of the institution, is that the quality of one's peers matter. 
+Indeed, several studies have shown that peer quality has a positive impact on long term student outcomes, such as graduation rates and cumulative GPA \citep{smith2015new,luppino2015college,ost2010role}. 
+Naturally, these findings lead to another area of research, identifying the specific areas of a student's life where peer effects are most significant. 
+One of the most obvious areas for a strong effect to exist is in the classroom.
+Thus, we seek to understand peer effects in the classroom, specifically how the ability of one's classmates impacts a student's class grade.
+
+This study contributes to the literature in two ways.
+First, this is the first study of it's kind (known to us) to research peer effects at the classroom level at this type of institution (a small private liberal arts college).
+Whereas the majority of other studies focus on K-12 education, we analyze the peer effects at an institution of higher education.
+Second, due to our access to data, we are able to use a unique method (at least in terms of classroom peer effects literature\footnote{Most of the literautre uses quasi-random assignments or fixed effects models. See \sectlabel{litreview} for more details.}) to analyze the data and combat selection bias, a serious problem in studies of this type \citep{carman2012classroom,burke2013classroom,ding2007peers}. 
+
+Using data from a small private liberal arts college in the mid-west we find that, regardless of the changes we applied to the peer measure, the proportion of high achieving students in a class has a small but significant negative impact on the grades of middle achieving students. 
+Additionally, we find that, when the peer measure is at its strictest level, the proportion of low achieving students in a class has a small but positive impact on the grades of middle achieving students. 
+These results are contrary to those found in most of the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}, which may be due to changing peer dynamics from K-12 education to higher education, grade curving occurring in classes at the institution, or a combination of both.
+Though these results are interesting, it is unclear how well they generalize to other institutions, of different types and the same type, due to the current scarcity of literature. 
+
+The structure of the paper is as follows: 
+We discuss the related literature in section~\ref{litreview}. 
+In section~\ref{data}, we examine the data used in this study. 
+In section~\ref{methods}, we describe our empirical methodology.
+We present our results, discuss the implications, and offer suggestions for further research in section~\ref{results}.
+Lastly, we conclude in section~\ref{conclusion}.
 
 \section{Literature Review}\label{litreview}
 
-There has been a fair amount of recent literature on peer effects in educational institutions.
-Specifically, roommate peer effects research has been a trending topic due to the natural quasi-random roommate assignments made by many institutions of higher education.
+\citet{smith2015new}, \citet{luppino2015college}, and \citet{ost2010role} show that peer effects have important long term impacts on cumulative GPA and graduation rates at institutions of higher education.
+These are important broad findings, which have naturally led to a more narrow focus in the literature.
+Much of the current literature focuses on identifying the areas of a student's life where peer effects are most significant. 
+
+For instance, roommate peer effects research has been a trending topic, due to the natural quasi-random roommate assignments made by many institutions of higher education.
 Quasi-random roommate assignments, such as those used in \citet{griffith2014peer} and \citet{zimmerman2003peer}, allow researchers to avoid the perils of selection bias and lead to theoretically more accurate results.
 However, most of the literature is divided on whether or not roommate peer effects exist \citep{griffith2014peer,zimmerman2003peer,sacerdote2000peer,foster2006s,mcewan2006roommate}.
-This is a testament to the difficulty of finding peer effects and the difficulty of solving all the econometric problems to ensure that they actually exist.
+This is a testament to the difficulty of finding peer effects and the difficulty of solving the econometric problems that exist in peer effects modeling.
 
-Much of the literature on peer effects in the classroom exploits quasi-random classroom assignments, in a similar vain to the roommate peer effects literature.
-For instance, researchers in \citet{kang2007classroom} exploit the quasi-random classroom assignments in South Korean middle schools, and \citet{carman2012classroom} utilize the fact that students are assigned to Chinese middle schools either randomly or through an admissions test.
+Our research adds to the growing (but currently scarce) literature focused on peer effects in the classroom.
+In a similar vain to the roommate peer effects literature, much of the literature on peer effects in the classroom exploits quasi-random classroom assignments.
+For instance, \citet{kang2007classroom} exploit the quasi-random classroom assignments in South Korean middle schools, and \citet{carman2012classroom} utilize the fact that students are assigned to Chinese middle schools either randomly or through an admissions test.
 Both studies focused on determining the significance of peer effects on classroom grades, and find evidence of peer effects.
-\citet{kang2007classroom} finds that strong students have a positive impact on the academic performance other students, while weak students have a negative effect on the performance of other students. 
-\citet{carman2012classroom} find somewhat mixed results, but in general they find evidence of positive and significant peer effects on the impact of classmate quality on the academic performance of other students.
-Other studies use econometric techniques, such as fixed effects modeling, to correct for any selection bias.\footnote{See \citet{burke2013classroom} as an additional example.}
+\citeauthor{kang2007classroom} finds that strong students\footnote{For our purposes, any qualitative measure of students abilities (high or low achiever, strong or weak student, etc.) refers to students relative acadmeic performance (usually on standardized tests). This is standard practice in all of the related literature \citep{carman2012classroom,burke2013classroom,kang2007classroom,schlosser2008inside,lavy2012good}} have a positive impact on the academic performance of other students, while weak students have a negative effect on the performance of other students. 
+\citeauthor{carman2012classroom} find somewhat mixed results, but in general they find evidence of positive and significant peer effects on the impact of classmate quality on the academic performance of other students.
+Other studies use econometric techniques, such as fixed effects modeling, to correct for any selection bias.
 For example, \citet{schlosser2008inside} and \citet{lavy2012good} control for fixed effects when studying the peer effects of underachievers and overachievers on other students in secondary schools.
 Both studies find evidence of peer effects where a larger proportion of lower achieving students in a high school class has a negative impact on the achievement of ``regular'' students in the class.
-\citet{lavy2012good} in particular also find a positive peer effect from high achieving peers on girls.
-In general, the majority of the literature finds a larger proportion of higher achievers in a class has a positive impact on the academic performance of other students, and a larger proportion of low achievers in a class has a negative impact on the academic performance of other students.\footnote{See the \nameref{results} section for the reasoning.}
+\citeauthor{lavy2012good} in particular find a positive peer effect from high achieving peers on girls.
+Additionally, \citet{burke2013classroom} use fixed effects modeling to analyze the peer effects in Florida public school classrooms.
+In general, \citeauthor{burke2013classroom} find results in line with the majority of other studies, an increase in the fraction of relatively higher achieving peers makes other students better off and an increase in the fraction of relatively lower achieving peers makes other students worse off.
+However, there are a few notable exceptions.
+\citeauthor{burke2013classroom} find that high achieving students benefit from an increased fraction of low or high achieving students, and in middle school mathematics, middle achievers benefit from a higher fraction of low achievers.
+The authors suggest that the intellectual distance between high achievers and low achievers may be the reason for their former finding.
+They explain that the intellectual distance may be so vast as to be a barrier to communication between the two groups, whereas high achievers can communicate effectively with the less intellectually distanced middle achievers (making high achievers worse off). 
+Unfortunately, \citeauthor{burke2013classroom} do not provide an explanation for their later finding which resembles one of the results of this paper.
+With the few exceptions found by \citet{burke2013classroom}, the majority of the literature finds that a larger proportion of higher achievers in a class has a positive impact on the academic performance of other students, and a larger proportion of low achievers in a class has a negative impact on the academic performance of other students.%\footnote{See the \nameref{results} section for the reasoning.}%
 
-We seek to add to the literature by analyzing the peer effects (if any) in higher education, whereas the majority of other studies focus on K-12 education. 
+Whereas the majority of other studies focus on K-12 education, we add to the literature by analyzing the peer effects in higher education. 
 It is possible that the peer dynamics change in the transition from secondary education to higher education, and our data set gives us a unique opportunity to analyze these peer dynamics.
-Our data set comes from a small liberal arts institution which should make it an excellent environment to see magnified peer effects.\footnote{For more details see \sectlabel{summarystats}.}
+% Additionally, our data set comes from a small liberal arts institution which should make it an excellent environment to see magnified peer effects.\footnote{For more details see \sectlabel{summarystats}.}
 
 \section{Data}\label{data}
 
-Our data set comes from a selective medium sized liberal arts college in the mid-west, henceforth referred to as the institution, for which we have data on 5 cohorts (2011-2015). 
-We use classroom level data in our regressions as it has been shown to generate stronger results than other group level measures \citep{burke2013classroom}. 
+\input{data.tex}
 
-In total we have 1,412 observations and use 18 variables. 
-Additionally, we use two different types of data in this study. 
-The first type is classroom data, that consists of individual student level characteristics as well as classroom characteristics. 
-We use data from the first class taken by first year students in order to mitigate selection bias\footnote{Discussed in the \nameref{methods} section.}.
-The second type of data we use is point data, which consists of the number of points students bid on classes and their preferences for certain classes. 
-
-\subsection{Classroom Data}\label{classdata}
-
-%We choose to use only data on the first class taken by first year students in order to mitigate selection bias. First year students must select their first course before the semester begins using a point bidding system. Students are accepted into the institution from a variety of areas and backgrounds, and it is very unlikely that students were able to select courses based on any previous relationships. This reduces the likelihood of selection bias effecting our model. In addition, first year students choose courses for a variety of reasons, and these reasons add an element of randomness to the course selection, which also helps to mitigate selection bias. 
-
-The classroom level data on first year students in their first class at the institution is primarily used in the second stage (primary) regression.\footnote{Some classroom level data is also used in the first stage regression. See \sectlabel{pointsdata} for details.}
-There are five key variables in our primary regression, Grade, AcadRating (Academic Rating), PctTopX, PctBotX, and PctMidY. 
-Grade is the primary outcome of interest, and is the grade received by a student after taking the course. 
-Courses are graded on a four point scale, and there are eleven possible grades ranging from an ``A'' (4.0) to ``F'' (0.0).\footnote{The possible grades are A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D+ = 1.3, D = 1.0, F = 0.0} 
-%TODO: Add to citations
-As a measure for student ability we follow the literature and use a proxy measure developed on data prior to college enrollment, Academic Rating \citep{griffith2014peer}. 
-The Academic Rating is a number assigned to all students at the institution. 
-It is a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. 
-As suggested by the literature these variables are all common (and ``good'') indicators of college academic performance \citep{betts2003determinants,dooley2012persistence}.
-The Academic Rating variable ranges from a low of 1 (representing a low ability student) to a high of 65 (representing a high ability student).
-
-We used the Academic Rating variable to create our peer measure variables PctTopX, PctBotX, and PctMidY. 
-PctTopX represents the proportion of students in the class that are in the top X percent of the sample based on Academic Rating. 
-For instance, PctTop5 represents the proportion of students in the class that are in the top five percent of the sample based on Academic Rating.
-PctBotX is defined similarly for the bottom X percentage in terms of Academic Rating. 
-PctMidY is the proportion of students in a class that are not in the top X percent or bottom X percent of the sample in terms of Academic Rating. 
-The remaining variables, Minority, Female, InState, Intl (International), Needy, ClassSize, URM (Underrepresented Minority), Year, Division, and Professor, were used as control variables in the regression.
-Refer to \tablelabel{tab:def1} below for the definitions of all the class level variables used. 
-
-\clearpage{}
-
-\begin{table}[htb]
-\centering
-\caption{Classroom Variable Definitions}\label{tab:def1}
- \begin{tabular}{|p{0.15\linewidth}|p{0.8\linewidth}|} 
- \hline\hline
- Variable & Definition \\ [0.5ex] 
- \hline\hline
- Grade & The grade received by a student after taking the course. \\ 
- \hline
- AcadRating & Referred to as Academic Rating, a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. \\
- \hline
- PctTopX & The proportion of students in the class in the top X percent of the sample based on Academic Rating \\
- \hline
- PctBotX & The proportion of students in the class in the bottom X percent of the sample based on Academic Rating \\
- \hline
- PctMidY & The proportion of students in a class that are not in the top X percent or bottom X percent of the sample in terms of Academic Rating. \\
- \hline
- Minority & A dummy variable representing whether or not the student is non-Caucasian. 1 = non-Caucasian \& 0 = Caucasian\\
- \hline
- Female & A dummy variable representing whether or not the student identifies as a female. 1 = female \& 0 = male\\
- \hline
- InState & A dummy variable indicating whether or not the student is an in-state student.  1 = in-state \& 0 = out of state\\
- \hline
- Intl & A dummy variable indicating whether or not the student is an international student.  1 = international \& 0 = not international\\
- \hline
-%TODO: Check this
- Needy & Whether or not a student qualified for need based financial aid.  1 = financial aid \& 0 = no financial aid\\
- \hline
- ClassSize & An integer the represents the total number of students in a class. \\
- \hline
- URM & Under Represented Minority, a dummy variable indicating whether or not the student is non-Caucasian or Asian.  1 = Asian or Caucasian \& 0 = other ethnicity \\
- \hline
- Year & The year the class took place. \\
- \hline
- Division & The subject area of the class, either Natural Science, Social Sciences, or Humanities. \\
- \hline
- Professor & An identifier for the professor teaching the class. \\
-[1ex] 
- \hline\hline
-\end{tabular}
-\end{table}
-
-\clearpage{}
-
-\subsection{Points Data}\label{pointsdata}
-
-At this institution a bidding system is used to ration classes. 
-From 2011-2014 the bidding system was as follows: 
-students are allotted 20 points and must rank eight classes in terms of their preferences, 
-after classes are ranked students then must bid a number between 0 and 20 (inclusive) points per class on their list, 
-students with the highest number of points bid per class are allotted seats, and ties are broken randomly. 
-If a student does not make it into any class on his or her preference list, then a class is chosen for the student at random. 
-
-In the year 2015, the bidding system was changed in an effort to allow more students to select into a class higher on their preference list. 
-The system was changed in the following ways:
-students are allotted 100 points and must rank eight classes in terms of their preferences,
-after classes are ranked students then must bid a number between 1 and 20 (inclusive) points per class on their list.
-The remaining rules from the original system are the same. 
-This new system effectively forces students to spread their points into multiple classes (whereas in the original system all points could be placed into one class) and therefore decreases the standard deviation.
-
-The changes to the bidding system affect one of our key variables in the first stage regression, Demand. 
-The Demand variable is an exclusion restriction that represents the total number of points bid on a course divided by the number of bidders. 
-In an attempt to correct for the changes in the bidding system, the 2015 Demand calculations were divided by five, because students received five times the number of points compared to the original system. 
-This corrected the mean of Demand in 2015, however the affect on standard deviation still remains. 
-Due to the nature of the bidding system changes, we are unable to correct the affect on the standard deviation, but fortunately this does not affect the overall results.\footnote{See the \nameref{results} section for more details.} 
-
-Another key variable in our first stage regression is Ranking. 
-Ranking is our dependent variable in the first stage regression, and is a number between one and eight that specifies the student's preference for the course, where one is a high preference, eight is a low preference, and preferences are not repeated. 
-We used the remaining variables in the first stage regression, Minority, Female, InState, Intl (International), Needy, AcadRating, URM (Underrepresented Minority), and Subject as control variables. Refer to \tablelabel{tab:def2} below for the definitions of the unique variables used in the first stage regression. 
-
-\begin{table}[htb]
-  \centering
-  \caption{Points Data Variable Definitions}\label{tab:def2}
-  \begin{tabular}{|p{0.15\linewidth}|p{0.8\linewidth}|} 
-    \hline\hline
-    Variable & Definition \\ [0.5ex] 
-    \hline\hline
-    Ranking & A number between one and eight specifying the student's preference for the course, where one is a high preference and eight is a low preference. \\ 
-    \hline
-    Demand & The total number of points bid on a course divided by the number of bidders. For the year 2015, this variable was divided by five to correct for the bidding system changes.\\
-    \hline
-    %TODO: Create full list
-    Subject & The specific subject of the course, such as mathematics, anthropology, chemistry, psychology, etc. For a full list of subjects see Appendix A. \\
-    [1ex] 
-    \hline\hline
-  \end{tabular}
-\end{table}
-
-\subsection{Summary Statistics}\label{summarystats}
-
-The descriptive statistics for the non-dummy variables are given below in \tablelabel{tab:summarystats}.\footnote{Control variables, such as Year, Professor, Division, and Subject where not summarized.} 
-The outcome of interest, Grade, has a mean that changes slightly over time, while the standard deviation remains fairly constant. 
-From 2011-2012 the mean Grade was 3.115, then from 2013-2015 the mean grade increased to 3.15. 
-This suggests that their might have been some grade inflation over the years as the mean Academic Rating, a measure of student ability, remained fairly consistent from 2011-2014 (jumping by about 2 points in 2015). 
-The variables PctTopX, PctBotX, and PctMidY all vary slightly from their expected values, indicating that the distribution of abilities is not uniform every year. 
-That is, one would expect the mean of PctTop5 to always be about 0.05, however this is not the case since the Academic Rating cutoffs are not exact\footnote{Exactly 5\% of students do not have an Academic Rating higher than our cutoff. Instead the number is about 0.048\% and this is true for all of our defined cutoffs.} and the distribution of abilities is not uniform. 
-In fact, the distribution of abilities seems to be bias towards recent years as the higher mean Academic Rating, PctTop5, and PctTop10 in 2015 indicate. 
-The ClassSize variable jumps from a mean of 11 in 2011-2014 to 14.27 in 2015 because fewer classes were offered and more students were in the incoming class.
-The average number of classes offered fell from 29 in 2012-2014 to 25 in 2015.\footnote{In 2011 the mean class size was also 25, however there were fewer students in the incoming class.}
-As expected, the Demand variable has a lower standard deviation in 2015 compared to 2011-2014 because the bidding system changes. 
-
-It may be valuable to note that several studies suggest that smaller class sizes have a positive impact on average student achievement (measured by grades and test scores) \citep{diette2015class,kokkelenberg2008effects}. 
-The primary reasoning for the inverse relationship between achievement and class size is that students have more quality time to interact with teachers and peers as class size decreases. 
-As this institution has relatively small class sizes, we may expect to find magnified peer effects. 
-
-\begin{sidewaystable}
-\caption{Summary Statistics}\label{tab:summarystats}
-\centering\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\hline
-& \multicolumn{2}{|c|}{2011 Data} & \multicolumn{2}{|c|}{2012 Data} & \multicolumn{2}{|c|}{2013 Data} & \multicolumn{2}{|c|}{2014 Data}  & \multicolumn{2}{|c|}{2015 Data}\\
-\hline
-\prbf{Variable} & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.}  & \prbf{Mean} & \prbf{Std. Dev.} & \prbf{Mean} & \prbf{Std. Dev.}\\
-\hline
-            Grade    & 3.12  & 0.96 & 3.11  & 0.87 & 3.17  & 0.78 & 3.15  & 0.81 & 3.16  & 0.87 \\
-            AcadRa{\textasciitilde}g & 50.72 & 6.09 & 50.89 & 5.9  & 49.98 & 6.25 & 50.95 & 6.44 & 52.80 & 6.19 \\
-            PctTopQ  & 0.30  & 0.13 & 0.28  & 0.17 & 0.22  & 0.17 & 0.27  & 0.15 & 0.41  & 0.14 \\
-            PctTop5  & 0.08  & 0.10 & 0.06  & 0.10 & 0.06  & 0.07 & 0.04  & 0.07 & 0.14  & 0.10 \\
-            PctTop10 & 0.16  & 0.12 & 0.14  & 0.13 & 0.14  & 0.11 & 0.16  & 0.13 & 0.26  & 0.13 \\
-            PctBotQ  & 0.23  & 0.11 & 0.19  & 0.11 & 0.28  & 0.17 & 0.18  & 0.10 & 0.13  & 0.10 \\
-            PctBot5  & 0.04  & 0.06 & 0.05  & 0.08 & 0.06  & 0.12 & 0.06  & 0.08 & 0.04  & 0.06 \\
-            PctBot10 & 0.08  & 0.08 & 0.07  & 0.08 & 0.10  & 0.14 & 0.08  & 0.08 & 0.06  & 0.08 \\
-            PctMid50 & 0.47  & 0.16 & 0.54  & 0.16 & 0.50  & 0.17 & 0.54  & 0.14 & 0.46  & 0.14 \\
-            PctMid90 & 0.87  & 0.11 & 0.89  & 0.12 & 0.87  & 0.14 & 0.90  & 0.12 & 0.82  & 0.10 \\
-            PctMid80 & 0.77  & 0.14 & 0.78  & 0.14 & 0.76  & 0.16 & 0.76  & 0.16 & 0.68  & 0.13 \\
-            Minority & 0.21  & 0.41 & 0.37  & 0.48 & 0.46  & 0.50 & 0.35  & 0.48 & 0.39  & 0.49 \\
-            Female   & 0.47  & 0.50 & 0.55  & 0.50 & 0.53  & 0.50 & 0.51  & 0.50 & 0.54  & 0.50 \\
-            InState  & 0.15  & 0.35 & 0.13  & 0.33 & 0.15  & 0.36 & 0.12  & 0.33 & 0.15  & 0.36 \\
-            Intl     & 0.02  & 0.15 & 0.01  & 0.08 & 0.06  & 0.23 & 0.05  & 0.22 & 0.07  & 0.25 \\
-            Needy    & 0.39  & 0.49 & 0.36  & 0.48 & 0.36  & 0.48 & 0.32  & 0.47 & 0.43  & 0.50 \\
-            ClassS{\textasciitilde}e & 10.85 & 3.09 & 11.91 & 3.05 & 11.11 & 2.48 & 11.39 & 2.62 & 14.27 & 2.47 \\
-            URM      & 0.11  & 0.31 & 0.29  & 0.45 & 0.36  & 0.48 & 0.27  & 0.44 & 0.30  & 0.46 \\
-            Ranking  & 1.77  & 1.54 & 1.70  & 1.44 & 1.79  & 1.41 & 1.91  & 1.79 & 2.14  & 1.41 \\
-            Demand   & 2.81  & 0.83 & 2.62  & 0.75 & 2.28  & 0.86 & 2.37  & 0.86 & 2.44  & 0.22 \\
-\hline
-N & 226 & & 292 & & 290 & & 285 & & 319\\
-\hline
-\hline
-\end{tabular}
-\end{sidewaystable}
-\newpage{}
 \section{Empirical Methodology}\label{methods}
 
-Our foundational peer effects model is as follows:
-\setlength{\belowdisplayskip}{6pt} \setlength{\belowdisplayshortskip}{1pt}
-\setlength{\abovedisplayskip}{-4pt} \setlength{\abovedisplayshortskip}{1pt}
-
-\begin{equation}\label{eq:0}
-G_{i} = \beta_{0} + \beta_{1} Ability_{i} + \beta_{2} Ability_{i}^{CM1} + \beta_{3} Ability_{i}^{CM2} + \overrightarrow{\beta} \overrightarrow{z} + \epsilon_{i}
-\end{equation}
-
-This is an OLS model, where $G_{i}$ is the grade received by student $i$ in their first course at the institution, $Ability_{i}$ is a proxy for the student's academic ability (Academic Rating)\footnote{For more information see \sectlabel{data}.}, $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are classmate ability measures, $\overrightarrow{z}$ is a vector of control variables\footnote{Control variables included Minority, Female, InState, International, Needy, Class Size, URM, Year, Division, and Professor. See \tablelabel{tab:def1} and \tablelabel{tab:def2} for definitions.}, and $\epsilon_{i}$ is the error term. 
-$Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are our peer measures and are defined as one of the following, the proportion of high achieving, middle achieving, or low achieving students in a class\footnote{Unfortunately due to data limitations only the proportion of high achievers and low achievers in a class is used for our peer measures, for more details see \sectlabel{results}.}(as defined by cutoffs in academic rating), and $Ability_{i}^{CM1}$ is not the same measure as  $Ability_{i}^{CM2}$. 
-Thus $\beta_{2}$ and $\beta_{3}$ are the primary coefficients of interest, as they estimate the impact of the classmate abilities variables (our peer measures) on a student's grade. 
-The OLS regression is run on the subset of students that are not part of the peer measures. 
-For example, if $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ were defined as the proportion of high achievers in a class and the proportion of low achievers in a class respectively, then the model would be run on the middle achievers. 
-
-However, because our sample is nonrandom\footnote{Unfortunately students are not assigned to classes and institutions randomly, instead the institution selects specific students, students next select the institution, and students then select into classes.} the calculated coefficients of model \eqref{eq:0} are at risk of being bias \citep{heckman1979sample}.\footnote{For more details see \sectlabel{methods:csb}} This bias, known as selection bias, is a serious threat to this type of peer effects model because self selection often exists and leads to a nonrandom sample \citep{carman2012classroom,burke2013classroom,ding2007peers}. Therefore, we must update our model in order to correct for any selection bias that may exist.
-
-\subsection{Two Stage Selection Model}\label{methods:tssmodel}
-
-In an effort to correct for selection bias we use a two stage selection model, similar to the one described in \citet{heckman1979sample}. Our two stage selection model uses an ordered probit model in the first stage and an OLS model in the second stage. From the first stage ordered probit model we take the calculated inverse mills ratios and use them as a control variable in the second stage regressions. The inverse mills ratios are calculated estimates, that when used in the second stage regression, help to control for selection bias \citep{heckman1979sample}.\footnote{For more information see \citet{greene2002limdep}.}
-
-For the first stage regression we use an ordered probit model, defined as follows:
-
-\setlength{\belowdisplayskip}{5pt} \setlength{\belowdisplayshortskip}{1pt}
-\setlength{\abovedisplayskip}{-6pt} \setlength{\abovedisplayshortskip}{1pt}
-
-\begin{equation}\label{eq:1}
-R_{i}^{*} = \alpha_{1} D_{i} + \overrightarrow{\alpha} \overrightarrow{\omega} + \epsilon_{i}
-\end{equation}
-
-\setlength{\belowdisplayskip}{11pt} \setlength{\belowdisplayshortskip}{1pt}
-\setlength{\abovedisplayskip}{-4pt} \setlength{\abovedisplayshortskip}{1pt}
-
-\begin{equation}\label{eq:2}
-R_{i} = 
-\begin{cases}
-  1 \ \ if \ \ - \infty < R_{i}^{*} \leq \mu_{1} \\
-  \vdots \\
-  j \ \ if \ \ \mu_{j} < R_{i}^{*} < \infty
-\end{cases}
-\end{equation}
-
-Where $D_{i}$ is the demand for the student's selected class, $\overrightarrow{\omega}$ is a vector of control variables\footnote{Specifically the variables include Minority, Female, InState, Intl, Needy, AcadRating, URM (Underrepresented Minority), and Subject. See \tablelabel{tab:def1} and \tablelabel{tab:def2} for definitions.}, and $\epsilon_{i}$ is the error term. 
-In \eqref{eq:2} we see that the unobserved selection variable $R_{i}^{*}$ corresponds to the observed $R_{i}$ through $\mu$, a vector of unknown cutoffs. 
-The variable $j$ represents the number of selection categories there are, where in any of our regressions $j$ is at least two and at most four. 
-For example, if $j$ is equal to two, then $R_{i}$ equal to one represents those students who selected into their first choice class and $R_{i}$ equal to two represents those students who did not select into their first choice class (instead selecting into their second choice, third choice, etc.). 
-The ordered probit model ultimately estimates the probability that $R_{i}$ is equal to $j$ using $R_{i}^{*}$, that is, 
-
-\setlength{\belowdisplayskip}{5pt} \setlength{\belowdisplayshortskip}{1pt}
-\setlength{\abovedisplayskip}{-4pt} \setlength{\abovedisplayshortskip}{1pt}
-
-\begin{equation}\label{eq:3}
-Pr(R_{i} = j) \ = \ Pr(\mu_{j-1} < R_{i}^{*} \leq \mu_{j})
-\end{equation}
-
-\noindent Once we calculate the first stage ordered probit, we use the inverse mills ratios in the second stage OLS regression.
-
-We use an OLS regression very similar to our foundational model for our second stage model, the only difference is that the inverse mills ratios are added as a control variable to correct for selection bias. The model is as follows:
-
-\begin{equation}\label{eq:4}
-G_{i} = \beta_{0} + \beta_{1} Ability_{i} + \beta_{2} Ability_{i}^{CM1} + \beta_{3} Ability_{i}^{CM2} + \beta_{4} \lambda_{i} + \overrightarrow{\beta} \overrightarrow{z} + \epsilon_{i}
-\end{equation}
-
-Where the variables are defined in the same manner as \eqref{eq:0}, and $\lambda_{i}$ is the inverse mills ratios calculated in the first stage regression.
-Just as in \eqref{eq:0} the OLS regression is run on the subset of students that are not part of the peer measures. 
-However, the calculation of different inverse mills ratios for each of the possible selection categories makes it necessary for a separate regression to be run on each of the students who selected into a particular selection category.\footnote{This is why there are Grade1, Grade2, etc. categories in the regressions seen in \sectlabel{results}.}
-As an example, suppose $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ were defined as the proportion of high achievers in a class and the proportion of low achievers in a class respectively and the number of selection categories ($j$) is equal to two. 
-The second stage OLS model will first be regressed on the middle achievers who selected into their first choice class, then on the middle achievers who did not select into their first choice class, producing two sets of regression outputs. 
-
-\subsection{Controlling Selection Bias}\label{methods:csb}
-
-By using the ranking and points data in the two stage selection model we are attempting to correct for selection bias, a serious problem in many peer effect models \citep{carman2012classroom,burke2013classroom,ding2007peers}. 
-Specifically, our model is controlling for any selection bias that results from students selecting into classes high on their preference list. 
-The idea is that there are unobservable factors that correlate with both student class preferences and the grade received in the class, which would then bias our coefficients of interest ($\beta_{2}$ and $\beta_{3}$). 
-For instance, it may be that popular courses draw a higher proportion of high achieving students, while the majority of middle achieving students are drawn into those same courses because they enjoy the subject. 
-In this case a higher proportion of high achievers is not causal to the increased grades of middle achievers. 
-Instead, an unobservable variable (passion for the subject) drives middle achievers to self select into courses where they will achieve higher grades and there happen to be a higher proportion of high achievers. 
-In such a case, the self-selection of middle achieving students would bias our coefficients of interest and our results would be inaccurate.
-By using the two stage regression model, we are attempting to correct for this type of selection bias.
+\input{methods.tex}
 
 \section{Results}\label{results}
 
 \input{results.tex}
 
-\section{Conclusion}\label{Conclusion}
-      
-We find small but significant effects from the proportion of high achievers and low achievers in a class on the grades of middle achievers using a two stage selection model to control for selection bias. 
-The results indicate that the proportion of high achievers in a class has a negative impact on the grades of middle achievers, while the proportion of low achievers in a class has a positive impact on the grades of middle achievers. 
-These results run counter to those found in the majority of the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}, which may be due to changing peer dynamics from K-12 education to higher education or grade curving occuring in the majority of first year classes at the institution. 
+\section{Conclusion}\label{conclusion}
 
+% We found peer effects, but as to how generalizable they are or how large they are we cannot be certain
+
+Several studies have found that the quality of ones peers at an institution of higher learning has a positive impact on long term outcomes, such as graduation rates and cumulative GPA \citep{smith2015new,luppino2015college,ost2010role}.
+We seek to answer the question of whether or not peer quality matters in the short term, particularly at the classroom level, and find small but significant effects from the proportion of high achievers and low achievers in a class on the grades of middle achievers. 
+The results indicate that the proportion of high achievers in a class has a negative impact on the grades of middle achievers, while the proportion of low achievers in a class has a positive impact on the grades of middle achievers. 
+These results are novel and run counter to those found in the majority of the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}, which may be due to changing peer dynamics from K-12 education to higher education, grade curving occurring in classes at the institution, or a combination of both.
+ 
+Due to data limitations we are unable to uncover how classmate ability impacts the grades of high or low achievers, which makes it challenging to prescribe any practical policy recommendations for the institution.
+Additionally, the type of institution studied was relatively unique, and it is not clear how generalizable these results are. 
+Fortunately, these study limitations create promising avenues for future research.
+Particularly promising areas of future research include comparing the classroom level peer effects at different types of institutions (such as community colleges or large universities), and following in the footsteps of \citet{oosterbeek2014gender}, looking at classroom peer effects from a gender peer effects perspective.
        
 \newpage{}
-
+\pagestyle{plain}
 \singlespacing
 
 \bibliography{references}
