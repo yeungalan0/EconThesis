@@ -5,9 +5,6 @@
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{fancyhdr}
-%Remove headers on pages with only floats
-\fancyhead[LE,RO]{\iffloatpage{}{\slshape\rightmark}}
-\fancyhead[LO,RE]{\iffloatpage{}{\slshape\leftmark}}
 \pagestyle{fancy}
 \setcounter{secnumdepth}{2}
 \usepackage{setspace}
@@ -21,11 +18,15 @@
 \usepackage{longtable}
 \usepackage{setspace}
 \usepackage{breakcites}
+\usepackage{afterpage}
 \usepackage{chngcntr}
 \counterwithin{table}{section}
+\usepackage{float}
+%\usepackage[outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=15pt,showframe]{geometry}
+\usepackage[outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=15pt,headsep=30pt]{geometry}
 
 \renewcommand\headrulewidth{0pt}
-\renewcommand\headheight{17pt}
+%\renewcommand\headheight{17pt}
 \newcommand{\prbf}[1]{\textbf{#1}}
 
 % Section variables used throughout
@@ -102,7 +103,6 @@ pdfpagemode=UseNone]{hyperref}
 % \AtBeginDocument{
 %   \def\labelitemi{\tiny\(\bullet\)}
 % }
-
 % \makeatother
 
 \begin{document}
@@ -219,10 +219,10 @@ We seek to answer the question of whether or not peer quality matters in the sho
 The results indicate that the proportion of high achievers in a class has a negative impact on the grades of middle achievers, while the proportion of low achievers in a class has a positive impact on the grades of middle achievers. 
 These results are novel and run counter to those found in the majority of the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}, which may be due to changing peer dynamics from K-12 education to higher education, grade curving occurring in classes at the institution, or a combination of both.
  
-Due to data limitations we are unable to uncover how classmate ability impacts the grades of high or low achievers, which makes it challenging to prescribe any practical policy recommendations for the institution.
+Due to data limitations we are unable to uncover how classmate ability impacts the grades of high and low achievers, which makes it challenging to prescribe any practical policy recommendations.
 Additionally, the type of institution studied was relatively unique, and it is not clear how generalizable these results are. 
 Fortunately, these study limitations create promising avenues for future research.
-Particularly promising areas of future research include comparing the classroom level peer effects at different types of institutions (such as community colleges or large universities), and following in the footsteps of \citet{oosterbeek2014gender}, looking at classroom peer effects from a gender peer effects perspective.
+Particularly promising areas of future research include comparing the classroom level peer effects at different types of institutions (such as community colleges or large universities), and, following in the footsteps of \citet{oosterbeek2014gender}, looking at classroom peer effects from a gender peer effects perspective.
        
 \newpage{}
 \pagestyle{plain}

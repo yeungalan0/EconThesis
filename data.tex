@@ -29,7 +29,8 @@ PctMidY is the proportion of students in a class that are not in the top X perce
 The remaining variables, Minority, Female, InState, Intl (International), Needy, ClassSize, URM (Underrepresented Minority), Year, Division, and Professor, are used as control variables in the regression.
 \tablelabel{tab:def1} displays the definitions of all the class level variables used. 
 
-\clearpage{}
+%\clearpage{}
+\bigskip
 
 \begin{table}[htb]
 \centering
@@ -99,6 +100,8 @@ Another key variable in our selection equation is Ranking.
 Ranking is the dependent variable in the selection equation, and is a number between one and eight that specifies the student's preference for the course, where one is a high preference, eight is a low preference, and preferences are not repeated. 
 The remaining variables in the first stage regression, Minority, Female, InState, Intl (International), Needy, AcadRating, URM (Underrepresented Minority), and Subject are used as control variables. Refer to \tablelabel{tab:def2} for the definitions of the unique variables used in the first stage regression. 
 
+\bigskip
+
 \begin{table}[htb]
   \centering
   \caption{Points Data Variable Definitions}\label{tab:def2}
@@ -134,7 +137,10 @@ As expected, the Demand variable has a lower standard deviation in 2015 compared
 % The primary reasoning for the inverse relationship between achievement and class size is that students have more quality time to interact with teachers and peers as class size decreases. 
 % As this institution has relatively small class sizes, we may expect to find magnified peer effects. 
 
-\begin{sidewaystable}
+\newpage{}
+
+\thispagestyle{plain}
+\begin{sidewaystable}[b]
 \caption{Summary Statistics}\label{tab:summarystats}
 \centering\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c|c|c}
 \hline
@@ -170,7 +176,7 @@ As expected, the Demand variable has a lower standard deviation in 2015 compared
 \end{tabular}
 \end{sidewaystable}
 
-\newpage{}
+\clearpage{}
 
 Our data gives us a unique opportunity to study peer effects in higher education.
 First, our data comes from an institution with relatively small class sizes which \citet{diette2015class} and \citet{kokkelenberg2008effects} show have a positive impact on average student achievement (measured by grades and test scores).
