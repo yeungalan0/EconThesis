@@ -24,6 +24,8 @@
 \usepackage{float}
 %\usepackage[outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=15pt,showframe]{geometry}
 \usepackage[outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=15pt,headsep=30pt]{geometry}
+\usepackage[toc,page]{appendix}
+\usepackage{multicol}
 
 \renewcommand\headrulewidth{0pt}
 %\renewcommand\headheight{17pt}
@@ -32,6 +34,7 @@
 % Section variables used throughout
 \newcommand{\sectlabel}[1]{section~\ref{#1} (\nameref{#1})}
 \newcommand{\tablelabel}[1]{Table~\ref{#1}}
+\newcommand{\appendixlabel}[1]{Appendix~\ref{#1}}
 
 % Caption formatting
 \usepackage[font=footnotesize,labelfont=bf]{caption}
@@ -229,5 +232,13 @@ Particularly promising areas of future research include comparing the classroom 
 \singlespacing
 
 \bibliography{references}
+
+\clearpage{}
+
+\begin{appendices}
+
+\input{appendix.tex}
+
+\end{appendices}
 
 \end{document}

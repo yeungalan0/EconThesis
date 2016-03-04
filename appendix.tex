@@ -1,0 +1,697 @@
+\section{Subjects}\label{appendix:a}
+
+There were 31 subjects used as controls in the selection equation, the full list includes:
+\begin{multicols}{2}
+  \begin{enumerate}
+  \item{Art History (AH)} 
+  \item{Anthropology (AN)}
+  \item{Biology (BY)}
+  \item{Chemistry (CH)}
+  \item{Classics (CL)}
+  \item{Chinese (CN)}
+  \item{Comparative Literature (CO)}
+  \item{Dance Theory (DA)}
+  \item{Dance Studio (DR)}
+  \item{Education (ED)}
+  \item{English (EN)}
+  \item{Environmental Science (ES)}
+  \item{Film Studies (FS)}
+  \item{German (GR)}
+  \item{Geology (GY)}
+  \item{History (HS)}
+  \item{Psychoanalysis (HY)}
+  \item{Japanese (JA)}
+  \item{Mathematics (MA)}
+  \item{Molecular Biology (MB)}
+  \item{Music (MU)}
+  \item{NS\footnote{One course in 2011 was regestered with this label, but records are lossed as to what it stands for.}}
+  \item{Physics (PC)}
+  \item{Philosophy (PH)}
+  \item{Political Science (PS)}
+  \item{Psychology (PY)}
+  \item{Religion (RE)}
+  \item{Russian (RS)}
+  \item{Sociology (SO)}
+  \item{Spanish (SP)}
+  \item{Theatre (TH)}
+  \end{enumerate}
+\end{multicols}
+
+\section{Full Regressions}\label{appendix:b}
+
+All of the coefficients and standard errors from the regressions run in \tablelabel{tab:2sc}, \tablelabel{tab:3sc}, and \tablelabel{tab:4sc} are shown below (with the exception of the professor dummy variables).
+
+\bigskip
+\noindent \textbf{Note:} For the four category two stage selection model (\tablelabel{table:b10} and \tablelabel{table:b11}) only the Top/Bot 5\% regression could be run. Top/Bot 25\% and Top/Bot 10\% regressions could not be run because there is too little variance in the data at those levels (most likely because there are too few observations).
+
+\newpage{}
+
+\newgeometry{outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=0pt,headsep=0pt,footskip=0pt,showframe}
+
+\begin{table}[H]\centering
+  \begin{threeparttable}
+  \caption{2 Selection Categories, 2 Stage Regression on Middle Achievers using Top/Bot 25\%}\label{table:b1}
+  \begin{tabular}{l c c|l c c }\hline\hline 
+    \multicolumn{1}{c}
+    {\textbf{Variable}}                          & {\textbf{Coefficient}}    & \textbf{(Std. Err.)} & {\textbf{Variable}} & {\textbf{Coefficient}} & \textbf{(Std. Err.)} \\ \hline
+    \hline 
+    \multicolumn{3}{c|}{Equation 1 : Selection 2 Categories } & \multicolumn{3}{|c}{Equation 3 : Grade1}                                                                               \\ 
+    \hline
+    Minority                                     & -0.351**                  & (0.197)              & \_lambda            & -0.298                 & (0.289)              \\
+    Female                                       & -0.008                    & (0.113)              & Minority            & 0.062                  & (0.117)              \\
+    InState                                      & 0.053                     & (0.177)              & Female              & 0.237***               & (0.069)              \\
+    Intl                                         & 0.226                     & (0.285)              & InState             & -0.049                 & (0.106)              \\
+    Needy                                        & -0.014                    & (0.150)              & Intl                & 0.006                  & (0.188)              \\
+    AcadRating                                   & 0.010                     & (0.025)              & Needy               & -0.009                 & (0.091)              \\
+    URM                                          & 0.068                     & (0.209)              & AcadRating          & 0.014                  & (0.015)              \\
+    Demandc                                      & -0.492***                 & (0.089)              & PctBotQ             & -0.150                 & (0.529)              \\
+    SUB\_AH                                      & -0.599                    & (0.471)              & PctTopQ             & -0.787**               & (0.405)              \\
+    SUB\_AN                                      & -1.207***                 & (0.448)              & ClassSize           & -0.009                 & (0.021)              \\
+    SUB\_BY                                      & -0.210                    & (0.440)              & URM                 & -0.127                 & (0.116)              \\
+    SUB\_CH                                      & -1.535***                 & (0.534)              & Year1               & 0.000                  & (0.000)              \\
+    SUB\_CL                                      & -0.115                    & (0.473)              & Year2               & 0.210*                 & (0.144)              \\
+    SUB\_CN                                      & -0.214                    & (0.498)              & Year3               & 0.185                  & (0.166)              \\
+    SUB\_CO                                      & -0.277                    & (0.477)              & Year4               & 0.136                  & (0.148)              \\
+    SUB\_DA                                      & -0.399                    & (0.721)              & Year5               & 0.227                  & (0.225)              \\
+    SUB\_DR                                      & 0.585                     & (0.971)              & Sub\_H              & 0.616*                 & (0.403)              \\
+    SUB\_ED                                      & 0.055                     & (0.569)              & Div\_N              & 0.121                  & (0.417)              \\
+    SUB\_EN                                      & -0.838***                 & (0.391)              & Div\_S              & 0.390                  & (0.418)              \\
+    SUB\_ES                                      & -0.219                    & (0.766)              & Intercept           & 2.122***               & (1.021)              \\
+    \cline{4-6}
+    SUB\_FS                                      & -1.753***                 & (0.600)              & \multicolumn{3}{c}{Equation 4 : Grade2}                             \\
+    \cline{4-6}
+    SUB\_GR                                      & -0.039                    & (0.499)              & \_lambda            & -0.112                 & (0.404)              \\
+    SUB\_GY                                      & -0.718*                   & (0.485)              & Minority            & -0.034                 & (0.197)              \\
+    SUB\_HS                                      & 0.032                     & (0.471)              & Female              & 0.277***               & (0.104)              \\
+    SUB\_HY                                      & -0.668**                  & (0.401)              & InState             & 0.107                  & (0.159)              \\
+    SUB\_JA                                      & 0.131                     & (0.501)              & Intl                & -0.322*                & (0.243)              \\
+    SUB\_MA                                      & -1.120***                 & (0.486)              & Needy               & -0.076                 & (0.134)              \\
+    SUB\_MU                                      & -1.303***                 & (0.457)              & AcadRating          & 0.007                  & (0.023)              \\
+    SUB\_NS                                      & -7.153                    & (14682754.049)       & PctBotQ             & 1.720**                & (1.003)              \\
+    SUB\_PC                                      & -1.111***                 & (0.453)              & PctTopQ             & 0.660                  & (0.699)              \\
+    SUB\_PH                                      & -1.668***                 & (0.523)              & ClassSize           & 0.011                  & (0.055)              \\
+    SUB\_PS                                      & -0.856***                 & (0.398)              & URM                 & -0.045                 & (0.205)              \\
+    SUB\_PY                                      & -1.515***                 & (0.477)              & Year1               & -0.057                 & (0.349)              \\
+    SUB\_RE                                      & -0.340                    & (0.478)              & Year2               & 0.155                  & (0.262)              \\
+    SUB\_RS                                      & 0.906*                    & (0.580)              & Year3               & 0.000                  & (0.000)              \\
+    SUB\_SO                                      & -0.988***                 & (0.429)              & Year4               & 0.244                  & (0.248)              \\
+    SUB\_SP                                      & -0.490                    & (0.534)              & Year5               & -0.346                 & (0.369)              \\
+    SUB\_TH                                      & -0.467                    & (0.608)              & Sub\_H              & -0.702                 & (0.594)              \\
+                                                 &                           &                      & Div\_N              & -0.363                 & (1.389)              \\
+                                                 &                           &                      & Div\_S              & -0.270                 & (0.702)              \\
+    \cline{1-3}
+      N                                          & \multicolumn{2}{|c|}{715} & Intercept            & 2.567**             & (1.508)                                       \\
+    \cline{1-3}
+    \multicolumn{3}{c|}{Equation 2 : cutoffs}    &                           &                      &                                                                     \\
+    \cline{1-3}
+    cutoff1                                      & -1.097                    & (1.323)              &                     &                        &                      \\
+    \hline 
+    \hline
+  \end{tabular}
+  \begin{tablenotes}
+  \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space.}
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+\newpage{}
+
+\begin{table}[H]\centering
+  \begin{threeparttable}
+  \caption{2 Selection Categories, 2 Stage Regression on Middle Achievers using Top/Bot 10\%}\label{table:b2}
+  \begin{tabular}{l c c|l c c }\hline\hline 
+    \multicolumn{1}{c}
+    {\textbf{Variable}}                          & {\textbf{Coefficient}}     & \textbf{(Std. Err.)} & {\textbf{Variable}} & {\textbf{Coefficient}} & \textbf{(Std. Err.)} \\ \hline
+    \hline 
+    \multicolumn{3}{c|}{Equation 1 : Selection 2 Categories} & \multicolumn{3}{|c}{Equation 3 : Grade1}                                                                                \\ 
+    \hline
+    Minority                                     & -0.224*                    & (0.16)               & \_lambda            & -0.698***              & (0.23)               \\
+    Female                                       & -0.022                     & (0.09)               & Minority            & 0.208**                & (0.11)               \\
+    InState                                      & -0.058                     & (0.14)               & Female              & 0.236***               & (0.06)               \\
+    Intl                                         & 0.151                      & (0.23)               & InState             & -0.044                 & (0.09)               \\
+    Needy                                        & -0.100                     & (0.11)               & Intl                & -0.155                 & (0.17)               \\
+    AcadRating                                   & 0.014                      & (0.01)               & Needy               & -0.008                 & (0.08)               \\
+    URM                                          & 0.082                      & (0.17)               & AcadRating          & 0.022***               & (0.01)               \\
+    Demandc                                      & -0.567***                  & (0.08)               & PctBotQ             & 0.612                  & (0.54)               \\
+    SUB\_AH                                      & -0.834***                  & (0.41)               & PctTopQ             & -0.741***              & (0.33)               \\
+    SUB\_AN                                      & -1.215***                  & (0.39)               & ClassSize           & -0.024*                & (0.02)               \\
+    SUB\_BY                                      & -0.263                     & (0.37)               & URM                 & -0.250***              & (0.11)               \\
+    SUB\_CH                                      & -1.216***                  & (0.43)               & Year1               & 0.000                  & (.)                  \\
+    SUB\_CL                                      & -0.293                     & (0.40)               & Year2               & 0.391***               & (0.11)               \\
+    SUB\_CN                                      & 0.072                      & (0.43)               & Year3               & 0.249**                & (0.13)               \\
+    SUB\_CO                                      & -0.056                     & (0.43)               & Year4               & 0.261***               & (0.12)               \\
+    SUB\_DA                                      & -0.234                     & (0.70)               & Year5               & 0.188                  & (0.19)               \\
+    SUB\_DR                                      & 0.874*                     & (0.66)               & Div\_H              & 0.768***               & (0.39)               \\
+    SUB\_ED                                      & 0.078                      & (0.49)               & Div\_N              & 0.568*                 & (0.38)               \\
+    SUB\_EN                                      & -0.538*                    & (0.34)               & Div\_S              & 0.799***               & (0.40)               \\
+    SUB\_ES                                      & -0.303                     & (0.52)               & Intercept           & -2.469***              & (0.88)               \\
+    \cline{4-6}
+    SUB\_FS                                      & -1.923***                  & (0.55)               & \multicolumn{3}{c}{Equation 4 : Grade2}                             \\
+    \cline{4-6}
+    SUB\_GR                                      & 0.027                      & (0.45)               & \_lambda            & -0.068                 & (0.27)               \\
+    SUB\_GY                                      & -0.793**                   & (0.41)               & Minority            & -0.066                 & (0.14)               \\
+    SUB\_HS                                      & 0.055                      & (0.41)               & Female              & 0.155***               & (0.08)               \\
+    SUB\_HY                                      & -0.436                     & (0.34)               & InState             & 0.070                  & (0.12)               \\
+    SUB\_JA                                      & 0.122                      & (0.43)               & Intl                & -0.529***              & (0.18)               \\
+    SUB\_MA                                      & -0.706**                   & (0.41)               & Needy               & 0.021                  & (0.10)               \\
+    SUB\_MB                                      & 7.587                      & (981574.55)          & AcadRating          & 0.023***               & (0.01)               \\
+    SUB\_MU                                      & -0.922***                  & (0.37)               & PctBotQ             & 0.370                  & (0.78)               \\
+    SUB\_NS                                      & -6.053                     & (669615.15)          & PctTopQ             & 0.827**                & (0.49)               \\
+    SUB\_PC                                      & -0.975***                  & (0.39)               & ClassSize           & 0.011                  & (0.04)               \\
+    SUB\_PH                                      & -1.577***                  & (0.45)               & URM                 & -0.025                 & (0.15)               \\
+    SUB\_PS                                      & -0.696***                  & (0.34)               & Year1               & -0.097                 & (0.25)               \\
+    SUB\_PY                                      & -1.529***                  & (0.44)               & Year2               & 0.092                  & (0.20)               \\
+    SUB\_RE                                      & -0.091                     & (0.42)               & Year3               & -0.167                 & (0.19)               \\
+    SUB\_RS                                      & 1.165***                   & (0.53)               & Year4               & 0.000                  & (.)                  \\
+    SUB\_SO                                      & -0.917***                  & (0.36)               & Year5               & -0.442***              & (0.22)               \\
+    SUB\_SP                                      & -0.528                     & (0.42)               & Div\_H              & -0.728*                & (0.55)               \\
+    SUB\_TH                                      & 0.163                      & (0.50)               & Div\_N              & -1.093**               & (0.64)               \\
+                                                 &                            &                      & Div\_S              & -0.681                 & (0.62)               \\
+    \cline{1-3}
+      N                                          & \multicolumn{2}{|c|}{1060} & Intercept            & 3.702***            & (1.07)                                        \\
+    \cline{1-3}
+    \multicolumn{3}{c|}{Equation 2 : cutoffs}    &                            &                      &                                                                     \\
+    \cline{1-3}
+    cutoff1                                      & -1.028*                    & (0.70)               &                     &                        &                      \\
+    \hline 
+    \hline
+  \end{tabular}
+  \begin{tablenotes}
+  \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space.}
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+\newpage{}
+
+\begin{table}[H]\centering
+  \begin{threeparttable}
+  \caption{2 Selection Categories, 2 Stage Regression on Middle Achievers using Top/Bot 5\%}\label{table:b3}
+  \begin{tabular}{l c c|l c c }\hline\hline 
+    \multicolumn{1}{c}
+    {\textbf{Variable}}                          & {\textbf{Coefficient}}     & \textbf{(Std. Err.)} & {\textbf{Variable}} & {\textbf{Coefficient}} & \textbf{(Std. Err.)} \\ \hline
+    \hline 
+    \multicolumn{3}{c|}{Equation 1 : Selection 2 Categories} & \multicolumn{3}{|c}{Equation 3 : Grade1}                                                                                \\ 
+    \hline
+    Minority                                     & -0.168                     & (0.15)               & \_lambda            & -0.644***              & (0.23)               \\
+    Female                                       & 0.051                      & (0.08)               & Minority            & 0.200**                & (0.10)               \\
+    InState                                      & -0.079                     & (0.13)               & Female              & 0.187***               & (0.06)               \\
+    Intl                                         & 0.180                      & (0.21)               & InState             & -0.034                 & (0.09)               \\
+    Needy                                        & -0.075                     & (0.10)               & Intl                & -0.273**               & (0.16)               \\
+    AcadRating                                   & 0.004                      & (0.01)               & Needy               & -0.001                 & (0.07)               \\
+    URM                                          & 0.009                      & (0.16)               & AcadRating          & 0.024***               & (0.01)               \\
+    Demandc                                      & -0.551***                  & (0.07)               & PctBotQ             & 1.001**                & (0.60)               \\
+    SUB\_AH                                      & -0.946***                  & (0.40)               & PctTopQ             & -0.702**               & (0.41)               \\
+    SUB\_AN                                      & -1.257***                  & (0.38)               & ClassSize           & -0.019                 & (0.02)               \\
+    SUB\_BY                                      & -0.399                     & (0.36)               & URM                 & -0.295***              & (0.11)               \\
+    SUB\_CH                                      & -1.285***                  & (0.42)               & Year1               & 0.000                  & (.)                  \\
+    SUB\_CL                                      & -0.254                     & (0.39)               & Year2               & 0.440***               & (0.11)               \\
+    SUB\_CN                                      & 0.045                      & (0.42)               & Year3               & 0.255***               & (0.13)               \\
+    SUB\_CO                                      & 0.080                      & (0.42)               & Year4               & 0.241***               & (0.11)               \\
+    SUB\_DA                                      & -0.257                     & (0.70)               & Year5               & 0.216                  & (0.18)               \\
+    SUB\_DR                                      & 0.811                      & (0.66)               & Div\_H              & 0.878***               & (0.39)               \\
+    SUB\_ED                                      & 0.182                      & (0.48)               & Div\_N              & 0.544*                 & (0.37)               \\
+    SUB\_EN                                      & -0.581**                   & (0.33)               & Div\_S              & 0.835***               & (0.41)               \\
+    SUB\_ES                                      & -0.472                     & (0.49)               & Intercept           & 1.180*                 & (0.74)               \\
+    \cline{4-6}
+    SUB\_FS                                      & -1.986***                  & (0.54)               & \multicolumn{3}{c}{Equation 4 : Grade2}                             \\
+    \cline{4-6}
+    SUB\_GR                                      & -0.045                     & (0.44)               & \_lambda            & -0.286                 & (0.26)               \\
+    SUB\_GY                                      & -0.865***                  & (0.39)               & Minority            & -0.087                 & (0.14)               \\
+    SUB\_HS                                      & 0.073                      & (0.39)               & Female              & 0.156***               & (0.07)               \\
+    SUB\_HY                                      & -0.395                     & (0.34)               & InState             & 0.059                  & (0.11)               \\
+    SUB\_JA                                      & 0.246                      & (0.42)               & Intl                & -0.586***              & (0.18)               \\
+    SUB\_MA                                      & -0.784***                  & (0.40)               & Needy               & 0.039                  & (0.09)               \\
+    SUB\_MB                                      & 7.985                      & (2153349.47)         & AcadRating          & 0.028***               & (0.01)               \\
+    SUB\_MU                                      & -0.964***                  & (0.36)               & PctBotQ             & -0.061                 & (0.70)               \\
+    SUB\_NS                                      & -6.328                     & (1680637.32)         & PctTopQ             & 0.198                  & (0.67)               \\
+    SUB\_PC                                      & -1.039***                  & (0.38)               & ClassSize           & -0.032                 & (0.04)               \\
+    SUB\_PH                                      & -1.321***                  & (0.41)               & URM                 & 0.043                  & (0.14)               \\
+    SUB\_PS                                      & -0.633**                   & (0.33)               & Year1               & 0.000                  & (.)                  \\
+    SUB\_PY                                      & -1.636***                  & (0.43)               & Year2               & 0.176                  & (0.22)               \\
+    SUB\_RE                                      & -0.225                     & (0.40)               & Year3               & -0.081                 & (0.22)               \\
+    SUB\_RS                                      & 1.215***                   & (0.52)               & Year4               & -0.019                 & (0.23)               \\
+    SUB\_SO                                      & -0.893***                  & (0.35)               & Year5               & -0.040                 & (0.30)               \\
+    SUB\_SP                                      & -0.485                     & (0.41)               & Div\_H              & -0.193                 & (0.54)               \\
+    SUB\_TH                                      & 0.331                      & (0.48)               & Div\_N              & -0.410                 & (0.62)               \\
+                                                 &                            &                      & Div\_S              & -0.075                 & (0.61)               \\
+    \cline{1-3}
+      N                                          & \multicolumn{2}{|c|}{1229} & Intercept            & 2.859***            & (1.14)                                        \\
+    \cline{1-3}
+    \multicolumn{3}{c|}{Equation 2 : cutoffs}    &                            &                      &                                                                     \\
+    \cline{1-3}
+    cutoff1                                      & -1.404***                  & (0.59)               &                     &                        &                      \\
+    \hline 
+    \hline
+  \end{tabular}
+  \begin{tablenotes}
+  \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space.}
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+\newpage{}
+
+\begin{table}[H]\centering
+  \begin{threeparttable}
+    \caption{3 Selection Categories, \\Selection Equation Output, Top/Bot 25\%}\label{table:b4}
+    \begin{tabular}{l c c}
+      \hline\hline 
+      \multicolumn{1}{c}{\textbf{Variable}} & {\textbf{Coefficient}} & \textbf{(Std. Err.)} \\ 
+      \hline
+      \hline 
+      Minority                              & -0.275*                & (0.19)               \\
+      Female                                & -0.035                 & (0.11)               \\
+      InState                                    & 0.084                  & (0.17)               \\
+      Intl                                  & 0.276                  & (0.26)               \\
+      Needy                                 & -0.127                 & (0.14)               \\
+      AcadRating                            & 0.003                  & (0.02)               \\
+      URM                                   & 0.044                  & (0.20)               \\
+      Demand                                & 0.065***               & (0.01)               \\
+      SUB\_AH                               & -0.396                 & (0.41)               \\
+      SUB\_AN                               & -1.335***              & (0.40)               \\
+      SUB\_BY                               & -0.282                 & (0.38)               \\
+      SUB\_CH                               & -2.011***              & (0.51)               \\
+      SUB\_CL                               & -0.300                 & (0.41)               \\
+      SUB\_CN                               & -0.425                 & (0.46)               \\
+      SUB\_CO                               & 0.322                  & (0.43)               \\
+      SUB\_DA                               & -1.259**               & (0.65)               \\
+      SUB\_DR                               & 0.121                  & (0.92)               \\
+      SUB\_ED                               & -0.457                 & (0.51)               \\
+      SUB\_EN                               & -0.863***              & (0.34)               \\
+      SUB\_ES                               & 0.050                  & (0.63)               \\
+      SUB\_FS                               & -2.453***              & (0.60)               \\
+      SUB\_GR                               & -0.875***              & (0.45)               \\
+      SUB\_GY                               & -1.490***              & (0.44)               \\
+      SUB\_HS                               & 0.083                  & (0.41)               \\
+      SUB\_HY                               & -0.632**               & (0.35)               \\
+      SUB\_JA                               & -0.409                 & (0.44)               \\
+      SUB\_MA                               & -1.336***              & (0.43)               \\
+      SUB\_MU                               & -1.387***              & (0.41)               \\
+      SUB\_NS                               & -8.413                 & (747971.64)          \\
+      SUB\_PC                               & -1.261***              & (0.40)               \\
+      SUB\_PH                               & -1.978***              & (0.49)               \\
+      SUB\_PS                               & -1.053***              & (0.36)               \\
+      SUB\_PY                               & -1.931***              & (0.46)               \\
+      SUB\_RE                               & -0.287                 & (0.42)               \\
+      SUB\_RS                               & 0.095                  & (0.48)               \\
+      SUB\_SO                               & -1.152***              & (0.39)               \\
+      SUB\_SP                               & -0.340                 & (0.48)               \\
+      SUB\_TH                               & -1.067**               & (0.56)               \\  
+      \hline
+      \textbf{cutoffs}                      &                        &                      \\
+      cutoff1                               & -0.171                 & (1.22)               \\
+      cutoff2                               & 0.329                  & (1.22)               \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+\newpage{}
+
+\begin{sidewaystable}[htb]\centering
+  \begin{threeparttable}
+    \caption{3 Selection Categories, \\Outcome Equation Output, Top/Bot 25\%}\label{table:b5}
+    \begin{tabular}{l|c|c|c|c|c|c}
+      \hline\hline 
+                        & \multicolumn{2}{|c|}{Grade1} & \multicolumn{2}{|c|}{Grade2} & \multicolumn{2}{|c}{Grade3}                                                               \\
+      \hline
+      \textbf{Variable} & \textbf{Coefficient}         & \textbf{(Std. Err.)}         & \textbf{Coefficient} & \textbf{(Std. Err.)} & \textbf{Coefficient} & \textbf{(Std. Err.)} \\ 
+      \hline
+      \hline 
+      \_lambda          & -0.431                       & (0.38)                       & 0.700                & (0.79)               & 1.360***             & (0.64)               \\
+      Minority          & 0.072                        & (0.12)                       & 0.382                & (0.33)               & -0.583**             & (0.32)               \\
+      Female            & 0.252***                     & (0.07)                       & 0.187                & (0.19)               & 0.330***             & (0.17)               \\
+      InState           & -0.062                       & (0.11)                       & 0.410*               & (0.28)               & 0.200                & (0.29)               \\
+      Intl              & -0.030                       & (0.20)                       & -1.342***            & (0.41)               & 0.114                & (0.41)               \\
+      Needy             & 0.009                        & (0.09)                       & 0.019                & (0.26)               & -0.156               & (0.24)               \\
+      AcadRating        & 0.017                        & (0.02)                       & 0.023                & (0.04)               & -0.002               & (0.04)               \\
+      PctBotQ           & -0.314                       & (0.52)                       & 1.248                & (1.41)               & 1.215                & (1.54)               \\
+      PctTopQ           & -0.840***                    & (0.39)                       & 1.614**              & (0.92)               & -0.961               & (1.16)               \\
+      ClassSize         & -0.004                       & (0.02)                       & -0.035               & (0.08)               & 0.056                & (0.08)               \\
+      URM               & -0.126                       & (0.12)                       & -0.842***            & (0.34)               & 0.338                & (0.33)               \\
+      year\_2011         & 0.000                        & (.)                          & 0.000                & (.)                  & 0.000                & (.)                  \\
+      year\_2012         & 0.210*                       & (0.14)                       & 0.727***             & (0.32)               & 0.130                & (0.80)               \\
+      year\_2013         & 0.236*                       & (0.16)                       & 1.087***             & (0.51)               & -0.078               & (0.76)               \\
+      year\_2014         & 0.147                        & (0.15)                       & 1.262***             & (0.49)               & 0.245                & (0.77)               \\
+      year\_2015         & 0.108                        & (0.26)                       & 1.251**              & (0.74)               & 0.031                & (0.87)               \\
+      Div\_H            & 0.750**                      & (0.43)                       & -2.021***            & (0.96)               & 0.022                & (1.34)               \\
+      Div\_N            & 0.375                        & (0.53)                       & -2.839***            & (1.30)               & -0.990               & (1.22)               \\
+      Div\_S            & 0.545                        & (0.46)                       & -2.316***            & (1.05)               & 0.989                & (1.36)               \\
+      Constant          & 2.004**                      & (1.06)                       & 2.568                & (2.51)               & 1.246                & (2.49)               \\
+      \hline
+      N & \multicolumn{6}{|c}{715} \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{sidewaystable}
+
+\clearpage{}
+
+\newpage{}
+
+\begin{table}[H]\centering
+  \begin{threeparttable}
+    \caption{3 Selection Categories, \\Selection Equation Output, Top/Bot 10\%}\label{table:b6}
+    \begin{tabular}{l c c}
+      \hline\hline 
+      \multicolumn{1}{c}{\textbf{Variable}} & {\textbf{Coefficient}} & \textbf{(Std. Err.)} \\ 
+      \hline
+      \hline 
+      Minority                              & -0.095                 & (0.15)               \\
+      Female                                & -0.077                 & (0.08)               \\
+      InState                                    & -0.072                 & (0.13)               \\
+      Intl                                  & 0.183                  & (0.21)               \\
+      Needy                                 & -0.184**               & (0.11)               \\
+      AcadRating                            & 0.009                  & (0.01)               \\
+      URM                                   & 0.043                  & (0.16)               \\
+      Demand                                & 0.059***               & (0.01)               \\
+      SUB\_AH                               & -0.621**               & (0.36)               \\
+      SUB\_AN                               & -1.314***              & (0.35)               \\
+      SUB\_BY                               & -0.341                 & (0.33)               \\
+      SUB\_CH                               & -1.674***              & (0.40)               \\
+      SUB\_CL                               & -0.342                 & (0.36)               \\
+      SUB\_CN                               & -0.271                 & (0.39)               \\
+      SUB\_CO                               & 0.518*                 & (0.38)               \\
+      SUB\_DA                               & -1.255**               & (0.65)               \\
+      SUB\_DR                               & 0.269                  & (0.61)               \\
+      SUB\_ED                               & -0.444                 & (0.44)               \\
+      SUB\_EN                               & -0.642***              & (0.30)               \\
+      SUB\_ES                               & 0.270                  & (0.44)               \\
+      SUB\_FS                               & -2.591***              & (0.56)               \\
+      SUB\_GR                               & -0.773**               & (0.41)               \\
+      SUB\_GY                               & -1.550***              & (0.37)               \\
+      SUB\_HS                               & 0.136                  & (0.36)               \\
+      SUB\_HY                               & -0.334                 & (0.31)               \\
+      SUB\_JA                               & -0.343                 & (0.38)               \\
+      SUB\_MA                               & -0.979***              & (0.36)               \\
+      SUB\_MB                               & -0.155                 & (0.88)               \\
+      SUB\_MU                               & -1.029***              & (0.33)               \\
+      SUB\_NS                               & -8.343                 & (669600.16)          \\
+      SUB\_PC                               & -1.242***              & (0.34)               \\
+      SUB\_PH                               & -1.889***              & (0.42)               \\
+      SUB\_PS                               & -0.997***              & (0.31)               \\
+      SUB\_PY                               & -1.989***              & (0.43)               \\
+      SUB\_RE                               & -0.035                 & (0.37)               \\
+      SUB\_RS                               & 0.307                  & (0.42)               \\
+      SUB\_SO                               & -0.982***              & (0.32)               \\
+      SUB\_SP                               & -0.529*                & (0.38)               \\
+      SUB\_TH                               & -0.549                 & (0.45)               \\
+      \hline
+      \textbf{cutoffs}                      &                        &                      \\           
+      cutoff1                               & 0.181                  & (0.62)               \\
+      cutoff2                               & 0.682                  & (0.62)               \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+\newpage{}
+
+\begin{sidewaystable}[htb]\centering
+  \begin{threeparttable}
+    \caption{3 Selection Categories, \\Outcome Equation Output, Top/Bot 10\%}\label{table:b7}
+    \begin{tabular}{l|c|c|c|c|c|c}
+      \hline\hline 
+                        & \multicolumn{2}{|c|}{Grade1} & \multicolumn{2}{|c|}{Grade2} & \multicolumn{2}{|c}{Grade3}                                                               \\
+      \hline
+      \textbf{Variable} & \textbf{Coefficient}         & \textbf{(Std. Err.)}         & \textbf{Coefficient} & \textbf{(Std. Err.)} & \textbf{Coefficient} & \textbf{(Std. Err.)} \\ 
+      \hline
+      \hline                                                                                                                                                     
+      \_lambda          & -0.784***                    & (0.30)                       & -0.765**             & (0.44)               & 1.038***             & (0.46)               \\
+      Minority          & 0.176*                       & (0.11)                       & 0.270                & (0.24)               & -0.420***            & (0.21)               \\
+      Female            & 0.268***                     & (0.07)                       & 0.118                & (0.13)               & 0.196**              & (0.12)               \\
+      CO                & -0.041                       & (0.10)                       & 0.178                & (0.18)               & -0.080               & (0.18)               \\
+      Intl              & -0.206                       & (0.17)                       & -1.067***            & (0.33)               & -0.400*              & (0.29)               \\
+      Needy             & 0.021                        & (0.08)                       & 0.020                & (0.17)               & -0.041               & (0.17)               \\
+      AcadRating        & 0.026***                     & (0.01)                       & 0.056***             & (0.02)               & 0.015                & (0.02)               \\
+      PctBot10          & 0.615                        & (0.55)                       & 0.112                & (1.00)               & -0.413               & (1.14)               \\
+      PctTop10          & -0.705***                    & (0.33)                       & 0.582                & (0.71)               & 0.101                & (0.61)               \\
+      ClassSize         & -0.013                       & (0.02)                       & -0.042               & (0.05)               & 0.011                & (0.05)               \\
+      URM               & -0.223**                     & (0.11)                       & -0.301               & (0.25)               & 0.290*               & (0.22)               \\
+      year\_2011        & 0.000                        & (.)                          & 0.000                & (.)                  & 0.000                & (.)                  \\
+      year\_2012        & 0.407***                     & (0.12)                       & 0.312*               & (0.22)               & 0.125                & (0.39)               \\
+      year\_2013        & 0.369***                     & (0.13)                       & 0.579***             & (0.29)               & -0.107               & (0.33)               \\
+      year\_2014        & 0.330***                     & (0.12)                       & 0.153                & (0.27)               & 0.184                & (0.37)               \\
+      year\_2015        & 0.049                        & (0.21)                       & -0.273               & (0.44)               & -0.004               & (0.55)               \\
+      Div\_H            & 0.984***                     & (0.39)                       & 1.355                & (1.39)               & 0.289                & (0.41)               \\
+      Div\_N            & 0.882***                     & (0.44)                       & 0.833                & (1.54)               & 0.000                & (.)                  \\
+      Div\_S            & 1.022***                     & (0.41)                       & 1.646                & (1.59)               & 0.587                & (0.51)               \\
+      Constant          & -3.332***                    & (0.89)                       & 0.032                & (1.10)               & 0.389                & (1.55)               \\
+      \hline
+      N & \multicolumn{6}{|c}{1060} \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{sidewaystable}
+
+\clearpage{}
+
+\newpage{}
+
+\begin{table}[H]\centering
+  \begin{threeparttable}
+    \caption{3 Selection Categories, \\Selection Equation Output, Top/Bot 5\%}\label{table:b8}
+    \begin{tabular}{l c c}
+      \hline\hline 
+      \multicolumn{1}{c}{\textbf{Variable}} & {\textbf{Coefficient}} & \textbf{(Std. Err.)} \\ 
+      \hline
+      \hline 
+      Minority                              & -0.097                 & (0.14)               \\
+      Female                                & -0.010                 & (0.08)               \\
+      InState                                    & -0.077                 & (0.12)               \\
+      Intl                                  & 0.152                  & (0.19)               \\
+      Needy                                 & -0.142*                & (0.10)               \\
+      AcadRating                            & 0.002                  & (0.01)               \\
+      URM                                   & -0.012                 & (0.15)               \\
+      Demand                                & 0.061***               & (0.01)               \\
+      SUB\_AH                               & -0.667**               & (0.35)               \\
+      SUB\_AN                               & -1.408***              & (0.34)               \\
+      SUB\_BY                               & -0.477*                & (0.32)               \\
+      SUB\_CH                               & -1.738***              & (0.39)               \\
+      SUB\_CL                               & -0.302                 & (0.34)               \\
+      SUB\_CN                               & -0.286                 & (0.38)               \\
+      SUB\_CO                               & 0.549*                 & (0.37)               \\
+      SUB\_DA                               & -1.258**               & (0.64)               \\
+      SUB\_DR                               & 0.226                  & (0.61)               \\
+      SUB\_ED                               & -0.455                 & (0.43)               \\
+      SUB\_EN                               & -0.712***              & (0.30)               \\
+      SUB\_ES                               & 0.129                  & (0.43)               \\
+      SUB\_FS                               & -2.705***              & (0.54)               \\
+      SUB\_GR                               & -0.860***              & (0.40)               \\
+      SUB\_GY                               & -1.606***              & (0.35)               \\
+      SUB\_HS                               & 0.220                  & (0.34)               \\
+      SUB\_HY                               & -0.357                 & (0.30)               \\
+      SUB\_JA                               & -0.232                 & (0.37)               \\
+      SUB\_MA                               & -1.096***              & (0.35)               \\
+      SUB\_MB                               & 0.182                  & (0.79)               \\
+      SUB\_MU                               & -1.065***              & (0.33)               \\
+      SUB\_NS                               & -8.711                 & (2759374.39)         \\
+      SUB\_PC                               & -1.329***              & (0.33)               \\
+      SUB\_PH                               & -1.656***              & (0.38)               \\
+      SUB\_PS                               & -1.012***              & (0.30)               \\
+      SUB\_PY                               & -2.071***              & (0.42)               \\
+      SUB\_RE                               & -0.206                 & (0.36)               \\
+      SUB\_RS                               & 0.364                  & (0.41)               \\
+      SUB\_SO                               & -0.994***              & (0.32)               \\
+      SUB\_SP                               & -0.433                 & (0.36)               \\
+      SUB\_TH                               & -0.476                 & (0.42)               \\
+      \hline
+      cutoffs                               &                        &                      \\
+      cutoff1                               & -0.150                 & (0.52)               \\
+      cutoff2                               & 0.350                  & (0.52)               \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+\newpage{}
+
+\begin{sidewaystable}[htb]\centering
+  \begin{threeparttable}
+    \caption{3 Selection Categories, \\Outcome Equation Output, Top/Bot 5\%}\label{table:b9}
+    \begin{tabular}{l|c|c|c|c|c|c}
+      \hline\hline 
+                        & \multicolumn{2}{|c|}{Grade1} & \multicolumn{2}{|c|}{Grade2} & \multicolumn{2}{|c}{Grade3}                                                               \\
+      \hline
+      \textbf{Variable} & \textbf{Coefficient}         & \textbf{(Std. Err.)}         & \textbf{Coefficient} & \textbf{(Std. Err.)} & \textbf{Coefficient} & \textbf{(Std. Err.)} \\ 
+      \hline
+      \hline 
+      \_lambda          & -0.710***                    & (0.30)                       & -0.512**             & (0.29)               & 0.782**              & (0.41)               \\
+      Minority          & 0.179**                      & (0.10)                       & 0.262                & (0.21)               & -0.447***            & (0.18)               \\
+      Female            & 0.214***                     & (0.06)                       & 0.224**              & (0.11)               & 0.137*               & (0.10)               \\
+      InState           & -0.031                       & (0.09)                       & 0.113                & (0.15)               & -0.077               & (0.16)               \\
+      Intl              & -0.286**                     & (0.16)                       & -1.109***            & (0.26)               & -0.422**             & (0.24)               \\
+      Needy             & 0.018                        & (0.07)                       & -0.138               & (0.13)               & 0.056                & (0.14)               \\
+      AcadRating        & 0.025***                     & (0.01)                       & 0.034***             & (0.01)               & 0.022**              & (0.01)               \\
+      PctBot5           & 1.081**                      & (0.61)                       & -0.542               & (0.88)               & -0.631               & (1.12)               \\
+      PctTop5           & -0.717**                     & (0.41)                       & -0.354               & (0.99)               & -0.748               & (0.83)               \\
+      ClassSize         & -0.010                       & (0.02)                       & -0.040               & (0.05)               & -0.039               & (0.05)               \\
+      URM               & -0.270***                    & (0.11)                       & -0.351**             & (0.21)               & 0.381***             & (0.19)               \\
+      year\_2011        & 0.000                        & (.)                          & -0.151               & (0.26)               & 0.000                & (.)                  \\
+      year\_2012        & 0.456***                     & (0.11)                       & 0.188                & (0.23)               & 0.086                & (0.36)               \\
+      year\_2013        & 0.360***                     & (0.12)                       & 0.346*               & (0.25)               & -0.007               & (0.30)               \\
+      year\_2014        & 0.308***                     & (0.11)                       & 0.000                & (.)                  & 0.169                & (0.33)               \\
+      year\_2015        & 0.096                        & (0.20)                       & -0.132               & (0.35)               & 0.528                & (0.51)               \\
+      Div\_H            & 1.086***                     & (0.40)                       & 1.079**              & (0.65)               & -0.089               & (0.38)               \\
+      Div\_N            & 0.824**                      & (0.44)                       & 0.959                & (0.99)               & 0.000                & (.)                  \\
+      Div\_S            & 1.056***                     & (0.42)                       & 1.398**              & (0.80)               & 0.105                & (0.44)               \\
+      Constant          & -0.939                       & (0.98)                       & -2.973***            & (1.25)               & 0.517                & (1.43)               \\
+      \hline
+      N        &         \multicolumn{6}{|c}{1229}                            \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{sidewaystable}
+
+\clearpage{}
+
+
+\newpage{}
+
+\begin{table}[H]\centering
+  \begin{threeparttable}
+    \caption{4 Selection Categories, \\Selection Equation Output, Top/Bot 5\%}\label{table:b10}
+    \begin{tabular}{l c c}
+      \hline\hline 
+      \multicolumn{1}{c}{\textbf{Variable}} & {\textbf{Coefficient}} & \textbf{(Std. Err.)} \\ 
+      \hline
+      \hline 
+
+      Minority         & -0.121    & (0.14)       \\
+      Female           & -0.031    & (0.08)       \\
+      InState               & -0.091    & (0.11)       \\
+      Intl             & 0.114     & (0.18)       \\
+      Needy            & -0.150*   & (0.09)       \\
+      AcadRating       & 0.003     & (0.01)       \\
+      URM              & 0.014     & (0.14)       \\
+      Demand           & 0.050***  & (0.01)       \\
+      SUB\_AH          & -0.551*   & (0.34)       \\
+      SUB\_AN          & -1.307*** & (0.33)       \\
+      SUB\_BY          & -0.401*   & (0.31)       \\
+      SUB\_CH          & -1.656*** & (0.38)       \\
+      SUB\_CL          & -0.272    & (0.33)       \\
+      SUB\_CN          & -0.027    & (0.37)       \\
+      SUB\_CO          & 0.601**   & (0.35)       \\
+      SUB\_DA          & -1.045**  & (0.62)       \\
+      SUB\_DR          & 0.572     & (0.59)       \\
+      SUB\_ED          & -0.397    & (0.41)       \\
+      SUB\_EN          & -0.635*** & (0.28)       \\
+      SUB\_ES          & 0.178     & (0.41)       \\
+      SUB\_FS          & -2.559*** & (0.53)       \\
+      SUB\_GR          & -0.711**  & (0.39)       \\
+      SUB\_GY          & -1.502*** & (0.34)       \\
+      SUB\_HS          & 0.451*    & (0.33)       \\
+      SUB\_HY          & -0.361    & (0.29)       \\
+      SUB\_JA          & -0.227    & (0.35)       \\
+      SUB\_MA          & -1.014*** & (0.34)       \\
+      SUB\_MB          & -0.231    & (0.66)       \\
+      SUB\_MU          & -0.935*** & (0.31)       \\
+      SUB\_NS          & -8.371    & (1022983.67) \\
+      SUB\_PC          & -1.256*** & (0.32)       \\
+      SUB\_PH          & -1.542*** & (0.37)       \\
+      SUB\_PS          & -0.943*** & (0.29)       \\
+      SUB\_PY          & -1.923*** & (0.40)       \\
+      SUB\_RE          & -0.071    & (0.34)       \\
+      SUB\_RS          & 0.532*    & (0.38)       \\
+      SUB\_SO          & -0.902*** & (0.30)       \\
+      SUB\_SP          & -0.299    & (0.35)       \\
+      SUB\_TH          & -0.432    & (0.40)       \\
+      \hline
+      \textbf{cutoffs} &           &              \\
+      cutoff1          & -0.108    & (0.50)       \\
+      cutoff2          & 0.390     & (0.50)       \\
+      cutoff3          & 0.855**   & (0.50)       \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\clearpage{}
+
+\newpage{}
+
+\begin{sidewaystable}[htb]\centering
+  \begin{threeparttable}
+    \caption{4 Selection Categories, \\Outcome Equation Output, Top/Bot 5\%}\label{table:b11}
+    \begin{tabular}{l|c|c|c|c|c|c|c|c}
+      \hline\hline 
+                        & \multicolumn{2}{|c|}{Grade1} & \multicolumn{2}{|c|}{Grade2} & \multicolumn{2}{|c}{Grade3} & \multicolumn{2}{|c}{Grade4}                                                                                      \\
+      \hline
+      \textbf{Variable} & \textbf{Coefficient}         & \textbf{(Std. Err.)}         & \textbf{Coefficient}        & \textbf{(Std. Err.)} & \textbf{Coefficient} & \textbf{(Std. Err.)} & \textbf{Coefficient} & \textbf{(Std. Err.)} \\ 
+      \hline
+      \hline 
+      \_lambda          & -0.635***                    & (0.29)                       & -0.502**                    & (0.28)               & -0.118               & (0.48)               & 0.313                & (0.46)               \\
+      Minority          & 0.182**                      & (0.10)                       & 0.255                       & (0.21)               & -0.062               & (0.22)               & -0.444***            & (0.22)               \\
+      Female            & 0.219***                     & (0.06)                       & 0.232***                    & (0.11)               & 0.298***             & (0.12)               & 0.053                & (0.12)               \\
+      InState                & -0.028                       & (0.09)                       & 0.116                       & (0.15)               & 0.142                & (0.18)               & -0.364**             & (0.22)               \\
+      Intl              & -0.271**                     & (0.15)                       & -1.086***                   & (0.26)               & -0.868***            & (0.23)               & -0.621**             & (0.36)               \\
+      Needy             & 0.016                        & (0.07)                       & -0.138                      & (0.13)               & -0.113               & (0.16)               & 0.316**              & (0.18)               \\
+      AcadRating        & 0.025***                     & (0.01)                       & 0.034***                    & (0.01)               & 0.030***             & (0.01)               & 0.020*               & (0.02)               \\
+      PctBot5           & 1.056**                      & (0.61)                       & -0.536                      & (0.87)               & 1.207                & (1.58)               & -0.070               & (1.85)               \\
+      PctTop5           & -0.719**                     & (0.41)                       & -0.273                      & (0.99)               & 1.243                & (1.43)               & -1.939*              & (1.29)               \\
+      ClassSize         & -0.010                       & (0.02)                       & -0.041                      & (0.05)               & 0.043                & (0.07)               & -0.020               & (0.07)               \\
+      URM               & -0.278***                    & (0.11)                       & -0.345**                    & (0.21)               & -0.116               & (0.21)               & 0.285                & (0.24)               \\
+      year\_2011        & 0.000                        & (.)                          & -0.128                      & (0.26)               & 0.000                & (.)                  & 0.000                & (.)                  \\
+      year\_2012        & 0.455***                     & (0.11)                       & 0.208                       & (0.23)               & 0.257                & (0.63)               & -1.137***            & (0.52)               \\
+      year\_2013        & 0.359***                     & (0.12)                       & 0.360*                      & (0.25)               & 0.111                & (0.39)               & -1.229***            & (0.48)               \\
+      year\_2014        & 0.308***                     & (0.11)                       & 0.000                       & (.)                  & 0.349                & (0.48)               & -0.924**             & (0.52)               \\
+      year\_2015        & 0.155                        & (0.19)                       & -0.059                      & (0.32)               & -0.930               & (0.85)               & 0.116                & (0.70)               \\
+      Div\_H            & 0.999***                     & (0.39)                       & 1.052*                      & (0.64)               & -0.304               & (0.62)               & -0.509               & (0.58)               \\
+      Div\_N            & 0.715**                      & (0.42)                       & 1.170                       & (0.97)               & -0.259               & (0.92)               & 0.000                & (.)                  \\
+      Div\_S            & 0.975***                     & (0.41)                       & 1.347**                     & (0.78)               & -0.548               & (0.76)               & -0.244               & (0.67)               \\
+      Constant          & -0.764                       & (0.97)                       & 2.425**                     & (1.25)               & 0.821                & (1.19)               & 1.726                & (1.72)               \\      
+      \hline
+      N & \multicolumn{8}{|c}{1229} \\
+      \hline
+      \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{sidewaystable}
+
+\clearpage{}
+
+\section{OLS Regression}\label{appendix:c}
