@@ -179,7 +179,7 @@ In each regression, GradeX refers to the regression run on the middle achievers 
       \hline
     \end{tabular}
     \begin{tablenotes}
-    \item{* p<.2, ** p<.1, *** p<.05 blah \\Note: Regressions run using 3 different peer measures and a three choice ordered probit for the first stage. Additionally, Top/Bottom 25\% and Top/Bottom 10\% regressions could not be run because there is too little variance in the data at those levels (most likely because there are too few observations).}
+    \item{* p<.2, ** p<.1, *** p<.05 \\Note: Regressions run using 3 different peer measures and a three choice ordered probit for the first stage. Additionally, Top/Bottom 25\% and Top/Bottom 10\% regressions could not be run because there is too little variance in the data at those levels (most likely because there are too few observations).}
     \end{tablenotes}
   \end{threeparttable}
 \end{sidewaystable}
@@ -218,7 +218,7 @@ Next, we'll explore the possible reasons behind the inconsistent results in the 
 One reason, may be that for students who do not select into their first choice class, the peer effect dynamics change and aren't as strong. 
 Perhaps the students who did not select into their first choice class have less motivation (or something of the sort) to perform in their non-first choice class, and this leads to less peer interactions (or interactions of a different kind) that ultimately lead to smaller/immeasurable peer effects. 
 Another explanation, one that we believe is more likely, is that there are simply fewer students who selected into a course that is not their first choice and the results are therefore less reliable. 
-In the best cases the number of students who did not select into their first choice is about one half of the number of students who did select into their first choice.\footnote{TODO: See Table X and \sectlabel{data} for more details} 
+In the best cases the number of students who did not select into their first choice is about one half of the number of students who did select into their first choice.\footnote{See \tablelabel{tab:freq_Ranking} in \sectlabel{data:pointsdata} for more details} 
 That is, for a two option ordered probit selection model (used in \tablelabel{tab:2sc}), the number of students who are regressed in the Grade1 calculations (those who selected into their first choice class) is twice that of the number of students are regressed in the Grade2 calculations (those who did not select into their first choice class).\footnote{For more details see \sectlabel{methods}.} 
 Additionally, as the number of options in the selection model increases (as is the case in \tablelabel{tab:3sc} and \ref{tab:4sc}) the number of students who did not select into their first choice class is further divided into those who selected into their second choice class, third choice class, etc. and regressed on. 
 This essentially means that the regressions run on the students who did not select into their first choice class (Grade2, Grade3, Grade4) have far fewer observations than the regressions run on students who did select into their first choice class (Grade1). 
@@ -240,7 +240,7 @@ It is possible that the same psychological mechanisms driving the imbalance in l
 
 There are two concerns with the methodology used in this paper that need to be addressed.
 One concern is selection bias and the other is the change in 2015 Demand\footnote{See \sectlabel{data:pointsdata} for more details.} which may affect the model and overall results.
-In order to correct for selection bias we use the two stage selection model outlined in \sectlabel{methods:tssmodel}, and after comparing our results to the foundational OLS model outlined in \eqref{eq:0}, the overall results are the same.\footnote{TODO: See \appendixlabel{appendix:c} for the regular OLS results.} 
+In order to correct for selection bias we use the two stage selection model outlined in \sectlabel{methods:tssmodel}, and after comparing our results to the foundational OLS model outlined in \eqref{eq:0}, the overall results are the same.\footnote{See \appendixlabel{appendix:c} for the regular OLS results.} 
 This suggests that selection bias is most likely not affecting our sample to any significant degree, but selection bias may still be a concern with any future studies that utilize a different sample.
 To address our second concern, we correct Demand in 2015\footnote{See \sectlabel{data:pointsdata} for more details on the correction methods we used.} to eliminate some of the effects of the changes in the bidding system, however some effects persisted\footnote{In particular the standard deviation of Demand in 2015 was still affected. See \sectlabel{data} for more details.} and may have affected our results.
 In order to verify the robustness of our results we reran the regressions on the same data from the years 2011-2014, with the original bidding system, and found that the same overall results persist.\footnote{TODO: See appendix X for the full results.}
@@ -269,8 +269,9 @@ However, more research need to be conducted to determine the long run implicatio
 There are two types of policies that the majority of the literature discusses, ``streaming'' and ``mixing'' \citep{ding2007peers,kang2007classroom,carman2012classroom}. 
 Streaming refers to the policy of grouping students of similar ability levels, while mixing generally refers to the policy of combining students of different ability levels \citep{ding2007peers}.
 However, in this case it is difficult to suggest any policy implications without restricting student course choices and without knowing how high achievers and low achievers are affected by classmates of different ability levels. 
+
 As \citet{burke2013classroom}, \citet{carman2012classroom}, and \citet{ding2007peers} find, an optimal policy prescription may not exist.
-Suppose that the grades of high achievers benefit from middle and low achievers, while the grades of low achievers are harmed by middle and high achievers,\footnote{TODO: Which is what \appendixlabel{appendix:c} suggests to be the case.} then a trade off will need to be made if a policy is to be implemented. 
+Suppose that the grades of high achievers benefit from middle and low achievers, while the grades of low achievers are harmed by middle and high achievers,\footnote{Which is what \appendixlabel{appendix:c} suggests to be the case.} then a trade off will need to be made if a policy is to be implemented. 
 In this case, there is no grouping which would lead to a positive impact on all student grades. 
 For instance, if middle achievers are prioritized, since there are more of them, then they should be placed into classes with as many low achievers as possible. 
 However, this leads to two problems.

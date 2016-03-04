@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,english,fleqn]{article}
+\documentclass[12pt,letterpaper,english,fleqn,titlepage]{article}
 \usepackage{mathptmx}
 \usepackage[scaled=0.86]{helvet}
 \renewcommand{\familydefault}{\rmdefault}
@@ -26,12 +26,18 @@
 \usepackage[outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=15pt,headsep=30pt]{geometry}
 \usepackage[toc,page]{appendix}
 \usepackage{multicol}
+\usepackage{sectsty}
+\sectionfont{\centering}
+
+% Experimental
+\usepackage{rotfloat}
+
 
 \renewcommand\headrulewidth{0pt}
 %\renewcommand\headheight{17pt}
 \newcommand{\prbf}[1]{\textbf{#1}}
 
-% Section variables used throughout
+% Commands  used throughout
 \newcommand{\sectlabel}[1]{section~\ref{#1} (\nameref{#1})}
 \newcommand{\tablelabel}[1]{Table~\ref{#1}}
 \newcommand{\appendixlabel}[1]{Appendix~\ref{#1}}
@@ -40,25 +46,15 @@
 \usepackage[font=footnotesize,labelfont=bf]{caption}
 
 
-% Reduce font size for section
-\makeatletter
-\renewcommand\section{\@startsection{section}{1}{\z@}
-{-5ex \@plus -1ex \@minus -.2ex}{2.3ex \@plus.2ex}{\normalfont\large\bf}}
-
-%Reduce font size for subsection
-\renewcommand\subsection{\@startsection{subsection}{2}
-{\z@}{-3.25ex\@plus -1ex \@minus -.2ex}{1.5ex \@plus .2ex}{\normalfont\bf}}
-
-
 % Enforce proper line breaks and avoid widows and orphans
-% \tolerance 1414
-% \hbadness 1414
-% \emergencystretch 1.5em
-% \hfuzz 0.3pt
-% \widowpenalty = 10000
-% \clubpenalty=10000
-% \vfuzz \hfuzz
-% \raggedbottom
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty = 10000
+\clubpenalty=10000
+\vfuzz \hfuzz
+\raggedbottom
 
 %Set date to empty
 \date{02/24/16}
@@ -108,15 +104,46 @@ pdfpagemode=UseNone]{hyperref}
 % }
 % \makeatother
 
+% Change name of Contents
+\addto\captionsenglish{
+  \renewcommand{\contentsname}%
+    {Table of Contents}%
+}
+
 \begin{document}
 
-\title{Here is the Title of Your Paper}
+\pagenumbering{gobble} % Remove page numbering
 
+\doublespacing
 
-\author{Alan Yeung%
-\thanks{Give your affiliation and thanks here.%
-}.}
-\maketitle
+%\title{Here is the Title of Your Paper}
+
+%\author{Alan Yeung%
+% \thanks{Give your affiliation and thanks here.%
+% }.}
+
+\begin{titlepage}
+	\centering
+        \vspace*{-1cm}
+	{\Large Thesis Title \par}
+	\vspace{3cm}
+	{\Large A THESIS \par}
+	\vspace{.5cm}
+	{Presented to \par}
+	\vspace{2cm}
+	{\Large\itshape John Birdwatch\par}
+	\vfill
+	supervised by\par
+	Dr.~Mark \textsc{Brown}
+
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+%\maketitle
+
 \begin{abstract}
 \noindent Here comes your abstract.
 
@@ -138,8 +165,11 @@ the classification numbers, such as \ J7, B54,\emph{ }etc. here\emph{.}
 
 \newpage{}
 
-\doublespacing
+\tableofcontents
 
+\newpage
+
+\pagenumbering{arabic} % Start page numbering
 \section{Introduction}\label{intro}
 
 In higher education, economists and prospective students often use the performance measures of the student body as a proxy measure for the quality of the institution \citep{smith2015new,sarmiento2015quality,black2006estimating}.
@@ -235,6 +265,7 @@ Particularly promising areas of future research include comparing the classroom 
 
 \clearpage{}
 
+\pagestyle{fancy}
 \begin{appendices}
 
 \input{appendix.tex}
