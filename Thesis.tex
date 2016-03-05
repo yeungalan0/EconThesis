@@ -1,4 +1,4 @@
-\documentclass[12pt,letterpaper,english,fleqn,titlepage]{article}
+\documentclass[12pt,letterpaper,english,fleqn]{article}
 \usepackage{mathptmx}
 \usepackage[scaled=0.86]{helvet}
 \renewcommand{\familydefault}{\rmdefault}
@@ -6,6 +6,7 @@
 \usepackage[latin9]{inputenc}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\fancyheadoffset{0cm}
 \setcounter{secnumdepth}{2}
 \usepackage{setspace}
 \usepackage[authoryear,round]{natbib}
@@ -28,6 +29,8 @@
 \usepackage{multicol}
 \usepackage{sectsty}
 \sectionfont{\centering}
+\usepackage{titling}
+\usepackage{filecontents}
 
 % Experimental
 \usepackage{rotfloat}
@@ -57,7 +60,11 @@
 \raggedbottom
 
 %Set date to empty
-\date{02/24/16}
+\date{March 2016}
+
+% Move text margins in only for this block
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
 
 % Format footnotes
 
@@ -110,66 +117,25 @@ pdfpagemode=UseNone]{hyperref}
     {Table of Contents}%
 }
 
+% ------------------------------------------------------------------------------------------------ %
+% BEGIN DOCUMENT                                                                                   %
+% ------------------------------------------------------------------------------------------------ %
+
 \begin{document}
 
 \pagenumbering{gobble} % Remove page numbering
 
 \doublespacing
 
-%\title{Here is the Title of Your Paper}
+% Prelim contains title page, abstract, honor code, acknowledgements, table of contents
+\input{prelims.tex}
 
-%\author{Alan Yeung%
-% \thanks{Give your affiliation and thanks here.%
-% }.}
-
-\begin{titlepage}
-	\centering
-        \vspace*{-1cm}
-	{\Large Thesis Title \par}
-	\vspace{3cm}
-	{\Large A THESIS \par}
-	\vspace{.5cm}
-	{Presented to \par}
-	\vspace{2cm}
-	{\Large\itshape John Birdwatch\par}
-	\vfill
-	supervised by\par
-	Dr.~Mark \textsc{Brown}
-
-	\vfill
-
-% Bottom of the page
-	{\large \today\par}
-\end{titlepage}
-
-%\maketitle
-
-\begin{abstract}
-\noindent Here comes your abstract.
-
-This is a template for documents prepared with \LaTeX{} for the journal
-Economics-The Open Access, Open Assessment E-Journal (www.economics-ejournal.org).
-
-You find further instructions in the Introduction. Please read them.
-
-\noindent \medskip{}
-
-
-\noindent \emph{Keywords: }Insert the keywords here, separated by
-commas.
-
-\noindent \emph{Journal of Economic Literature Classification: }Insert
-the classification numbers, such as \ J7, B54,\emph{ }etc. here\emph{.}
-\end{abstract}
-
-
-\newpage{}
-
-\tableofcontents
-
-\newpage
+%----------------%
+% Start of paper %
+%----------------%
 
 \pagenumbering{arabic} % Start page numbering
+
 \section{Introduction}\label{intro}
 
 In higher education, economists and prospective students often use the performance measures of the student body as a proxy measure for the quality of the institution \citep{smith2015new,sarmiento2015quality,black2006estimating}.
@@ -180,17 +146,30 @@ Naturally, these findings lead to another area of research, identifying the spec
 One of the most obvious areas for a strong effect to exist is in the classroom.
 Thus, we seek to understand peer effects in the classroom, specifically how the ability of one's classmates impacts a student's class grade.
 
-This study contributes to the literature in two ways.
-First, this is the first study of it's kind (known to us) to research peer effects at the classroom level at this type of institution (a small private liberal arts college).
-Whereas the majority of other studies focus on K-12 education, we analyze the peer effects at an institution of higher education.
-Second, due to our access to data, we are able to use a unique method (at least in terms of classroom peer effects literature\footnote{Most of the literautre uses quasi-random assignments or fixed effects models. See \sectlabel{litreview} for more details.}) to analyze the data and combat selection bias, a serious problem in studies of this type \citep{carman2012classroom,burke2013classroom,ding2007peers}. 
+The answer to this question is important for various reasons. 
+First, a substantial amount of learning in higher education occurs in the classroom. 
+Knowledge about classroom peer effects patterns may help to explain differences in student performance, and thus may lead to policy implications that maximize student achievement. 
+Second, the answer may influence which institution of higher education students should attend. 
+All else being equal, students should attend the institution where peer effects have the strongest possible positive impact on a students academic performance. 
+For instance, if classmate peer effects have a stronger positive impact on a students academic performance at institution A versus institution B, then that is an incentive to attend a institution A. 
+The answer may even impact which type of institution to attend.
+If classmate peer effects have a stronger positive impact on a students academic performance at a liberal arts institution versus an institution of a different type, then that is an incentive to attend a liberal arts institution. 
+However, if on the other hand, classmate peer effects have a negligible or a stronger negative impact on a students academic performance at a liberal arts institution versus an institution of a different type, then that is an incentive to attend a different type of institution. 
 
-Using data from a small private liberal arts college in the mid-west we find that, regardless of the changes we applied to the peer measure, the proportion of high achieving students in a class has a small but significant negative impact on the grades of middle achieving students. 
+This study contributes to the literature in two ways.
+First, this is the first study (known to us) to research peer effects at the classroom level at this type of institution (a small private liberal arts college). 
+Previous studies of this kind  almost exclusively focus on K-12 education. 
+This naturally leads to the question of whether the previous findings can be extrapolated to higher education, where peer dynamics may be very different. 
+As mentioned earlier, the answer to this question has serious policy implications and may influence institutional attendance.
+
+Second, due to our access to data, we are able to use a unique method (at least in terms of classroom peer effects literature\footnote{Most of the literautre uses quasi-random assignments or fixed effects models. See \sectlabel{litreview} for more details.}) to analyze the data and correct for selection bias, a serious problem in studies of this type \citep{carman2012classroom,burke2013classroom,ding2007peers}. 
+
+We use data from a small private liberal arts college in the mid-west and find that, regardless of the changes we applied to the peer measure, the proportion of high achieving students in a class has a small but significant negative impact on the grades of middle achieving students. 
 Additionally, we find that, when the peer measure is at its strictest level, the proportion of low achieving students in a class has a small but positive impact on the grades of middle achieving students. 
 These results are contrary to those found in most of the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}, which may be due to changing peer dynamics from K-12 education to higher education, grade curving occurring in classes at the institution, or a combination of both.
 Though these results are interesting, it is unclear how well they generalize to other institutions, of different types and the same type, due to the current scarcity of literature. 
 
-The structure of the paper is as follows: 
+The paper is organized as follows. 
 We discuss the related literature in section~\ref{litreview}. 
 In section~\ref{data}, we examine the data used in this study. 
 In section~\ref{methods}, we describe our empirical methodology.
@@ -212,7 +191,7 @@ Our research adds to the growing (but currently scarce) literature focused on pe
 In a similar vain to the roommate peer effects literature, much of the literature on peer effects in the classroom exploits quasi-random classroom assignments.
 For instance, \citet{kang2007classroom} exploit the quasi-random classroom assignments in South Korean middle schools, and \citet{carman2012classroom} utilize the fact that students are assigned to Chinese middle schools either randomly or through an admissions test.
 Both studies focused on determining the significance of peer effects on classroom grades, and find evidence of peer effects.
-\citeauthor{kang2007classroom} finds that strong students\footnote{For our purposes, any qualitative measure of students abilities (high or low achiever, strong or weak student, etc.) refers to students relative acadmeic performance (usually on standardized tests). This is standard practice in all of the related literature \citep{carman2012classroom,burke2013classroom,kang2007classroom,schlosser2008inside,lavy2012good}} have a positive impact on the academic performance of other students, while weak students have a negative effect on the performance of other students. 
+\citeauthor{kang2007classroom} finds that strong students\footnote{For our purposes, any qualitative measure of student abilities (high or low achiever, strong or weak student, etc.) refers to students relative acadmeic performance (usually on standardized tests). This is standard practice in all of the related literature \citep{carman2012classroom,burke2013classroom,kang2007classroom,schlosser2008inside,lavy2012good}} have a positive impact on the academic performance of other students, while weak students have a negative effect on the performance of other students. 
 \citeauthor{carman2012classroom} find somewhat mixed results, but in general they find evidence of positive and significant peer effects on the impact of classmate quality on the academic performance of other students.
 Other studies use econometric techniques, such as fixed effects modeling, to correct for any selection bias.
 For example, \citet{schlosser2008inside} and \citet{lavy2012good} control for fixed effects when studying the peer effects of underachievers and overachievers on other students in secondary schools.
@@ -258,9 +237,13 @@ Fortunately, these study limitations create promising avenues for future researc
 Particularly promising areas of future research include comparing the classroom level peer effects at different types of institutions (such as community colleges or large universities), and, following in the footsteps of \citet{oosterbeek2014gender}, looking at classroom peer effects from a gender peer effects perspective.
        
 \newpage{}
+%-------------------%
+% Start of postlims %
+%-------------------%
+
 \pagestyle{plain}
 \singlespacing
-
+\addcontentsline{toc}{section}{References}
 \bibliography{references}
 
 \clearpage{}
@@ -273,3 +256,4 @@ Particularly promising areas of future research include comparing the classroom 
 \end{appendices}
 
 \end{document}
+%TODO: Spell Check

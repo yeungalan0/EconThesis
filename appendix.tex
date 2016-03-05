@@ -4,6 +4,7 @@
 There were 31 subjects used as controls in the selection equation, the full list includes:
 \begin{multicols}{2}
   \begin{enumerate}
+    \itemsep0em
   \item{Art History (AH)} 
   \item{Anthropology (AN)}
   \item{Biology (BY)}
@@ -47,7 +48,8 @@ All of the coefficients and standard errors from the regressions run in \tablela
 
 \clearpage{}
 
-\newgeometry{outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=0pt,headsep=0pt,footskip=0pt,showframe}
+\newgeometry{outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=0pt,headsep=-20pt,footskip=0pt,showframe}
+
 \thispagestyle{empty}
 \begin{table}[htb]\centering
   \begin{threeparttable}
@@ -119,6 +121,7 @@ All of the coefficients and standard errors from the regressions run in \tablela
 
 \newpage{}
 
+\thispagestyle{empty}
 \begin{table}[htb]\centering
   \begin{threeparttable}
   \caption{2 Selection Categories, 2 Stage Regression on Middle Achievers using Top/Bot 10\%}\label{table:b2}
@@ -183,6 +186,7 @@ All of the coefficients and standard errors from the regressions run in \tablela
   \begin{tablenotes}
   \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space.}
   \end{tablenotes}
+  \centering\thepage
   \end{threeparttable}
 \end{table}
 
@@ -190,6 +194,7 @@ All of the coefficients and standard errors from the regressions run in \tablela
 
 \newpage{}
 
+\thispagestyle{empty}
 \begin{table}[htb]\centering
   \begin{threeparttable}
   \caption{2 Selection Categories, 2 Stage Regression on Middle Achievers using Top/Bot 5\%}\label{table:b3}
@@ -253,6 +258,7 @@ All of the coefficients and standard errors from the regressions run in \tablela
   \begin{tablenotes}
   \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space.}
   \end{tablenotes}
+  \centering\thepage
   \end{threeparttable}
 \end{table}
 
@@ -260,6 +266,7 @@ All of the coefficients and standard errors from the regressions run in \tablela
 
 \newpage{}
 
+%\thispagestyle{empty}
 \begin{table}[htb]\centering
   \begin{threeparttable}
     \caption{3 Selection Categories, \\Selection Equation Output, Top/Bot 25\%}\label{table:b4}
@@ -316,6 +323,7 @@ All of the coefficients and standard errors from the regressions run in \tablela
     \begin{tablenotes}
     \item{* p<.2, ** p<.1, *** p<.05}
     \end{tablenotes}
+%    \centering\thepage
   \end{threeparttable}
 \end{table}
 
@@ -696,14 +704,16 @@ All of the coefficients and standard errors from the regressions run in \tablela
 
 \clearpage{}
 
-\section{OLS Results}\label{appendix:c}
+\restoregeometry{}
 
-The tables below display the results from the OLS foundational model \eqref{eq:0}. 
+\section{Original Model Results}\label{appendix:c}
+
+The tables below display the results from the original model \eqref{eq:0}. 
 The overall results are the same, which suggests that selection bias is not affecting our model for the given sample.
 
 \begin{sidewaystable}[htb]\centering
   \begin{threeparttable}
-    \caption{OLS Model \eqref{eq:0} on Middle Achievers}\label{table:c1}
+    \caption{Original Model \eqref{eq:0} on Middle Achievers}\label{table:c1}
     \begin{tabular}{l|c|c|c|c|c|c}
       \hline\hline 
                         & \multicolumn{2}{|c|}{Top/Bot 25\%} & \multicolumn{2}{|c|}{Top/Bot 10\%} & \multicolumn{2}{|c}{Top/Bot 5\%}                                                               \\
@@ -747,7 +757,7 @@ The overall results are the same, which suggests that selection bias is not affe
 
 \begin{sidewaystable}[htb]\centering
   \begin{threeparttable}
-    \caption{OLS Model \eqref{eq:0} on Low Achievers}\label{table:c2}
+    \caption{Original Model \eqref{eq:0} on Low Achievers}\label{table:c2}
     \begin{tabular}{l|c|c|c|c|c|c}
       \hline\hline 
                         & \multicolumn{2}{|c|}{Top 25\% Mid 50\%} & \multicolumn{2}{|c|}{Top 10\% Mid 80\%} & \multicolumn{2}{|c}{Top 5\% Mid 90\%} \\
@@ -792,7 +802,7 @@ The overall results are the same, which suggests that selection bias is not affe
 
 \begin{sidewaystable}[htb]\centering
   \begin{threeparttable}
-    \caption{OLS Model \eqref{eq:0} on High Achievers}\label{table:c3}
+    \caption{Original Model \eqref{eq:0} on High Achievers}\label{table:c3}
     \begin{tabular}{l|c|c|c|c|c|c}
       \hline\hline 
                         & \multicolumn{2}{|c|}{Bot 25\% Mid 50\%} & \multicolumn{2}{|c|}{Bot 10\% Mid 80\%} & \multicolumn{2}{|c}{Bot 5\% Mid 90\%} \\
@@ -832,9 +842,7 @@ The overall results are the same, which suggests that selection bias is not affe
 
 \clearpage{}
 
-\restoregeometry{}
-
-\section{Robustness to Changes in Bidding System}
+\section{Robustness to Changes in Bidding System}\label{appendix:d}
 
 In order to test the robustness of our results to the changes in the bidding system, we reran the regressions only on data from the years 2011-2014 (with the original bidding system). 
 The overall results are the same, suggesting that our results are robust to the change in the bidding system. 
@@ -886,6 +894,7 @@ The overall results are the same, suggesting that our results are robust to the 
 \end{table}
 
 \clearpage{}
+\newgeometry{outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=0pt,headsep=10pt,footskip=0pt,showframe}
 
 %\thispagestyle{empty}
 \begin{table}[htb]
