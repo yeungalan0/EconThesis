@@ -1,3 +1,8 @@
+Our data gives us a unique opportunity to study peer effects in higher education.
+First, our data comes from an institution with relatively small class sizes which \citet{diette2015class} and \citet{kokkelenberg2008effects} show have a positive impact on average student achievement (measured by grades and test scores).
+The primary reasoning for the inverse relationship between achievement and class size is that students have more quality time to interact with teachers and peers as class size decreases, suggesting that we may expect to find magnified peer effects at this institution. 
+Additionally, the data on student preferences (Ranking) and class demands (Demand) enable us to use a two stage selection model, a model generally not used in other classroom peer effects literature\footnote{See \sectlabel{litreview} for more details.}, to correct for selection bias and analyze the data. 
+
 The data set comes from a selective medium sized liberal arts college in the mid-west, henceforth referred to as the institution, for which data is collected on five cohorts (2011-2015). 
 Classroom level data is used in our regressions as it has been shown to generate stronger results than other group level measures \citep{burke2013classroom}. 
 
@@ -13,7 +18,7 @@ The second type of data we use is point data, which consists of the number of po
 
 The classroom level data on first year students in their first class at the institution is primarily used in the outcome equation.\footnote{Some classroom level data is also used in the selection equation. See \sectlabel{data:pointsdata} for details.}
 There are five key variables in our outcome equation, Grade, AcadRating (Academic Rating), PctTopX, PctBotX, and PctMidY. 
-The dependent variable, Grade is the primary outcome of interest, and is the grade received by a student after taking the course. 
+The dependent variable, Grade is our performance measure, and is the grade received by a student after taking the course. 
 Courses are graded on a four point scale, and there are eleven possible grades ranging from an ``A'' (4.0) to ``F'' (0.0).\footnote{The possible grades are A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D+ = 1.3, D = 1.0, F = 0.0} 
 As a measure of student ability we follow the literature and use a proxy measure developed on data prior to college enrollment, Academic Rating \citep{griffith2014peer,smith2015new}. 
 The Academic Rating is a number assigned to all students at the institution. 
@@ -29,7 +34,6 @@ PctMidY is the proportion of students in a class that are not in the top X perce
 The remaining variables, Minority, Female, InState, Intl (International), Needy, ClassSize, URM (Underrepresented Minority), Year, Division, and Professor, are used as control variables in the regression.
 \tablelabel{tab:def1} displays the definitions of all the class level variables used. 
 
-%\clearpage{}
 \bigskip
 
 \begin{table}[htb]
@@ -39,9 +43,9 @@ The remaining variables, Minority, Female, InState, Intl (International), Needy,
  \hline\hline
  Variable & Definition \\ [0.5ex] 
  \hline\hline
- Grade & The grade received by a student after taking the course. \\ 
+Grade & The grade received by a student after taking the course. \\ 
  \hline
- AcadRating & Referred to as Academic Rating, a number that represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. \\
+ AcadRating & Referred to as Academic Rating, represents the culmination of a student's high school GPA, their test scores, the difficulty of the high school curriculum, the quality of their high school, and their writing ability. \\
  \hline
  PctTopX & The proportion of students in the class in the top X percent of the sample based on Academic Rating \\
  \hline
@@ -61,11 +65,11 @@ The remaining variables, Minority, Female, InState, Intl (International), Needy,
  \hline
  ClassSize & An integer the represents the total number of students in a class. \\
  \hline
- URM & Under Represented Minority, a dummy variable indicating whether or not the student is non-Caucasian or Asian.  1 = Asian or Caucasian \& 0 = other ethnicity \\
+ URM & Under Represented Minority, a dummy variable indicating whether or not the student is Caucasian/Asian, or not.  1 = Asian or Caucasian \& 0 = other ethnicity \\
  \hline
  Year & The year the class took place. \\
  \hline
- Division & The subject area of the class, either Natural Science, Social Sciences, or Humanities. \\
+ Division & The subject area of the class (Natural Science, Social Sciences, or Humanities). \\
  \hline
  Professor & An identifier for the professor teaching the course. \\
 [1ex] 
@@ -203,8 +207,3 @@ As expected, the Demand variable has a lower standard deviation in 2015 compared
 \end{sidewaystable}
 
 \clearpage{}
-
-Our data gives us a unique opportunity to study peer effects in higher education.
-First, our data comes from an institution with relatively small class sizes which \citet{diette2015class} and \citet{kokkelenberg2008effects} show have a positive impact on average student achievement (measured by grades and test scores).
-The primary reasoning for the inverse relationship between achievement and class size is that students have more quality time to interact with teachers and peers as class size decreases, suggesting that we may expect to find magnified peer effects at this institution. 
-Additionally, the data on student preferences (Ranking) and class demands (Demand) enable us to use a two stage selection model, a model generally not used in other classroom peer effects literature\footnote{See \sectlabel{litreview} for more details.}, to combat selection bias and analyze the data. 
