@@ -1,5 +1,5 @@
 The results suggest that the proportion of high achievers in a class has a significant  negative impact on the grades of middle achievers, while the proportion of low achievers in a class has a significant positive impact on the grades of middle achievers.\footnote{See \tablelabel{tab:2sc}, \tablelabel{tab:3sc}, and \tablelabel{tab:4sc}}
-We find that the estimated coefficients from the effect of high achievers on middle achiever's grades to be economically significant, but the effect of low achievers on middle achiever's grades are too small to have an economically significant impact on final student grades.
+We find the effect of high achievers on middle achiever's grades to be economically significant\footnote{Meaning that the sign of a student's grade is affected.}, but the effect of low achievers on middle achiever's grades are too small to have an economically significant impact.
 These results are contradictory to those found in the majority of the literature and we discuss some possible explanations for this below \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}. 
 We begin the section by evaluating our results in detail and describing the patterns found.
 Then, we conclude by discussing the implications of our results and provide some suggestions for further research. 
@@ -66,7 +66,9 @@ In each regression, GradeX refers to the model regressed on the middle achievers
 
 \clearpage{}
 
-%\thispagestyle{empty}
+\newgeometry{outer=25mm,inner=35mm,vmargin=20mm,includehead,includefoot,headheight=0pt,headsep=10pt,footskip=0pt}
+
+\thispagestyle{empty}
 \begin{table}[htb]
   \centering
   \begin{threeparttable}
@@ -125,9 +127,12 @@ In each regression, GradeX refers to the model regressed on the middle achievers
     \item{* p<.2, ** p<.1, *** p<.05 \\Note: Regressions run using 3 different peer measures and a three choice ordered probit for the first stage.}
     \end{tablenotes}
     \centering
-%    \thepage
+    \thepage
   \end{threeparttable}
 \end{table}
+
+\restoregeometry{}
+\doublespacing
 
 \clearpage{}
 
@@ -177,7 +182,7 @@ In each regression, GradeX refers to the model regressed on the middle achievers
       \hline
     \end{tabular}
     \begin{tablenotes}
-    \item{* p<.2, ** p<.1, *** p<.05 \\Note: Regressions run using 3 different peer measures and a three choice ordered probit for the first stage. Additionally, Top/Bottom 25\% and Top/Bottom 10\% regressions could not be estimated because there is too little variance in the data at those levels (this seems to be caused by the correction to Demand discussed in \sectlabel{data} as the regressions in \appendixlabel{appendix:d} could be estimated).}
+    \item{* p<.2, ** p<.1, *** p<.05 \\Note: Regressions run using 3 different peer measures and a four choice ordered probit for the first stage. Additionally, Top/Bottom 25\% and Top/Bottom 10\% regressions could not be estimated because there is too little variance in the data at those levels (this seems to be caused by the correction to Demand discussed in \sectlabel{data} as the regressions in \appendixlabel{appendix:d} could be estimated).}
     \end{tablenotes}
   \end{threeparttable}
 \end{sidewaystable}
@@ -189,8 +194,8 @@ First, the majority of the statistically significant results are found in studen
 Next, all the significant results in Grade1 are consistent, in that the proportion of high achievers has a negative impact on the grades of middle achievers and the proportion of low achievers has a positive impact on the grades of middle achievers. 
 Furthermore, the majority of significant results appear as the peer measure becomes stricter, that is more significant results appear as the peer measure changes from the top/bottom twenty-five percent, to ten percent, and finally to five percent. 
  
-The Grade1 results in \tablelabel{tab:2sc}, \ref{tab:3sc}, and \ref{tab:4sc} show a consistent pattern. 
-The proportion of high achievers in a classroom has a negative impact on the grade of middle achievers, regardless of the strictness of the peer measure. 
+The Grade1 results show a consistent pattern. 
+The proportion of high achievers in a class has a negative impact on the grades of middle achievers, regardless of the strictness of the peer measure. 
 As the peer measure becomes stricter (specifically at the five percent threshold), we see that the proportion of low achievers in a classroom has a positive impact on the grades of middle achievers. 
 There is some precedence for using the five percent threshold and finding peer effects. 
 In \citet{lavy2012good} researchers also found strong peer effects using the top and bottom five percent as their peer measures. 
@@ -199,46 +204,43 @@ That is, they showed that students in the middle ninety percent of the ability d
 
 Our results run counter to those found in the current literature\footnote{\citet{burke2013classroom} do find one result similar to ours, but they do not provide any explanation for their finding.}, granted that the current literature is rather scarce especially in the area of higher education \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}. 
 Most of the current literature finds that low achievers hurt the grades of middle achieving students and high achievers help the grades of middle achieving students. 
-Similar results have also been discovered in roommate peer effects literature \citep{griffith2014peer,zimmerman2003peer,sacerdote2000peer}.
 The reasoning being that low achieving students may disrupt learning (possibly by instilling bad study habits in the middle achieving students) and the high achieving students may facilitate learning (possibly by asking more relevant questions or helping to tutor middle achieving students). 
-This reasoning is very compelling and is exactly what many people would expect to happen, which makes our results of the contrary all the more puzzling.  
+This reasoning is compelling and is exactly what many people would expect to happen, which makes our results of the contrary all the more puzzling.  
 
 We have developed two possible explanations for these results. 
-One possibility is that since most of the previous literature does not focus on courses in higher education, peer dynamics have changed in the transition from K-12 education to undergraduate education. 
-Most of the literature focuses on K-12, therefore, it is reasonable to suppose that peer effects at institutions of higher education may differ from those seen in K-12 education. 
+One possibility is that, since most of the literature focuses on K-12 education, peer dynamics have changed in the transition from K-12 education to undergraduate education. 
 It is possible that high achieving students in college have a negative peer effect on grades, perhaps through demoralizing other students, and low achieving students have a positive peer effect on grades, perhaps through increasing the number of group study sessions. 
 Another possibility is that grade curving is occurring in many of the classes studied, and is overpowering any actual peer effects. 
-That is to say, the student's grades in a class may be determined by their relative performance to their classmates, instead of by their absolute performance. 
+That is to say, student class grades may be determined by their relative performance to their classmates, instead of by their absolute performance. 
 Unfortunately, due to the time span of the data and faculty changes, it is not feasible to uncover which classes were truly graded on a curve (in which case these findings would not be surprising) and which classes were not. 
 Furthermore, if grade curving is the underlying cause of the results we are finding, then it is still possible that peer effects in line with the literature exist, but the curving effects are simply overwhelming any peer effects that are occurring. 
 
-Next, we'll explore the possible reasons behind the inconsistent results in the regressions run on students who selected into a class that was not their first choice. 
+Next, we'll explore the possible reasons behind the inconsistent results in the regressions run on students who selected into a class that was not their first choice (Grade2, Grade3, and Grade4). 
 One reason, may be that for students who do not select into their first choice class, the peer effect dynamics change and aren't as strong. 
-Perhaps the students who did not select into their first choice class have less motivation (or something of the sort) to perform in their non-first choice class, and this leads to less peer interactions (or interactions of a different kind) that ultimately lead to smaller/immeasurable peer effects. 
-Another explanation, is that there are simply fewer students who selected into a course that is not their first choice and the results are therefore less reliable. 
-In the best cases the number of students who did not select into their first choice course is about one half of the number of students who did select into their first choice course.\footnote{See \tablelabel{tab:freq_Ranking} in \sectlabel{data:pointsdata} for more details} 
-That is, for a two option ordered probit selection model (used in \tablelabel{tab:2sc}), the number of students who are regressed in the Grade1 calculations (those who selected into their first choice class) is twice that of the number of students that are regressed in the Grade2 calculations (those who did not select into their first choice class).\footnote{For more details see \sectlabel{methods}.} 
+Perhaps the students have less motivation (or something of the sort) to perform in their non-first choice class, and this leads to less peer interactions (or interactions of a different kind) that ultimately lead to smaller/immeasurable peer effects. 
+Another explanation, is that there are simply fewer students who selected into a course that was not their first choice and the results are therefore less reliable. 
+In the best cases the number of students who did not select into their first choice course is about one half of the number of students who did select into their first choice course.\footnote{See \tablelabel{tab:freq_Ranking} in \sectlabel{data:pointsdata} for more details.} 
 
 Additionally, as the number of options in the selection model increases (as is the case in \tablelabel{tab:3sc} and \ref{tab:4sc}) the number of students who did not select into their first choice class is further divided into those who selected into their second choice class, third choice class, etc. and regressed on. 
-This essentially means that the regressions run on the students who did not select into their first choice class (Grade2, Grade3, Grade4) have far fewer observations than the regressions run on students who did select into their first choice class (Grade1). 
+This means that the regressions estimated on the students who did not select into their first choice class (Grade2, Grade3, Grade4) have far fewer observations than the regressions estimated on students who did select into their first choice class (Grade1). 
 In this case, fewer observations effectively means a smaller sample size, and studies that use smaller sample sizes find that the sample size may lead to insignificant or inaccurate results \citep{gonzalez2013gibrat} and the results of these studies are often not generalizable \citep{oladipupo2013does}.
-This is a troubling problem as it suggests that the results from the Grade2, Grade3, and Grade4 regressions are more unreliable than the results of the Grade1 regressions. 
+This is a troubling problem as it suggests that the results from the Grade2, Grade3, and Grade4 regressions are less reliable than the results of the Grade1 regressions. 
 However, the only way to resolve this problem is to collect several more years of data, which is not feasible at this time. 
 Therefore, we will focus on the Grade1 regression results for the remainder of the section, and since the majority of students selected into their first choice class, the Grade1 results are arguably the most relevant results regardless. 
 
-In addition, our results are somewhat imbalanced. That is to say, high achieving students clearly have a negative impact on middle achieving students throughout the majority of our regressions, but low achieving students only have a statistically significant positive impact on middle achieving students when the peer measure becomes stricter. 
+Our results are somewhat imbalanced, which is to say, high achieving students clearly have a negative impact on middle achieving students throughout the majority of our regressions, but low achieving students only have a statistically significant positive impact on middle achieving students when the peer measure becomes stricter. 
 One explanation may be that it is pure statistical chance that high achievers had a significant negative affect more often than low achievers had a significant positive affect. 
 Our sample size of 903 students who selected into their first choice class is not as large as some found in the literature, which reach into the many thousands \citep{kang2007classroom,lavy2012good}. 
 Another possibility is that top students are very effective at having a negative impact on other student's grades, and this result is simply robust to changes in the peer measure. 
-Finally, if grade curving is the underlying cause of our results, it may be that high achieving students dull out a middle achieving student's performance more than a low achieving student helps a middle achieving student shine.
+The final possibility may be that, if grade curving is the underlying cause of our results, high achieving students dull out a middle achieving student's performance more than a low achieving student helps a middle achieving student shine.
 Since professors may curve grades in a subjective fashion, they may be affected by this psychological phenomenon. 
-Currently we do not have an explanation for this phenomena, although there is evidence of similar kinds of psychological imbalance in other areas. 
-For example take the well documented theory of loss aversion. 
+We do not have an explanation for this phenomena, although there is evidence of similar kinds of psychological imbalances in other areas. 
+For example, take the well documented theory of loss aversion. 
 As explained by \citet{tversky1991loss}, loss aversion implies that people experience greater impact from a loss when compared to a gain equal in magnitude, and this phenomena has been found in many different areas of human behavior \citep{shalev2002loss,goette2004loss}. 
-It is possible that the same psychological mechanisms driving the imbalance in losses and gains (loss aversion) are also driving the imbalance in the effect of the proportion of high achievers and low achievers on middle achievers grades. 
+It is possible that the same psychological mechanisms driving the imbalance in losses and gains are also driving the imbalance in the effect of the proportion of high achievers and low achievers on middle achievers grades. 
 
 There are two concerns with the methodology used in this paper that need to be addressed.
-One concern is selection bias and the other is the change in 2015 Demand\footnote{See \sectlabel{data:pointsdata} for more details.} which may affect the model and overall results.
+One concern is selection bias and the other is the change in 2015 Demand\footnote{See \sectlabel{data:pointsdata} for more details.}, which may affect the model and overall results.
 In order to correct for selection bias we use the two stage selection model outlined in \sectlabel{methods:tssmodel}, and after comparing our results to the original model outlined in \eqref{eq:0}, the overall results are the same.\footnote{The calculated magnitudes are smaller however. See \appendixlabel{appendix:c} for the original model results.} 
 This suggests that selection bias is most likely not affecting our sample to any significant degree, but selection bias may still be a concern with any future studies that utilize a different sample.
 To address our second concern, we correct Demand in 2015\footnote{See \sectlabel{data:pointsdata} for more details on the correction methods we used.} to eliminate some of the effects of the changes in the bidding system, however some effects persisted\footnote{In particular the standard deviation of Demand in 2015 was still affected. See \sectlabel{data} for more details.} and may have affected our results.
@@ -253,24 +255,21 @@ Using a magnitude of -0.70, for every ten percent increase in the proportion of 
 In order for the proportion of high achievers in an average class to be high enough to have a significant\footnote{Defined as at least changing the sign of a student's grade which takes about 0.3 grade points.} influence on the grades of middle achieving students, forty percent of the average class of twelve students (five students) must be high achievers.\footnote{0.4 * 0.7 = 0.28} 
 At the twenty five percent threshold, as \appendixlabel{appendix:e} shows, there are forty-nine courses (about 37\%) in our data set which have a proportion of high achievers of at least forty percent.\footnote{Using stricter peer measures the implications become less severe, but regardless our data indicates that these effects exist at the 25\% threshold of our peer measures.}  
 These calculations indicate that 127 middle achievers (about nine percent of all students) in our data set are experiencing a significant negative effect on their grades from the proportion of high achievers in their classes. 
-With nearly one in ten students impacted, this may be a serious concern for the administration and student's of the insitution.
+With nearly one in ten students impacted, this may be a serious concern for the administration and student's of the institution.
 However, more research needs to be conducted on the peer effects that exist at other similar types of institutions before the severity of these results can be assessed.
 
 Even though the proportion of low achievers has a relatively higher positive impact on the grades of middle achievers, there are simply not enough low achievers in classes at the five percent threshold\footnote{Low achievers showed significant results only at the 5\% threshold} to seriously impact the grades of middle achievers.
-As \appendixlabel{appendix:e} shows, less than one percent of all middle achiever's grades are impacted by the proportion of low achievers in their classes. 
+As \appendixlabel{appendix:e} shows, less than one percent of all middle achievers are impacted by the proportion of low achievers in their classes. 
 
-There are two considerations that must be taken into account.
+There are three considerations that must be taken into account.
 The first consideration is that the coefficients are estimates, and it may be that the real coefficients are much smaller or larger than those estimated. 
 If the real coefficients happen to be smaller, then the results may not be a practical concern to students and the administration.
-Second, if these results continued in further classes, then the cumulative effect on the GPA may be significant. 
-Depending on a student's degree path, they may be more likely to select into classes with a higher proportion of low achieving students or classes with a higher proportion of high achieving students. 
-Additionally, higher level classes at the institution may number under ten students (depending on the popularity of the degree), therefore if these trends continue it is possible for the cumulative GPA (as well as class grades) of a student to be affected. 
-This may be a serious problem in unpopular degrees with abnormally small class sizes. 
+Second, without classroom peer effect results from other institutions, it is impossible to judge the severity of the peer effects found at this institution. 
+It may be that all institutions have similar peer effects, or it may be that this institution has peer effects that are abnormal, but without results from other institutions for comparison none of these judgments can be made. 
+Finally, if these results continued in further classes, then a student's cumulative GPA may also be significantly affected. 
+Depending on a student's degree path (unpopular degrees are especially vulnerable), they may be more likely to select into classes with a higher proportion of low achieving students or classes with a higher proportion of high achieving students, magnifying these effects on cumulative GPA.
 
-The calculations above show that the proportion of high achievers in a class may have a significant, and concerning, impact on the grades of middle achievers, but the impact from the proportion of low achievers is most likely not a practical concern to most students. 
-Additionally, more research needs to be conducted to determine the long run implications of these results. 
-
-There are two types of policies that the majority of the literature discusses, ``streaming'' and ``mixing'' \citep{ding2007peers,kang2007classroom,carman2012classroom}. 
+In regards to policy, there are two types that the majority of the literature discusses, ``streaming'' and ``mixing'' \citep{ding2007peers,kang2007classroom,carman2012classroom}. 
 Streaming refers to the policy of grouping students of similar ability levels, while mixing generally refers to the policy of combining students of different ability levels \citep{ding2007peers}.
 However, in this case it is difficult to suggest any policy implications without restricting student course choices and without knowing how high achievers and low achievers are affected by classmates of different ability levels. 
 
@@ -279,24 +278,23 @@ Suppose that the grades of high achievers benefit from middle and low achievers,
 In this case, there is no grouping which would lead to a positive impact on all student grades. 
 For instance, if middle achievers are prioritized, then they should be placed into classes with as many low achievers as possible. 
 However, this leads to two problems.
-First, the grades of low achievers would be harmed in this case.
+First, the grades of low achievers would be harmed.
 Additionally only a select group of middle achievers could benefit from this policy, since there are far fewer low achievers.\footnote{If too many middle achievers are placed into a class, the proportion of low achievers would be diluted to a point where the affects are insignificant.}
-If, on the other hand, the grades of low achievers are positively impacted by the proportion of middle achievers in the class, then by grouping low achievers and middle achievers the grades of both may be maximized.
+If, on the other hand, the grades of low achievers are positively impacted by the proportion of middle achievers in the class, then by grouping low achievers and middle achievers the grades of both may be maximized.\footnote{There need to be some assumptions made on the magnitudes of the effects, but that is outside the scope of this hypothetical exercise.}
 Again, only a select group of middle achievers would benefit, but this would still maximize the average grade received by all groups overall.
 However, to effectively create this optimal grouping, the institution would need to restrict student course choices based on their ability levels, which may not be a popular decision among current or prospective students.\footnote{Institutions could also incentivize students of certain ability levels to take certain courses, however this may be considered unfair to those students who are not incentivized.}
 
 This study is somewhat limited by the sample size. 
-With more observations we may be able to determine how high achievers and low achievers are affected by each other and middle achievers.
+Due to the limited sample size we are unable to determine how high achievers and low achievers are affected by classmates of different ability levels.
 Additionally, it is an open question as to whether or not these results may be generalized to other types of institutions. 
-This study was conducted on data from a small private liberal arts college and the results may differ at different types of institutions with potentially different peer interactions (such as at large universities). 
+This study is conducted on data from a small private liberal arts college and the results may differ at different types of institutions with potentially different peer interactions (such as at large universities). 
 Also, due to the time span of the data, we are unable to determine whether peer effects, grade curving, or both are responsible for our results. 
 
 Fortunately, these limitations may lead to promising areas of future research. 
 In a few years there may be enough observations to rerun the regressions on high and low achievers and discover how they are affected by students of other ability levels in the class. 
 With this full picture of classroom peer effects one might find unexpected results (such as if low achievers benefited from high achievers and high achievers benefited from low achievers) that have clearer policy implications.
 Another avenue for further research, would be to conduct similar regressions at different types of institutions.
-It would be interesting to know if the same peer effects are found at community colleges or large universities. 
-Both community colleges and large universities are a fundamentally different type of institution compared to a small private liberal arts school, and it is possible that different types (or the same types) of peer effects exist. 
+It would be interesting to know if the same peer effects or different peer effects are found at community colleges or large universities, which are fundamentally different types of institutions compared to a small private liberal arts college. 
 If different peer effects are found to exist at different types of institutions, then these results may serve in the comparison of the costs and benefits of different types of institutions. 
 Additionally, different liberal arts colleges may have different grading policies (i.e. a specific policy on grade curving), and by comparing the results from another similar institution to this one it may help determine if grade curving is an underlying cause of our results. 
 Finally, it may be interesting to analyze classroom peer effects based on gender composition. 

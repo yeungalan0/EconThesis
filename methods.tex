@@ -6,7 +6,7 @@ Our original peer effects model is as follows:
 G_{i} = \beta_{0} + \beta_{1} Ability_{i} + \beta_{2} Ability_{i}^{CM1} + \beta_{3} Ability_{i}^{CM2} + \overrightarrow{\beta} \overrightarrow{z} + \epsilon_{i}
 \end{equation}
 
-Where $\epsilon_{i} \stackrel{iid}{\sim} N(0,\sigma_{\epsilon}^2)$, $G_{i}$ is the grade received by student $i$ in their first course at the institution, $Ability_{i}$ is a proxy for the student's academic ability (Academic Rating)\footnote{For more information see \tablelabel{tab:def1}.}, $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are classmate ability measures, and $\overrightarrow{z}$ is a vector of control variables\footnote{Control variables included Minority, Female, InState, International, Needy, Class Size, URM, Year, Division, and Professor. See \tablelabel{tab:def1} and \tablelabel{tab:def2} for definitions.}. 
+Where $\epsilon_{i} \stackrel{iid}{\sim} N(0,\sigma_{\epsilon}^2)$, $G_{i}$ is the grade received by student $i$ in their first course at the institution, $Ability_{i}$ is a proxy for the student's academic ability (Academic Rating)\footnote{For more information see \tablelabel{tab:def1}.}, $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are classmate ability measures, and $\overrightarrow{z}$ is a vector of control variables.\footnote{Control variables included Minority, Female, InState, International, Needy, Class Size, URM, Year, Division, and Professor. See \tablelabel{tab:def1} and \tablelabel{tab:def2} for definitions.}
 $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are our peer measures and are defined as one of the following, the proportion of high achieving, middle achieving, or low achieving students in a class\footnote{Unfortunately due to data limitations only the proportion of high achievers and low achievers in a class is used for our peer measures, for more details see \sectlabel{results}.}(as defined by cutoffs in academic rating), and $Ability_{i}^{CM1}$ is not the same measure as  $Ability_{i}^{CM2}$. 
 Thus $\beta_{2}$ and $\beta_{3}$ are the primary coefficients of interest, as they estimate the impact of the classmates ability variables (our peer measures) on a student's grade. 
 The model \eqref{eq:0} is regressed on the subset of students that are not incorporated in the peer measures. 
@@ -32,7 +32,7 @@ The second type of selection bias we control for is students selecting into cour
 For instance, some students may intentionally select into courses where they are likely to receive a high grade, due to unobservable factors (interest in the course, previous experience in the subject, etc.), that happen to also attract students of a certain ability level.
 In this case, the coefficients would be bias because unobservable factors are correlated with both the course grade and classmate ability levels (our peer measure).
 We control for this type of selection bias by using a two stage selection model.
-Specifically, our model is controlling for any selection bias that results from students selecting into courses high on their preference list or students selecting into courses low on their preference list.\footnote{The cutoffs that define a ``high'' and ``low'' preference course are determined by the number of categories ($j$) in our selection model.} 
+Specifically, our model is controlling for any selection bias that results from students selecting into courses that are high or low on their preference list.\footnote{The cutoffs that define a ``high'' and ``low'' preference course are determined by the number of categories ($j$) in our selection model.} 
 The idea is that students that have unobservable characteristics that would lead them to do well in certain courses will have higher preferences for those courses, whereas students who have unobservable characteristics that would lead them to do less well in a course (lack of interest, disappointment about not getting into a high preference course, etc.) will have low preferences for the course.
 By controlling for student course preferences we are controlling for some of the unobservable factors that, as a result of student self-selection into courses, may bias our coefficients.
 
@@ -65,7 +65,7 @@ R_{i} =
 
 Where $D_{i}$ is the demand for the student's selected course, $\overrightarrow{\omega}$ is a vector of control variables\footnote{Specifically the variables include Minority, Female, InState, Intl, Needy, AcadRating, URM (Underrepresented Minority), and Subject. See \tablelabel{tab:def1} and \tablelabel{tab:def2} for definitions.}, and $\epsilon_{i}$ is the error term. 
 In \eqref{eq:2} we see that the unobserved selection variable $R_{i}^{*}$ corresponds to the observed $R_{i}$ through $\mu$, a vector of unknown cutoffs. 
-The variable $j$ represents the number of selection categories there are, where in any of our regressions $j$ is at least two and at most four. 
+The variable $j$ represents the number of selection categories, where in any of our regressions $j$ is at least two and at most four. 
 For example, if $j$ is equal to two, then $R_{i}$ equal to one represents those students who selected into their first choice course and $R_{i}$ equal to two represents those students who did not select into their first choice course (instead selecting into their second choice, third choice, etc.). 
 The ordered probit model estimates the probability that $R_{i}$ is equal to $j$ using $R_{i}^{*}$, that is, 
 
@@ -79,7 +79,7 @@ Pr(R_{i} = j) \ = \ Pr(\mu_{j-1} < R_{i}^{*} \leq \mu_{j})
 \noindent Once we estimate the selection equation, we include the inverse mills ratios in the outcome equation.
 
 We use a model very similar to our original model \eqref{eq:0} as our outcome equation. 
-The only difference is that the inverse mills ratios are added as a control variable to correct for selection bias. 
+The only difference is that the inverse mills ratios ($\lambda$) are added as a control variable to correct for selection bias. 
 The model is as follows:
 
 \begin{equation}\label{eq:4}
@@ -88,6 +88,6 @@ G_{i} = \beta_{0} + \beta_{1} Ability_{i} + \beta_{2} Ability_{i}^{CM1} + \beta_
 
 Where the variables are defined in the same manner as \eqref{eq:0}, and $\lambda_{i}$ is the inverse mills ratios taken from the first stage regression.
 Just as in \eqref{eq:0} the model \eqref{eq:4} is regressed on the subset of students that are not part of the peer measures. 
-However, the calculation of different inverse mills ratios for each of the possible selection categories makes it necessary for a separate regression to be extimated on each of the students who selected into a particular selection category.\footnote{This is why there are Grade1, Grade2, etc. categories in the regressions seen in \sectlabel{results}.}
+However, the calculation of different inverse mills ratios for each of the possible selection categories makes it necessary for a separate regression to be estimated on each of the students who selected into a particular selection category.\footnote{This is why there are Grade1, Grade2, etc. categories in the regressions seen in \sectlabel{results}.}
 As an example, suppose $Ability_{i}^{CM1}$ and $Ability_{i}^{CM2}$ are defined as the proportion of high achievers in a course and the proportion of low achievers in a course respectively and the number of selection categories ($j$) is equal to two. 
 The outcome equation \eqref{eq:4} will first be regressed on the middle achievers who selected into their first choice course, then on the middle achievers who did not select into their first choice course, producing two sets of regression outputs. 

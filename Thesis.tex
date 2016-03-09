@@ -32,6 +32,7 @@
 \usepackage{titling}
 \setlength{\droptitle}{-80pt}
 \usepackage{filecontents}
+\usepackage{lipsum}
 
 % Experimental
 \usepackage{rotfloat}
@@ -140,47 +141,43 @@ pdfpagemode=UseNone]{hyperref}
 
 In higher education, economists and prospective students often use the performance measures of the student body as a proxy measure for the quality of the institution \citep{smith2015new,sarmiento2015quality,black2006estimating}.
 For example, the average high school GPA, average SAT score, and average class rank are all common reported characteristics of an institution and indicators of institutional quality.
-The underlying idea of using the quality of the student body as a measure for the quality of the institution, is that the quality of one's peers matter. 
-Indeed, several studies have shown that peer quality has a positive impact on long term student outcomes, such as graduation rates and cumulative GPA \citep{smith2015new,luppino2015college,ost2010role}. 
-Naturally, these findings lead to another area of research, identifying the specific areas of a student's life where peer effects are most significant. 
-One of the most obvious areas for a strong effect to exist is in the classroom.
-Thus, we seek to understand peer effects in the classroom, specifically how the ability level of classmates impacts a student's class performance.
+Since institutional quality is measured by student performance, and there is a relationship between peer effects and student performance, it becomes important to study peer effects. 
 
-The answer to this question is important for various reasons. 
-First, a substantial amount of learning in higher education occurs in the classroom. 
-Knowledge about classroom peer effects patterns may help to explain differences in student performance, and thus may lead to policy implications that maximize student achievement. 
-Second, the answer may influence which institution of higher education students should attend. 
-All else being equal, students should attend the institution where peer effects have the strongest possible positive impact on a students academic performance. 
-For instance, if classmate peer effects have a stronger positive impact on a students academic performance at institution A versus institution B, then that is an incentive for the student to attend institution A. 
-Additionally, the answer may even impact which type of institution to attend.
-If classmate peer effects have a stronger positive impact on a students academic performance at an institution of type A, a liberal arts institution, versus an institution of type B, a large public university, then that is an incentive to attend an institution of type A. 
-However, if on the other hand, classmate peer effects have a negligible or a stronger negative impact on a students academic performance at an institution of type A versus an institution of type B, then that is an incentive to attend an institution of type B. 
+Indeed, several studies have shown that peer effects have a significant impact on long term student outcomes, such as graduation rates and cumulative GPA \citep{smith2015new,luppino2015college,ost2010role}. 
+Naturally, these findings lead to another area of research, identifying the specific areas of a student's life where peer effects are most significant. 
+One of the most obvious areas for strong peer effects to exist is in the classroom.
+However, not many papers have studied peer effects in the classroom, especially at the level of higher education. 
+Hence, this paper focuses on peer effects in the classroom, specifically how the ability level of classmates impacts a student's class performance at an institution of higher education.
+We use data from a small private liberal arts college in the mid-west, and find that the proportion of high achieving students in a class has a significant negative impact on the grades of middle achieving students. 
+Additionally, we find evidence that the proportion of low achieving students in a class has a positive impact on the grades of middle achieving students. 
+
+Our results are contrary to those found in most of the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}, which may be due to changing peer dynamics from K-12 education to higher education, grade curving occurring in classes at the institution, or a combination of both.
+Additionally, the results are limited by the size of our data set, and it is unclear how well these results generalize as the current research on this subject is scarce.
 
 This study contributes to the literature in two ways.
 First, this is the first study (known to us) to research peer effects at the classroom level at this type of institution (a small private liberal arts college). 
 Previous studies of this kind  almost exclusively focus on K-12 education. 
 This naturally leads to the question of whether the previous findings can be extrapolated to higher education, where peer dynamics may be very different. 
-As mentioned earlier, the answer to this question has serious policy implications and may assist in the comparison of different institutions.
 
 Second, due to our access to data, we are able to use a unique method (at least in terms of classroom peer effects literature) to analyze the data and correct for selection bias, a serious problem in studies of this type\footnote{For more details see \sectlabel{methods}} \citep{carman2012classroom,burke2013classroom,ding2007peers}. 
 Most of the current literature uses two methods to control for selection bias, exploiting quasi-random classroom assignments or using fixed effects models.
 Quasi-random classroom assignments are not used at the institution providing our data (nor at most institutions of higher education in the United States), and thus cannot be used for our purposes. 
 Studies that use fixed effects models must make the identifying assumption that unobservable factors that affect peer quality and student performance are time-invariant \citep{lavy2012good}. 
 With our access to data we can use a two stage selection model\footnote{Discussed in \sectlabel{methods}.} where we need not make such assumptions. 
-Therefore, our model and data access allow us to analyze the data in a unique way, where we are not limited by the assumption made when using the fixed effects model.
+Therefore, our model and data access allow us to analyze the data in a unique way, where we are not limited by the assumption made when using the fixed effects model. 
 
-We use data from a small private liberal arts college in the mid-west, and find that the proportion of high achieving students in a class has a significant negative impact on the grades of middle achieving students. 
-Additionally, we find evidence that the proportion of low achieving students in a class has a positive impact on the grades of middle achieving students. 
-The effect of the proportion of high achievers on the grades of middle achievers is economically significant, whereas the effect of the proportion of low achievers is economically insignificant. 
-Our results are contrary to those found in most of the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}, which may be due to changing peer dynamics from K-12 education to higher education, grade curving occurring in classes at the institution, or a combination of both.
-The results are limited by the size of our data set, and it is unclear how well these results generalize as the current research on this subject is scarce. 
+Studying classroom peer effects is important for various reasons. 
+As mentioned earlier, economists and students measure institutional quality using student performance measures, which are influenced by peer effects. 
+Additionally, knowledge about classroom peer effects patterns may help to explain differences in student performance, and thus may lead to policy implications that maximize student achievement. 
+Finally, with additional research on the subject, classroom peer effects may influence which institution of higher education students should attend. 
+All else being equal, students should attend the institution where peer effects have the strongest possible positive impact on a students academic performance, and thus the peer effects at different institutions may provide incentives (or disincentives) for students to attend them. 
 
-The rest of the paper is organized as follows. 
-We discuss the related literature in section~\ref{litreview}. 
-In section~\ref{data}, we examine the data used in this study. 
-In section~\ref{methods}, we describe our empirical methodology.
-We present our results, discuss the implications, and offer suggestions for further research in section~\ref{results}.
-Lastly, we conclude in section~\ref{conclusion}.
+% The rest of the paper is organized as follows. 
+% We discuss the related literature in section~\ref{litreview}. 
+% In section~\ref{data}, we examine the data used in this study. 
+% In section~\ref{methods}, we describe our empirical methodology.
+% We present our results, discuss the implications, and offer suggestions for further research in section~\ref{results}.
+% Lastly, we conclude in section~\ref{conclusion}.
 
 \section{Literature Review}\label{litreview}
 
@@ -194,13 +191,13 @@ This is a testament to the difficulty of finding peer effects and the difficulty
 
 The current paper adds to the growing literature focused on peer effects in the classroom.
 In a similar vain to the roommate peer effects literature, much of the literature on peer effects in the classroom exploits quasi-random classroom assignments.
-For instance, \citet{kang2007classroom} exploit the quasi-random classroom assignments in South Korean middle schools, and \citet{carman2012classroom} utilize the fact that students are assigned to Chinese middle schools either randomly or through an admissions test.
+For instance, \citet{kang2007classroom} exploits the quasi-random classroom assignments in South Korean middle schools, and \citet{carman2012classroom} utilize the fact that students are assigned to Chinese middle schools either randomly or through an admissions test.
 Both studies focused on determining the significance of peer effects on classroom grades, and find evidence of peer effects.
 \citet{kang2007classroom} finds that strong students\footnote{For our purposes, any qualitative measure of student abilities (high or low achiever, strong or weak student, etc.) refers to students relative academic performance (usually on standardized tests). This is standard practice in all of the related literature \citep{carman2012classroom,burke2013classroom,kang2007classroom,schlosser2008inside,lavy2012good}} have a positive impact on the academic performance of other students, while weak students have a negative effect on the performance of other students. 
 \citet{carman2012classroom} find somewhat mixed results, but in general they find evidence of positive and significant peer effects on the impact of classmate quality on the academic performance of other students.
 Other studies use econometric techniques, such as fixed effects modeling, to correct for any selection bias.
 For example, \citet{schlosser2008inside} and \citet{lavy2012good} control for fixed effects when studying the peer effects of underachievers and overachievers on other students in secondary schools.
-Both studies find evidence of peer effects where a larger proportion of lower achieving students in a high school class has a negative impact on the achievement of ``regular'' students in the class.
+Both studies find evidence of peer effects where a larger proportion of lower achieving students in a class has a negative impact on the achievement of ``regular'' students in the class.
 \citet{lavy2012good} in particular find a positive peer effect from high achieving peers on girls.
 
 Additionally, \citet{burke2013classroom} use fixed effects modeling to analyze the peer effects in Florida public school classrooms.
@@ -209,11 +206,10 @@ However, there are a few notable exceptions.
 \citet{burke2013classroom} find that high achieving students benefit from an increased fraction of low or high achieving students, and in middle school mathematics, middle achievers benefit from a higher fraction of low achievers.
 The authors suggest that the intellectual distance between high achievers and low achievers may be the reason for their former finding.
 They explain that the intellectual distance may be so vast as to be a barrier to communication between the two groups, whereas high achievers can communicate effectively with the less intellectually distanced middle achievers (making high achievers worse off). 
-With the few exceptions found by \citet{burke2013classroom}, the majority of the literature finds that a larger proportion of higher achievers in a class has a positive impact on the academic performance of other students, and a larger proportion of low achievers in a class has a negative impact on the academic performance of other students.%\footnote{See the \nameref{results} section for the reasoning.}%
+With the few exceptions found by \citet{burke2013classroom}, the majority of the literature finds that a larger proportion of high achievers in a class has a positive impact on the academic performance of other students, and a larger proportion of low achievers in a class has a negative impact on the academic performance of other students.%\footnote{See the \nameref{results} section for the reasoning.}%
 
 Whereas the majority of other studies focus on K-12 education, we add to the literature by analyzing the peer effects in higher education. 
 It is possible that the peer dynamics change in the transition from secondary education to higher education, and our data set gives us a unique opportunity to analyze these peer dynamics.
-% Additionally, our data set comes from a small liberal arts institution which should make it an excellent environment to see magnified peer effects.\footnote{For more details see \sectlabel{summarystats}.}
 
 \section{Data}\label{data}
 
@@ -231,8 +227,8 @@ It is possible that the peer dynamics change in the transition from secondary ed
 
 % We found peer effects, but as to how generalizable they are or how large they are we cannot be certain
 
-Several studies have found that the quality of ones peers at an institution of higher learning has a positive impact on long term outcomes, such as graduation rates and cumulative GPA \citep{smith2015new,luppino2015college,ost2010role}.
-We seek to answer the question of whether or not peer quality impacts short term outcomes, particularly at the classroom level, and find small but significant effects from the proportion of high achievers and low achievers in a class on the grades of middle achievers. 
+Several studies have shown that the quality of ones peers at an institution of higher education has a positive impact on long term outcomes, such as graduation rates and cumulative GPA \citep{smith2015new,luppino2015college,ost2010role}.
+We seek to answer the question of whether or not peer quality impacts short term outcomes, particularly at the classroom level, and find significant effects from the proportion of high achievers and low achievers in a class on the grades of middle achievers. 
 The results indicate that the proportion of high achievers in a class has a negative impact on the grades of middle achievers, while the proportion of low achievers in a class has a positive impact on the grades of middle achievers. 
 We find that the effect of the proportion of high achievers on the grades of middle achievers is economically significant, whereas the effect of the proportion of low achievers is economically insignificant. 
 These results are novel and run counter to those found in the majority of the current literature \citep{kang2007classroom,carman2012classroom,burke2013classroom,schlosser2008inside,lavy2012good}, which may be due to changing peer dynamics from K-12 education to higher education, grade curving occurring in classes at the institution, or a combination of both.

@@ -44,7 +44,7 @@ There were 31 subjects used as controls in the selection equation, the full list
 All of the coefficients and standard errors from the regressions run in \tablelabel{tab:2sc}, \tablelabel{tab:3sc}, and \tablelabel{tab:4sc} are shown below (with the exception of the professor dummy variables).
 
 \bigskip
-\noindent \textbf{Note:} For the four category two stage selection model (\tablelabel{table:b10} and \tablelabel{table:b11}) only the Top/Bot 5\% regression could be run. Top/Bot 25\% and Top/Bot 10\% regressions could not be run because there is too little variance in the data at those levels (most likely because there are too few observations).
+\noindent \textbf{Note:} For the four category two stage selection model (\tablelabel{table:b10} and \tablelabel{table:b11}) only the Top/Bot 5\% regression could be run. Top/Bot 25\% and Top/Bot 10\% regressions could not be run because there is too little variance in the data at those levels (this seems to be caused by the correction to Demand discussed in \sectlabel{data} as the regressions in \appendixlabel{appendix:d} could be estimated).
 
 \clearpage{}
 
@@ -711,7 +711,9 @@ All of the coefficients and standard errors from the regressions run in \tablela
 The tables below display the results from the original model \eqref{eq:0}. 
 The overall results are the same, which suggests that selection bias is not affecting our model for the given sample.
 
-\begin{sidewaystable}[!htbp]\centering
+\bigskip
+\rotatebox{90}{%
+%\begin{sidewaystable}[!htbp]
   \begin{threeparttable}
     \caption{Original Model \eqref{eq:0} on Middle Achievers}\label{table:c1}
     \begin{tabular}{l|c|c|c|c|c|c}
@@ -749,7 +751,8 @@ The overall results are the same, which suggests that selection bias is not affe
     \item{* p<.2, ** p<.1, *** p<.05 \\ Note: Professor dummy variables are omitted to save space. The column header represents the peer measures used.}
     \end{tablenotes}
   \end{threeparttable}
-\end{sidewaystable}
+}
+%\end{sidewaystable}
 
 \clearpage{}
 
@@ -845,9 +848,9 @@ The overall results are the same, which suggests that selection bias is not affe
 \section{Robustness to Changes in Bidding System}\label{appendix:d}
 
 In order to test the robustness of our results to the changes in the bidding system, we reran the regressions only on data from the years 2011-2014 (with the original bidding system). 
-The overall results are the same, suggesting that our results are robust to the change in the bidding system. 
+The overall results are the same as our original results and displayed below. 
 \bigskip
-\begin{table}[htb]
+\begin{table}[!htb]
   \centering
   \begin{threeparttable}
     \caption{Two Selection Categories}\label{tab:d1}
